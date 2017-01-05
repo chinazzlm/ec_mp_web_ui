@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>lms</title>
+    <style media="screen">
+      *{
+      margin: 0;
+      padding: 0
+      }
+      li{
+        list-style: none;
+      }
+      a{
+        text-decoration: none;
+        color: #fff;
+      }
+      .warp{
+        width: 1024px;
+        height: 768px;
+        margin: 0 auto;
+        background: url(images/back-12.jpg) no-repeat 0 0;
+        background-size: cover;
+        position: relative;
+      }
+      .top{
+        width: 100%;
+        height: 73px;
+
+        overflow: hidden;
+      }
+      .top-left{
+        width: 35px;
+        height: 35px;
+        background: url(images/shouye-1.png) no-repeat 0 0;
+        background-size: contain;
+        line-height: 45px;
+        text-align: center;
+        margin-top: 12px;
+        margin-left: 38px;
+        float: left;
+      }
+      .top-center{
+        width: 216px;
+        height: 73px;
+
+        position: absolute;
+        top: 9px;
+        left: 43%;
+        color: #fff;
+        text-align: center;
+
+      }
+      .top-center span{
+        display: inline-block;
+        padding-top: 16px;
+        font-weight: 600;
+        opacity: 0.8;
+      }
+      .top-right{
+        float: right;
+        margin-right: 39px;
+        margin-top: 12px;
+      }
+      .top-right-left{
+        width: 25px;
+        height: 25px;
+        background: url(images/header-1.png) no-repeat 0 0;
+        background-size: contain;
+      }
+
+      /*中间部分*/
+      .middle{
+        width: 100%;
+        height: 560px;
+
+        overflow: hidden;
+      }
+      .middle-tiaoma{
+        width: 265px;
+        float: right;
+        position: absolute;
+        top:82px;
+        right: -30px;
+        overflow: hidden;
+      }
+      .tiaoma-left{
+        width:20px;
+        height:15px;
+        background: url(images/tiaoma.png) no-repeat 0 0;
+        background-size: cover;
+        display: inline-block;
+
+      }
+      .tiaoma-right{
+        margin-top: -2px;
+        width: 167px;
+        height: 22px;
+        display: inline-block;
+        outline: none;
+        -webkit-appearance : none ;
+        vertical-align: middle;
+        border: none;
+      }
+      .middle-product{
+        width: 944px;
+        height: 470px;
+        background:rgba(255,255,255,0.1);
+        margin: 0 auto;
+        margin-top: 23px;
+        z-index: 999;
+      }
+      .product-infor{
+        width: 210px;
+        height: 210px;
+        margin-top:10px;
+        margin: 10px 6px 0;
+        display: inline-block;
+
+      }
+
+      .product-infor p{
+        width: 170px;
+        margin: 0 auto;
+        font-size: 14px;
+        padding-bottom: 5px;
+        color: #FFF;
+      }
+      .product-img{
+        width: 176px;
+        height: 170px;
+        margin: 0 auto;
+
+      }
+      .product-img img{
+        width: 170px;
+        height: 170px;
+      }
+      .product-infor span:first-child{
+        font-size: 18px;
+        color: red;
+        margin-left: 21px;
+      }
+      .product-infor span:last-child{
+        font-size:18px;
+        color: #FF0000;
+        float: right;
+        margin-right: 23px;
+      }
+      .product-conver{
+        /*display: none;*/
+        width: 930px;
+        margin: 0 auto;
+        overflow: auto;
+        height: 470px;
+      }
+     /*底                部*/
+     .footer{
+
+       overflow: hidden;
+     }
+     .footer-left{
+       width: 140px;
+       height: 130px;
+       float: left;
+       background: #59be22;
+       border-radius: 2px;
+       margin-left: 10px;
+     }
+     .footer-left p{
+       font-size: 12px;
+       font-weight: 400;
+       text-align: center;
+       line-height: 15px;
+       color: #fff;
+    }
+    .footer-left p:first-child{
+      margin-top: 47px;
+    }
+    .footer-center{
+      width: 704px;
+      height: 130px;
+      float: left;
+    }
+    .footer-center-nav{
+      display: flex;
+      margin-top: 43px;
+    }
+    .footer-center-nav li{
+      flex: 1;
+    }
+    .nav-infor{
+      width: 79px;
+      height:64px;
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+
+
+    .footer-right{
+      float: right;
+      margin-right:10px;
+      width: 160px;
+      height: 130px;
+      background:#f7357b;
+      border-radius: 2px;
+    }
+    .footer-right p{
+      text-align: center;
+      color: #fff;
+    }
+    .footer-right p:first-child{
+      margin-top: 57px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .footer-right p:last-child{
+        margin-top: 17px;
+        font-size: 14px;
+        text-align: center;
+
+    }
+    .ma-num{
+      display: inline-block;
+      padding-top: 20px;
+      margin-left: 40px;
+      color: #fff;
+    }
+    /*.touming{
+      width: 944px;
+      height: 470px;
+      background: #fff;
+      opacity: 0.3;
+      position: absolute;
+      top: 133px;
+      left: 40px;
+    }*/
+    </style>
+  </head>
+  <body>
+    <div class="warp">
+      <div class="top">
+        <div class="top-left"><a href="#"></a></div>
+        <div class="top-center"><span><u>XXX店</u></span><br><br>佑佑科技收银管理平台</div>
+        <div class="top-right">
+          <div class="top-right-left"></div>
+          <span><a href="#">XXX</a></span>
+        </div>
+      </div>
+      <div class="middle">
+        <div class="ma-num">
+          机器编号：001
+        </div>
+        <div class="middle-tiaoma">
+          <div class="tiaoma-left"></div>
+          <input type="text" name="" value="" class="tiaoma-right">
+        </div>
+
+        <!-- 商品显示 -->
+        <div class="middle-product">
+          <div class="touming">
+
+          </div>
+          <ul class="product-conver">
+            <li class="product-infor">
+              <div class="product-img"><img src="images/maojin.jpg" alt=""></div>
+              <p>蓝色妖姬</p>
+              <div class="price">
+                <span>￥999.00</span><span>X1</span>
+              </div>
+            </li>
+            <li class="product-infor">
+              <div class="product-img"><img src="images/maojin.jpg" alt=""></div>
+              <p>蓝色妖姬</p>
+              <div class="">
+                <span>￥999.00</span><span>X1</span>
+              </div>
+            </li>
+            <li class="product-infor">
+              <div class="product-img"><img src="images/maojin.jpg" alt=""></div>
+              <p>蓝色妖姬</p>
+              <div class="">
+                <span>￥999.00</span><span>X1</span>
+              </div>
+            </li>
+            <li class="product-infor">
+              <div class="product-img"><img src="images/maojin.jpg" alt=""></div>
+              <p>蓝色妖姬</p>
+              <div class="">
+                <span>￥999.00</span><span>X1</span>
+              </div>
+            </li>
+            <li class="product-infor">
+              <div class="product-img"><img src="images/maojin.jpg" alt=""></div>
+              <p>蓝色妖姬</p>
+              <div class="">
+                <span>￥999.00</span><span>X1</span>
+              </div>
+            </li>
+            <li class="product-infor">
+              <div class="product-img"><img src="images/maojin.jpg" alt=""></div>
+              <p>蓝色妖姬</p>
+              <div class="">
+                <span>￥999.00</span><span>X1</span>
+              </div>
+            </li>
+            <li class="product-infor">
+              <div class="product-img"><img src="images/maojin.jpg" alt=""></div>
+              <p>蓝色妖姬</p>
+              <div class="">
+                <span>￥999.00</span><span>X1</span>
+              </div>
+            </li>
+            <li class="product-infor">
+              <div class="product-img"><img src="images/maojin.jpg" alt=""></div>
+              <p>蓝色妖姬</p>
+              <div class="">
+                <span>￥999.00</span><span>X1</span>
+              </div>
+            </li>
+            <li class="product-infor">
+              <div class="product-img"><img src="images/maojin.jpg" alt=""></div>
+              <p>蓝色妖姬</p>
+              <div class="">
+                <span>￥999.00</span><span>X1</span>
+              </div>
+            </li>
+            <li class="product-infor">
+              <div class="product-img"><img src="images/maojin.jpg" alt=""></div>
+              <p>蓝色妖姬</p>
+              <div class="">
+                <span>￥999.00</span><span>X1</span>
+              </div>
+            </li>
+            <li class="product-infor">
+              <div class="product-img"><img src="images/maojin.jpg" alt=""></div>
+              <p>蓝色妖姬</p>
+              <div class="">
+                <span>￥999.00</span><span>X1</span>
+              </div>
+            </li>
+            <li class="product-infor">
+              <div class="product-img"><img src="images/maojin.jpg" alt=""></div>
+              <p>蓝色妖姬</p>
+              <div class="">
+                <span>￥999.00</span><span>X1</span>
+              </div>
+            </li>
+            <li class="product-infor">
+              <div class="product-img"><img src="images/maojin.jpg" alt=""></div>
+              <p>蓝色妖姬</p>
+              <div class="">
+                <span>￥999.00</span><span>X1</span>
+              </div>
+            </li>
+            <li class="product-infor">
+              <div class="product-img"><img src="images/maojin.jpg" alt=""></div>
+              <p>蓝色妖姬</p>
+              <div class="">
+                <span>￥999.00</span><span>X1</span>
+              </div>
+            </li>
+            <li class="product-infor">
+              <div class="product-img"><img src="images/maojin.jpg" alt=""></div>
+              <p>蓝色妖姬</p>
+              <div class="">
+                <span>￥999.00</span><span>X1</span>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer-left">
+          <p>姓名：X先生</p>
+          <p>可用积分：1111</p>
+          <p>可用余额：1111</p>
+        </div>
+        <div class="footer-center">
+          <ul class="footer-center-nav">
+            <li>
+              <div class="nav-infor" style="background: #ffbd0f"></div>
+            </li>
+            <li>
+              <div class="nav-infor" style="background: #1dadf2"></div>
+            </li>
+            <li>
+              <div class="nav-infor" style="background: #c027fb"></div>
+            </li>
+            <li>
+              <div class="nav-infor" style="background: #59be22"></div>
+            </li>
+            <li>
+              <div class="nav-infor" style="background: #ffbd0f"></div>
+            </li>
+
+          </ul>
+        </div>
+        <div class="footer-right">
+          <p><u>￥999999.99</u></p>
+          <p>本次积分：999</p>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
