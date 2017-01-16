@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>业绩排行榜</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximumscale=1,user-scalable=no"/>
+    <style media="screen">
+      @media screen and (max-width:640px){
+        *{
+            padding: 0;
+            margin: 0;
+          }
+          html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+          }
+          li{
+            list-style: none;
+            float: left;
+          }
+          a{
+            text-decoration: none;
+            color: #000;
+          }
+          /*隐藏滚动条*/
+          ::-webkit-scrollbar {
+              display: none;
+          }
+        .head{
+          width: 100%;
+          height:60px;
+          line-height: 60px;
+          text-align: center;
+          color: #333333;
+          font-size: 14px;
+          border-bottom: 1px solid #f3f3f5;
+        }
+        .content-first-ul{
+          width: 100%;
+          height: 120px;
+          border-bottom: 1px solid #f3f3f5;
+          overflow: hidden;
+        }
+
+        .content-first-ul li a{
+          color: #fff;
+          /*font-weight: bold;*/
+        }
+        .content-first-ul li:first-child{
+          width: 24%;
+          height: 26px;
+          line-height: 26px;
+          background: #e84e40;
+          border-top-right-radius: 6px;
+          border-bottom-right-radius: 6px;
+          text-align: center;
+          margin-top: 49px;
+        }
+        .content-first-middle{
+          width: 141px;
+          height: 80px;
+          display: inline-block;
+          margin: 0 auto;
+          background: url(images/first.png) no-repeat 0 0;
+          background-size: cover;
+          /*margin-left: 14.4%;*/
+          margin-top: 10px;
+          position: relative;
+        }
+        .content-first-ul li:nth-child(3n+2){
+          width: 52%;
+          height: 121px;
+          text-align: center;
+          margin: 0 auto;
+        }
+        .circle{
+          width: 44px;
+          height: 44px;
+          border-radius:22px;
+          background:url(images/c_9_5.jpg) no-repeat 0 0;
+          background-size:contain;
+          position: absolute;
+          top: 18px;
+          left: 49px;
+        }
+        .middle-name{
+          overflow: hidden;
+
+          position: absolute;
+          top: 63px;
+          left: 0;
+          color: #fff;
+          font-size: 14px;
+          font-weight: 600;
+          overflow: hidden;
+        }
+        .middle-name span{
+          display: inline-block;
+          width: 141px;
+          text-align: center;
+        }
+        .content-first-ul li p span{
+          display: inline-block;
+          height: 26px;
+          line-height: 26px;
+        }
+        .content-first-ul li p span img{
+          width: 20px;
+          height: 26px;
+          vertical-align: middle;
+          margin-right: 10px;
+        }
+        .content-first-ul li p{
+          display: inline-block;
+          position: absolute;
+          top: 78px;
+          left:34px;
+          color: #e7c420;
+        }
+        .content-first-ul li:last-child{
+          width: 24%;
+          line-height: 120px;
+          text-align: left;
+
+        }
+        .last-child img{
+          width: 10px;
+          height: 15px;
+          vertical-align: middle;
+        }
+        .content-first-ul .last-child a{
+          color: #e51c23;
+        }
+        .last-child span{
+          height: 16px;
+          line-height: 16px;
+        }
+        .content-next-ul{
+            width: 100%;
+            height: 86px;
+            border-bottom: 1px solid #f3f3f5;
+            overflow: hidden;
+          }
+
+          .content-next-ul li a{
+            color: #636263;
+            font-weight: bold;
+            font-weight: normal;
+          }
+          .content-next-ul li:first-child{
+            width: 24%;
+            height: 26px;
+            line-height: 26px;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            text-align: center;
+            margin-top: 29px;
+          }
+          .content-next-ul li:nth-child(3n+2){
+            width: 52%;
+            margin: 20px auto 0;
+            overflow: hidden;
+
+          }
+
+          .content-next-ul li:last-child{
+            width: 24%;
+            line-height: 86px;
+            text-align: left;
+
+          }
+          .content-next-ul .last-child a{
+            color: #e51c23;
+
+          }
+          .content-next-middle{
+            width: 160px;
+            height: 80px;
+            margin: 0 auto;
+          }
+          .content-next-left{
+            float: left;
+            width: 56px;
+            height: 56px;
+            line-height: 56px;
+            border-radius: 28px;
+            background: #7bbecc;
+            text-align: center;
+          }
+          .content-next-left img{
+            width: 42px;
+            height: 42px;
+            vertical-align: middle;
+          }
+          .content-next-right{
+            float: right;
+          }
+          .content-next-right p{
+            line-height: 26px;
+          }
+          .content-next-right p img{
+            width: 20px;
+            height: 26px;
+            vertical-align: middle;
+          }
+          .content-next-right p:first-child{
+            width: 80px;
+            text-align: center;
+            font-weight: 400;
+            color: #4d434d;
+            font-size: 14px;
+          }
+          .content-next-right p:last-child{
+            text-align: center;
+            color: #e7c420;
+          }
+          .content-next-right p span{
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            font-weight: 600;
+          }
+          #color-three{
+            color: #e01de0;
+          }
+          #color-two{
+            color: #edd472;
+          }
+          /*我*/
+          .me{
+            font-size: 20px;
+            /*float: left;*/
+            color: #e84e40;
+          }
+        }
+    </style>
+  </head>
+  <body>
+
+    <div class="content">
+      <div class="content-first">
+        <ul class="content-first-ul">
+          <li><a href="#">NO.1</a></li>
+          <li>
+            <div class="content-first-middle">
+              <div class="circle"></div>
+              <div class="middle-name"><span>MiniGui</span></div>
+              <p><span><img src="images/money.png" alt=""></span><span>15555</span></p>
+            </div>
+          </li>
+          <li class="last-child"><a href="#"><span><img src="images/jiantou-top.png" alt=""><img src="images/jiantou-top.png" alt=""></span><span>5</span></a></li>
+        </ul>
+      </div>
+      <div class="content-next">
+        <ul class="content-next-ul">
+          <li><a href="#" id="color-two"><span class="me">*</span>NO.2</a></li>
+          <li>
+            <div class="content-next-middle">
+              <div class="content-next-left" style="background:#f08316">
+                <img src="images/fish.png" alt="">
+              </div>
+              <div class="content-next-right">
+                <p>小小猪</p>
+                <p><img src="images/money.png" alt=""><span>12345</span></p>
+              </div>
+            </div>
+          </li>
+          <li class="last-child"><a href="#"><span><img src="images/jiantou-top.png" alt=""><img src="images/jiantou-top.png" alt=""></span><span>5</span></a></li>
+        </ul>
+      </div>
+      <div class="content-next">
+        <ul class="content-next-ul">
+          <li><a href="#" id="color-three">NO.3</a></li>
+          <li>
+            <div class="content-next-middle">
+              <div class="content-next-left" style="background:#2851b8">
+                <img src="images/ji.png" alt="">
+              </div>
+              <div class="content-next-right">
+                <p>小小猪</p>
+                <p><img src="images/money.png" alt=""><span>12345</span></p>
+              </div>
+            </div>
+          </li>
+          <li class="last-child"><a href="#"><span><img src="images/jiantou-top.png" alt=""><img src="images/jiantou-top.png" alt=""></span><span>5</span></a></li>
+        </ul>
+      </div>
+      <div class="content-next">
+        <ul class="content-next-ul">
+          <li><a href="#" class="color-four">NO.4</a></li>
+          <li>
+            <div class="content-next-middle">
+              <div class="content-next-left" style="background:#21cc90">
+                <img src="images/per.png" alt="">
+              </div>
+              <div class="content-next-right">
+                <p>小小猪</p>
+                <p><img src="images/money.png" alt=""><span>12345</span></p>
+              </div>
+            </div>
+          </li>
+          <li class="last-child"><a href="#"><span><img src="images/jiantou-down.png" alt=""><img src="images/jiantou-down.png" alt=""></span><span>5</span></a></li>
+        </ul>
+      </div>
+      <div class="content-next">
+        <ul class="content-next-ul">
+          <li><a href="#" class="color-four">NO.5</a></li>
+          <li>
+            <div class="content-next-middle">
+              <div class="content-next-left" style="background:#f22c88">
+                <img src="images/shep.png" alt="">
+              </div>
+              <div class="content-next-right">
+                <p>小小猪</p>
+                <p><img src="images/money.png" alt=""><span>12345</span></p>
+              </div>
+            </div>
+          </li>
+          <li class="last-child"><a href="#"><span><img src="images/jiantou-top.png" alt=""><img src="images/jiantou-top.png" alt=""></span><span>5</span></a></li>
+        </ul>
+      </div>
+      <div class="content-next">
+        <ul class="content-next-ul">
+          <li><a href="#" class="color-four">NO.6</a></li>
+          <li>
+            <div class="content-next-middle">
+              <div class="content-next-left" style="background:#f08316">
+                <img src="images/tu.png" alt="">
+              </div>
+              <div class="content-next-right">
+                <p>小小猪</p>
+                <p><img src="images/money.png" alt=""><span>12345</span></p>
+              </div>
+            </div>
+          </li>
+          <li class="last-child"><a href="#"><span><img src="images/jiantou-down.png" alt=""><img src="images/jiantou-down.png" alt=""><img src="images/jiantou-down.png" alt=""></span><span>5</span></a></li>
+        </ul>
+      </div>
+      <div class="content-next">
+        <ul class="content-next-ul">
+          <li><a href="#" class="color-four">NO.7</a></li>
+          <li>
+            <div class="content-next-middle">
+              <div class="content-next-left" style="background:#21cc90">
+                <img src="images/zhu.png" alt="">
+              </div>
+              <div class="content-next-right">
+                <p>小小猪</p>
+                <p><img src="images/money.png" alt=""><span>12345</span></p>
+              </div>
+            </div>
+          </li>
+          <li class="last-child"><a href="#"><span><img src="images/jiantou-top.png" alt=""><img src="images/jiantou-top.png" alt=""></span><span>5</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
