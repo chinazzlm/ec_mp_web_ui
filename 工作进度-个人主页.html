@@ -86,8 +86,8 @@
           .head-bottom{
             width:270px;
             margin: 40px auto 0;
-            overflow: hidden;
-
+            /*overflow: hidden;*/
+            position: relative;
           }
           .head-bottom p{
             width: 129px;
@@ -103,10 +103,24 @@
           .head-bottom p:first-child{
             background: #2baf2b;
 
+
           }
-          .head-bottom p:last-child{
+          .head-bottom p:nth-child(3n+2){
             background: #26c6da;
             float: right;
+          }
+          .head-bottom-num{
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            border-radius: 10px;
+            background:red;
+            position: absolute;
+            top: -5px;
+            left: 103px;
+            color: #fff;
+            text-align: center;
+
           }
           .line{
             border-bottom: 1px solid #e3e1e3;
@@ -168,14 +182,17 @@
             color: #4d434d;
             font-size: 12px;
             line-height: 32px;
-            float: left;
+            float: right;
             overflow: hidden;
 
           }
           .footer .footer-right p{
-            width: 210px;
+            width: 190px;
+            white-space:normal;
             overflow: hidden;
+
           }
+
           .footer .footer-left{
             float: left;
           }
@@ -205,6 +222,7 @@
       <div class="head-bottom">
         <p>客户跟踪</p>
         <p>备忘录</p>
+        <div class="head-bottom-num">4</div>
       </div>
       <div class="line"></div>
     </div>
@@ -216,7 +234,6 @@
       <p class="middle-num3 num"><span>未完成销售额</span><span>:</span><span>333333</span><span>50%</span></p>
       <p class="middle-play">今日销售额</p>
       <p class="middle-num1 num"><span>本日销售额</span><span>:</span><span>123456</span><span></span></p>
-
     </div>
     <p class="line"></p>
 
@@ -225,7 +242,7 @@
         <img src="images/zhengzai.png" alt="">
       </div>
       <div class="footer-right">
-        <p>12：10 电话联系王小姐，确认、、、、</p>
+        <p><span>12：10 电话联系王小姐，确认、、、、</span></p>
         <p><img src="images/down.png" alt=""></p>
         <p>14：30见李先生看XXX房子</p>
       </div>
