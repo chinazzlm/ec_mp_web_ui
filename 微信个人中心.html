@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>个人中心</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <style media="screen">
+      @media screen and (max-width:640px){
+        *{
+            padding: 0;
+            margin: 0;
+          }
+          html,body{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+          }
+          a{
+            text-decoration: none;
+            color: #000;
+          }
+          /*隐藏滚动条*/
+          ::-webkit-scrollbar {
+              display: none;
+          }
+          .warp{
+            width: 90.66667%;
+            background: url(images/bak3.jpg) no-repeat 0 0;
+            background-size:cover;
+            margin: 23px auto;
+            overflow: hidden;
+            height: 139px;
+            border-radius: 4px;
+          }
+          .top{
+            height: 50px;
+
+          }
+          .top-left{
+            width: 175px;
+            float: left;
+            margin: 28px 0 0 10px;
+          }
+          .top-left-header{
+            display: inline-block;
+            width: 76px;
+            height: 76px;
+            border-radius: 38px;
+
+          }
+          .top-left-header img{
+            width: 76px;
+            height: 76px;
+            border-radius: 38px;
+          }
+
+          .top-left-name{
+            display: inline-block;
+            width: 80px;
+            vertical-align: top;
+          }
+          .top-left-name p{
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 40px;
+          }
+          .top-right{
+            float: right;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 28px;
+            margin-right: 14px;
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="warp">
+      <div class="top">
+        <div class="top-left">
+          <div class="top-left-header">
+            <img src="images/weixinheader.jpg" alt="">
+          </div>
+          <div class="top-left-name">
+            <p>李网吧</p>
+            <p>$钻石会员</p>
+          </div>
+        </div>
+        <p class="top-right">13111111111</p>
+        <p class="top-right">折扣：7折</p>
+      </div>
+
+    </div>
+  </body>
+</html>
