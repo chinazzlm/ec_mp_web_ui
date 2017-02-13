@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>设置</title>
+    <title>个人信息</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
     <style media="screen">
       @media screen and (max-width:640px){
@@ -121,6 +121,9 @@
           .middle .middle-li .middle-p2{
             text-align: right;
           }
+          .middle .middle-li .middle-p2 span{
+            color: #999;
+          }
           .middle .middle-li .middle-p2 img{
             width: 20px;
             height: 20px;
@@ -144,6 +147,32 @@
             left: 0;
             right: 0;
           }
+
+          /*头像*/
+          .middle .middle-ul li:first-child{
+            height: 76px;
+            line-height: 76px;
+          }
+          .middle .middle-ul li .p{
+            height: 76px;
+            line-height: 76px;
+          }
+          .middle .middle-ul li .p .header{
+            display: inline-block;
+            width: 66px;
+            height: 66px;
+            line-height: 66px;
+            border-radius:33px;
+            vertical-align: middle;
+          }
+          .middle .middle-ul li .p .header img{
+            width: 66px;
+            height: 66px;
+            border-radius: 33px;
+
+            vertical-align:top;
+          }
+
       }
     </style>
   </head>
@@ -153,16 +182,16 @@
         <div class="back">
           <img src="images/back.png" alt="">
         </div>
-        <p class="top-title">设置</p>
-        <div class="top-right"><img src="images/news.png" alt=""><p>15</p></div>
+        <p class="top-title">账户管理</p>
+        <div class="top-right"></div>
       </div>
       <div class="middle">
         <ul class="middle-ul">
-          <li class="middle-li"><p class="middle-p1">个人信息</p><p class="middle-p2"><img src="images/jiantou-right.png" alt=""></p></li>
-          <li class="middle-li"><p class="middle-p1">地址管理</p><p class="middle-p2"><img src="images/jiantou-right.png" alt=""></p></li>
-          <li class="middle-li"><p class="middle-p1">赠票资质</p><p class="middle-p2"><img src="images/jiantou-right.png" alt=""></p></li>
-          <li class="middle-li"><p class="middle-p1">账户安全</p><p class="middle-p2"><img src="images/jiantou-right.png" alt=""></p></li>
-          <li class="middle-li"><p class="middle-p1">关于我们</p><p class="middle-p2"><img src="images/jiantou-right.png" alt=""></p></li>
+          <li class="middle-li"><p class="middle-p1 p">头像</p><p class="middle-p2 p"><span class="header"><img src="images/header1.png" alt=""></span><img src="images/jiantou-right.png" alt=""></p></li>
+          <li class="middle-li"><p class="middle-p1">用户名</p><p class="middle-p2"><span>马云</span><img src="images/jiantou-right.png" alt=""></p></li>
+          <li class="middle-li"><p class="middle-p1">昵称</p><p class="middle-p2"><span>mayun</span><img src="images/jiantou-right.png" alt=""></p></li>
+          <li class="middle-li"><p class="middle-p1">性别</p><p class="middle-p2"><span>男</span><img src="images/jiantou-right.png" alt=""></p></li>
+          <li class="middle-li"><p class="middle-p1">出生日期</p><p class="middle-p2 p3"><span>2017年02月13日</span><img src="images/jiantou-right.png" alt=""></p></li>
         </ul>
 
       </div>
