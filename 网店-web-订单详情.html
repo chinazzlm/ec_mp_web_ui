@@ -15,7 +15,7 @@
             padding: 0;
             width: 100%;
             height: 100%;
-
+            position: relative;
 
           }
           /*隐藏滚动条*/
@@ -333,10 +333,15 @@
         }
         .footer{
           width: 100%;
-          height: 40px;
-          margin-top: 40px;
+          border-top: 1px solid #eee;
+          background: #fff;
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
         }
         .footer ul{
+          padding: 10px;
           display: flex;
           width: 96%;
           margin: 0 auto;
@@ -350,10 +355,13 @@
         }
         .footer ul li p{
           width: 74px;
-          background: #e84e40;
+          background: #999;
           margin: 0 auto;
           border-radius: 3px;
           text-align: center;
+        }
+        .footer ul li .last-p{
+          background: #e84e40;
         }
         .yuanjia{
           color: #999;
@@ -458,11 +466,11 @@
     <!-- 订单创建时间 -->
     <div class="background"></div>
     <div class="order-time">
-      
+
       <p>支付交易号：2017021221001001200270165991</p>
-      <p>创建时间：2017-02-14  14：22</p>
-      <p>付款时间：2017-02-14  14：22</p>
-      <p>发货时间：2017-02-14  18：22</p>
+      <p>创建时间：2017-02-14  &nbsp    14：22</p>
+      <p>付款时间：2017-02-14  &nbsp    14：22</p>
+      <p>发货时间：2017-02-14  &nbsp    18：22</p>
     </div>
     <!-- 底部 -->
     <div class="footer">
@@ -470,9 +478,10 @@
         <li><a href="#"><p>删除订单</p></a></li>
         <li><a href="#"><p>商品评价</p></a></li>
         <li><a href="#"><p>确认收货</p></a></li>
-        <li><a href="#"><p>再次购买</p></a></li>
+        <li><a href="#"><p class="last-p">再次购买</p></a></li>
 
       </ul>
     </div>
+    <div style="width:100%;height:56px;background:#fff;"></div>
   </body>
 </html>
