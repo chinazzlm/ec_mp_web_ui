@@ -777,6 +777,7 @@
       //封装程序入口
       action:function(id)
       {
+       this.imgshow(this.index,this.numlist,this.imglist);
        this.autoplay();
        this.mouseoverout(this.bigbox,this.numlist);
       },
@@ -784,7 +785,7 @@
       imgshow:function(num,numlist,imglist)
       {
        this.index=num;
-       var alpha=0;
+       var alpha=80;
        for(var i=0;i<numlist.length;i++)
        {
         numlist[i].className="";
@@ -797,6 +798,9 @@
         imglist[j].style.filter="alpha(opacity=0)";
        }
        var $this=this;
+       imglist[$this.index].style.opacity=alpha;
+       imglist[$this.index].style.filter="alpha(opacity="+alpha+")";
+
        //利用透明度来实现切换图片
        this.timer=setInterval(function(){
         alpha+=2;
