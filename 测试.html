@@ -2,369 +2,402 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>order-center</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
     <style media="screen">
       @media screen and (max-width:640px){
         *{
           padding: 0;
           margin: 0;
+
         }
-        body{
+        a{
+          text-decoration: none;
+          color: #000;
+        }
+        li{
+          list-style: none;
+        }
+        html,body{
           width: 100%;
           height: 100%;
+        }
+         .top{
+          width: 100%;
+          height: 47px;
+          overflow: hidden;
+          border-bottom: 1px solid #e7e7e7;
+          box-shadow: 0 2px 5px #e7e7e7;
+          background: #fff;
+        }
+        .top .back{
+          width: 12.5333333%;
+          height: 47px;
+          float: left;
+          display: inline-block;
+          text-align: center;
+          line-height: 47px;
+
+        }
+        .top .back img{
+          width: 25px;
+          height: 25px;
+          vertical-align: middle;
+        }
+        .top .top-right{
+          width: 12.5333333%;
+          height: 47px;
+          float: right;
+          display: inline-block;
+          text-align: center;
+          line-height: 47px;
           position: relative;
         }
-        .productkind{
-          width: 100%;
-          height: 100%;
-          background: red;
-          position: fixed;
-          left: 0;
-          top: 0;
-          background: rgba(0,0,0,0.5);
-          z-index: 200;
-        }
-        .content{
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          width: 100%;
-          height: 70%;
-          background-color: #fff;
-          border-top: 1px solid #dadada;
-          z-index: 250;
-        }
-        .content .img{
+        .top .top-right p{
+          display: inline-block;
+          width: 18px;
+          height: 14px;
+          line-height: 14px;
+          color: #fff;
           position: absolute;
-          left: 8px;
-          top: -26px;
-          width: 100px;
-          height: 100px;
-          border-radius: 3px;
-          border: 1px solid #f0f1f3;
-          background-color: #fff;
-          overflow: hidden;
-          display: -webkit-box;
-          -webkit-box-pack: center;
-          -webkit-box-align: center;
+          left: 19px;
+          top: 10px;
+          font-size: 12px;
+          background: #D81E06;
+          border-radius: 7px;
+          text-align: center;
         }
-        .content .img img{
-          max-width: 100px;
-          max-height: 100px;
-          overflow: hidden;
+        .top .top-right img{
+          width: 25px;
+          height: 25px;
+          vertical-align: middle;
         }
-        .delect{
-          display: block;
-          width: 40px;
-          height: 40px;
-          position: absolute;
-          top: 0;
-          right: 0;
-        }
-        .delect-img{
-          display: block;
-          background: url("images/product-detail-sprites-mjs.png") no-repeat 0 0;
-          background-size: 100px 100px;
-          background-position: -28px -17px;
-          width: 11px;
-          height: 12px;
-          position: absolute;
-          right: 10px;
-          top: 16px;
-        }
-        .price{
-          width: 100%;
-          height: 84px;
-          border-bottom: 1px solid #dcdcdc;
-        }
-        .price-top{
-          font-size: 15px;
-          line-height: 15px;
-          color: #f23030;
-          padding-top: 42px;
-          padding-left: 121px;
+        .top .top-title{
+          float: left;
+          width: 74.93333333%;
+          height: 47px;
+          line-height: 47px;
+          text-align: center;
+          color: #252525;
           font-weight: bold;
         }
-        .price .price-top-1{
-          width: 9px;
-          height: 11px;
-          margin-right: 3px;
-          margin-top: 2px;
-          float: left;
-          display: block;
-          background: url("images/product-detail-sprites-mjs.png") no-repeat 0 0;
-          background-size: 100px 100px;
-          background-position: -14px -17px;
-        }
-        .price .price-bottom{
-          font-size: 11px;
-          line-height: 11px;
-          color: #81838e;
-          padding-top: 8px;
-          padding-left: 121px;
-        }
-        .content .content-middle{
-          position: absolute;
-          bottom: 43px;
-          top: 85px;
-          left: 0;
-          right: 0;
-          padding-left: 10px;
-          overflow: auto;
-        }
-        .content-middle-infor{
-          height: auto;
-          padding-top: 15px;
-          font-size: 0;
-          padding-bottom: 15px;
-          border-width: 0 0 1px 0;
-          background-color: #fff;
-        }
-        .middle-1{
-          font-size: 0;
-          overflow: hidden;
-          position: relative;
-        }
-        .middle-span1{
-          line-height: 18px;
-          margin-right: 8px;
-          display: inline-block;
-          line-height: 15px;
-          font-size: 13px;
-          color: #81838e;
-          width: 26px;
-          white-space: normal;
-          height: auto;
-          float: left;
-        }
-        .middle-name{
-          line-height: 18px;
-          margin-right: 8px;
-          margin-left: 34px;
-          font-size: 13px;
-          color: #252525;
-          line-height: 15px;
-          padding-right: 15px;
-        }
-        .middle-2 .middle-2-0ne{
-          margin-top: 13px;
-          font-size: 0;
-          overflow: hidden;
-          position: relative;
-        }
-        .middle-2 .middle-2-0ne .middle-span3{
-          line-height: 23px;
-          float: left;
-          display: inline-block;
-          font-size: 13px;
-          color: #81838e;
-          width: 26px;
-          white-space: normal;
-          height: auto;
-        }
-        .middle-2 .middle-2-0ne .middle-color{
-          margin-left: 34px;
-          overflow: hidden;
-        }
-        .middle-2 .middle-2-0ne .middle-color .middle-a1{
 
-          border: 1px solid #bfbfbf;
-          color: #232326;
-          height: 27px;
-          border-radius: 4px;
-          line-height: 25px;
-          font-size: 13px;
-          float: left;
-          margin-right: 10px;
-          padding-left: 20px;
-          padding-right: 20px;
-          margin-bottom: 10px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          min-width: 69px;
-          max-width: 98%;
-          box-sizing: border-box;
-          text-align: center;
+        /*导航*/
+        .nav{
+          width: 96%;
+          margin: 0 auto;
         }
-        .middle-2 .middle-2-0ne .middle-color .middle-a2{
-          border: 1px solid #f23030;
-          color: #f23030;
-
-        }
-        .middle-2-0ne::after{
-          visibility: hidden;
-          display: block;
-          font-size: 0;
-          content: " ";
-          clear: both;
-          height: 0;
-        }
-        .middle-number-right{
-          display: inline-block;
-          height: 26px;
-          border-radius: 5px;
-          margin-left: 8px;
-          float: left;
-          line-height: 26px;
-        }
-        .middle-number-input1{
-          font-size: 16px;
-          vertical-align: middle;
-          outline: none;
-          color: inherit;
-          font: inherit;
-        }
-        .middle-number-right .middle-a3{
-          float: left;
-          font-size: 15px;
-          text-align: center;
-          background: #fff;
-          border: 1px solid #cbcbcb;
-          color: #232326;
-          display: block;
-          height: 24px;
-          line-height: 24px;
-          width: 26px;
-          overflow: hidden;
-          text-indent: -200px;
-          box-sizing: border-box;
-          -webkit-border-radius: 2px 0 0 2px;
-        }
-        .middle-number-right .middle-a3 .middle-em{
-
-          background: url("images/product-detail-sprites-mjs.png") no-repeat;
-          background-position: -32px -85px;
-          background-size: 100px 100px;
-          height: 12px;
-          width: 12px;
-          display: block;
-          margin: 6px;
-        }
-        .middle-number-right .middle-a3 .push{
-          background: url("images/product-detail-sprites-mjs.png") no-repeat;
-          background-position: -32px -67px;
-          background-size: 100px 100px;
-          height: 12px;
-          width: 12px;
-          display: block;
-          margin: 6px;
-        }
-        .middle-number-input2{
-          float: left;
-          font-size: 15px;
-          text-align: center;
-          color: #232326;
-          border: solid #cbcbcb;
-          border-width: 1px 0 1px 0;
-          height: 24px;
-          line-height: 24px;
-          width: 34px;
-          border-radius: 0;
-          -webkit-appearance: none;
-          box-sizing: border-box;
-          vertical-align: middle;
-          outline: none;
-        }
-        .content-footer{
+        .nav .nav-ul{
           width: 100%;
-          font-size: 0;
-          position: absolute;
-          bottom: 0;
-          left: 0;
           display: flex;
+          font-size: 14px;
 
         }
-        .content-footer .content-footer-a{
-          transform-origin: 0px 0px 0px;
-          opacity: 1;
-          transform: scale(1, 1);
-          display: block;
-          height: 43px;
-          width: 1%;
-          -webkit-box-flex: 1;
-          -webkit-box-flex: 1;
-          -moz-box-flex: 1;
-          -webkit-flex: 1;
+        .nav .nav-ul li{
           flex: 1;
-          font-size: 15px;
-          line-height: 43px;
+          text-align: center;
+          height: 35px;
+          line-height: 35px;
+          text-align: center;
+        }
+        .nav .nav-ul li a{
+          display: block;
+        }
+        .nav-color{
+          border-bottom: 1px solid #ff5000;
+          box-sizing: border-box;
+          color: #ff5000;
+        }
+        .shop-infor{
+          width: 90%;
+          margin: 0 auto;
+          height: 35px;
+          line-height: 35px;
+          overflow: hidden;
+        }
+        .shop-infor .shop-infor-img{
+          margin-right:8.544px;
+          line-height: 0;
+          width: 16px;
+          height: 17px;
+          display: inline-block;
+        }
+        .shop-infor .shop-infor-img img{
+          width: 100%;
+          vertical-align: middle;
+        }
+        .middle .shop-infor .span1{
+          font-size: 14px;
+          color: #999;
+          vertical-align: middle;
+          display: inline-block;
+          margin-right: 5px;
+        }
+        .middle .shop-infor span img{
+          width: 15px;
+          height: 15px;
+          vertical-align: middle;
+        }
+        .middle .shop-infor .span2{
+          font-size: 14px;
+          color: #F72E0A;
+          vertical-align: middle;
+          float: right;
+          vertical-align: middle;
+        }
+        .middle .product-infor{
+          width: 100%;
+
+          overflow: hidden;
+          background: #F5F5F5;
+          padding: 5px 0;
+        }
+        .middle .product-infor .all{
+          width: 90%;
+          padding: 5px 0;
+          overflow: hidden;
+          margin: 0 auto;
+
+        }
+        .product-infor .product-infor-left{
+          float: left;
+          width: 51px;
+          height: 52px;
+          margin-right: 10px;
+        }
+        .product-infor .product-infor-left img{
+          width: 51px;
+          height: 52px;
+        }
+        .product-infor .product-infor-middle{
+          float: left;
+          width: 176px;
+
+        }
+        .product-infor .product-infor-middle .p1{
+          width: 100%;
+          font-size: 12px;
+          height: 30px;
+          overflow: hidden;
+          -webkit-line-clamp: 2;
+          -moz-line-clamp: 2;
+          -ms-line-clamp: 2;
+          -o-line-clamp: 2;
+          line-clamp: 2;
+          -webkit-box-orient: vertical;
+          -moz-box-orient: vertical;
+          -ms-box-orient: vertical;
+          -o-box-orient: vertical;
+          box-orient: vertical;
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-box;
+          display: -o-box;
+          display: box;
+          word-break: break-all;
+        }
+        .product-infor .product-infor-middle .p2{
+          margin-top: 5px;
+          color: #999;
+          width: 100%;
+          font-size: 12px;
+          /*height: 30px;*/
+          overflow: hidden;
+
+        }
+        .product-infor .product-infor-middle .p3{
+          margin-top: 5px;
+          width: 48px;
+          font-size: 12px;
+          display: inline-block;
+          background: #ff5000;
           color: #fff;
           text-align: center;
-          background-color: #ffb03f;
         }
-        .content-footer .content-footer-a1{
-          background-color: #f23030;
+        .product-infor .product-infor-right{
+          width: 51px;
+          float: right;
+        }
+        .product-infor .product-infor-right p{
+          width: 100%;
+          text-align: right;
+          line-height: 13px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          margin-bottom: 5px;
+        }
+        .product-infor .product-infor-right p:first-child{
+          width: 100%;
+          text-align: right;
+          line-height: 13px;
+          font-weight: 700;
+        }
+        .product-money{
+          width: 100%;
+          text-align: right;
+        }
+        .product-money span{
+            display: inline-block;
+            padding: 4px 12px;
+        }
+        .product-money span:last-child{
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .product-submit{
+          width: 100%;
+          text-align: right;
+          margin: 6px 0;
+        }
+        .product-submit span{
+            display: inline-block;
+            padding: 4px 12px;
+            color: #999;
+            border: 1px solid #999;
+            margin-right: 15px;
+        }
+        .product-submit span:last-child{
+            display: inline-block;
+            margin-right: 15px;
+            color: #FF5000;
+            border: 1px solid #FF5000;
+        }
+
+        .background{
+          width: 100%;
+          height: 10px;
+          background: #EEEEEE;
+        }
+        .footer{
+          width: 100%;
+          height: 46px;
+          text-align: center;
+          background: #eee;
+          color: #999;
+        }
+
+        .yuanjia{
+          color: #999;
         }
       }
     </style>
   </head>
   <body>
-    <div class="productkind">
-      <div class="content">
-        <div class="img">
-          <img src="images/xianglong.jpg" alt="">
-        </div>
-        <a href="#" class="delect"><p class="delect-img"></p></a>
-        <div class="price">
-          <div class="price-top">
-            <span class="price-top-1"></span>
-            <span class="price-top-2">111.00</span>
-          </div>
-          <div class="price-bottom">
-            <span>重量:</span>
-            <span>5kg</span>
-          </div>
-        </div>
-        <div class="content-middle">
-          <div class="content-middle-infor">
-            <div class="middle-1">
-              <span class="middle-span1">以选</span>
-              <div class="middle-name">
-                降龙十八掌精装版&nbsp&nbsp <span class="middle-span2">1件</span>
-              </div>
-            </div>
-            <div class="middle-2">
-              <div class="middle-2-0ne">
-                <span class="middle-span3">颜色</span>
-                <p class="middle-color"><a href="#" class="middle-a1">青色</a><a href="#" class="middle-a1 middle-a2">黄色</a></p>
-
-              </div>
-              <div class="middle-2-0ne">
-                <span class="middle-span3">重量</span>
-                <p class="middle-color"><a href="#" class="middle-a1">5kg</a><a href="#" class="middle-a1 middle-a2">10kg</a><a href="#" class="middle-a1">15kg</a><a href="#" class="middle-a1">20kg</a><a href="#" class="middle-a1">25kg</a></p>
-
-              </div>
-              <div class="middle-2-0ne">
-                <span class="middle-span3">季节</span>
-                <p class="middle-color"><a href="#" class="middle-a1">一月</a><a href="#" class="middle-a1 middle-a2">二月</a><a href="#" class="middle-a1">三月</a><a href="#" class="middle-a1">四月</a><a href="#" class="middle-a1">五月</a></p>
-
-              </div>
-              <div class="middle-2-0ne">
-                <span class="middle-span3">数量</span>
-                <div class="middle-number-right">
-                  <input type="hidden" name="" value="" class="middle-number-input1">
-                  <a href="#" class="middle-a3"><em class="middle-em">-</em></a>
-                  <input type="tel" name="" value="" class="middle-number-input2">
-                  <a href="#" class="middle-a3"><em class="middle-em push">+</em></a>
-                </div>
-              </div>
-              <div class="middle-2-0ne">
-                <span class="middle-span3">重量</span>
-                <p class="middle-color"><a href="#" class="middle-a1">5kg</a><a href="#" class="middle-a1 middle-a2">10kg</a><a href="#" class="middle-a1">15kg</a><a href="#" class="middle-a1">20kg</a><a href="#" class="middle-a1">25kg</a></p>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="content-footer">
-          <a href="#" class="content-footer-a">加入购物车</a>
-          <a href="#" class="content-footer-a content-footer-a1">立即购买</a>
-        </div>
+    <div class="top">
+      <div class="back">
+        <img src="images/back.png" alt="">
+      </div>
+      <p class="top-title">我的订单</p>
+      <div class="top-right"><img src="images/news.png" alt=""><p>15</p></div>
+    </div>
+    <div class="nav">
+      <ul class="nav-ul">
+        <li><a href="#" class="nav-color">全部</a></li>
+        <li><a href="#">待付款</a></li>
+        <li><a href="#">待发货</a></li>
+        <li><a href="#">待收货</a></li>
+        <li><a href="#">待评价</a></li>
+      </ul>
+    </div>
+    <div class="middle">
+      <div class="shop-infor">
+        <div class="shop-infor-img"><img src="images/shop.png" alt=""></div>
+        <span class="span1">小子麻辣烫</span><span><img src="images/jiantou-right.png" alt=""></span><span class="span2">卖家已发货</span>
       </div>
 
+      <div class="product-infor">
+        <div class="all">
+          <div class="product-infor-left"><img src="images/i-9.png" alt=""></div>
+          <div class="product-infor-middle">
+            <p class="p1">海天酱油，天然大豆酿造,750g笑嘻嘻笑嘻嘻笑嘻嘻搜房网服ssssss务</p>
+            <p class="p2">颜色分类：黑色，赠勺子,都是广告  都是广告</p>
+            <p class="p3">7天退换</p>
+
+          </div>
+          <div class="product-infor-right">
+            <p>￥8.8</p>
+            <p class="yuanjia"><s>￥18.8</s></p>
+            <p>x1</p>
+          </div>
+        </div>
+        <div class="all">
+          <div class="product-infor-left"><img src="images/c_5.jpg" alt=""></div>
+          <div class="product-infor-middle">
+            <p class="p1">海天酱油，天然大豆酿造,750g笑嘻嘻笑嘻嘻笑嘻嘻搜房网服ssssss务</p>
+            <p class="p2">颜色分类：黑色，赠勺子,都是广告  都是广告</p>
+            <p class="p3">7天退换</p>
+
+          </div>
+          <div class="product-infor-right">
+            <p>￥88.8</p>
+            <p><s>￥188.8</s></p>
+            <p>x2</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="product-money"><span>共3件商品</span><span>合计:2222.00</span><span>运费:0</span></p>
+      <p class="product-submit"><span>查看物流</span><span>确认收货</span></p>
+      <div class="background"></div>
+      <div class="background"></div>
+      <div class="shop-infor">
+        <div class="shop-infor-img"><img src="images/shop.png" alt=""></div>
+        <span class="span1">小子火锅店</span><span><img src="images/jiantou-right.png" alt=""></span><span class="span2">交易成功</span>
+      </div>
+      <div class="product-infor">
+
+        <div class="all">
+          <div class="product-infor-left"><img src="images/c_8.jpg" alt=""></div>
+          <div class="product-infor-middle">
+            <p class="p1">海天酱油，天然大豆酿造,750g笑嘻嘻笑嘻嘻笑嘻嘻搜房网服ssssss务</p>
+            <p class="p2">颜色分类：黑色，赠勺子,都是广告  都是广告</p>
+            <p class="p3">7天退换</p>
+
+          </div>
+          <div class="product-infor-right">
+            <p>￥8.8</p>
+            <p><s>￥18.8</s></p>
+            <p>x1</p>
+          </div>
+        </div>
+
+
+      </div>
+      <p class="product-money"><span>共3件商品</span><span>合计:2222.00</span><span>运费:0</span></p>
+      <p class="product-submit"><span>查看物流</span><span>追加评论</span><span>确认收货</span></p>
+      <div class="background"></div>
+      <div class="shop-infor">
+        <div class="shop-infor-img"><img src="images/shop.png" alt=""></div>
+        <span class="span1">小子衣服店</span><span><img src="images/jiantou-right.png" alt=""></span><span class="span2">交易关闭</span>
+      </div>
+      <div class="product-infor">
+
+        <div class="all">
+          <div class="product-infor-left"><img src="images/c_7.jpg" alt=""></div>
+          <div class="product-infor-middle">
+            <p class="p1">海天酱油，天然大豆酿造,750g笑嘻嘻笑嘻嘻笑嘻嘻搜房网服ssssss务</p>
+            <p class="p2">颜色分类：黑色，赠勺子,都是广告  都是广告</p>
+            <p class="p3">7天退换</p>
+
+          </div>
+          <div class="product-infor-right">
+            <p>￥8.8</p>
+            <p><s>￥18.8</s></p>
+            <p>x1</p>
+          </div>
+        </div>
+
+
+      </div>
+      <p class="product-money"><span>共3件商品</span><span>合计:2222.00</span><span>运费:0</span></p>
+      <p class="product-submit"><span>删除订单</span></p>
+      <div class="background"></div>
+
+    </div>
+
+    <div class="footer">
+      没有更多内容
     </div>
   </body>
 </html>
