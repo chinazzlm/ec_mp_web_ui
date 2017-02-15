@@ -108,7 +108,7 @@
             /*width: 100%;*/
             overflow: hidden;
             border-bottom: 1px solid #e7e7e7;
-            padding: 0 5px;
+            padding: 0 10px;
             background: #fff;
           }
           .middle .middle-li p{
@@ -129,6 +129,10 @@
             width: 20px;
             height: 20px;
             vertical-align: middle;
+          }
+          .middle .middle-li .middle-p2 input{
+            outline-style: none;
+            border: none;
           }
           .middle .middle-li:last-child{
             margin-top: 26px
@@ -281,6 +285,40 @@
             background: #DD2727;
             border-radius: 4px;
           }
+          /*性别*/
+          .xingbie{
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            position:fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9;
+            display: none;
+          }
+          .xingbie .xingbie-infor{
+            width: 96%;
+            height: 138px;
+            background: #fff;
+            position: absolute;
+            top: 31%;
+            left: 2%;
+            z-index: 99;
+          }
+          .xingbie .xingbie-infor p:first-child{
+
+            border-bottom: 1px solid #999;
+          }
+          .xingbie .xingbie-infor p{
+            height: 45px;
+            line-height: 45px;
+            text-indent: 15px;
+            border-bottom: 1px solid #eee;
+          }
+
+
       }
     </style>
   </head>
@@ -295,11 +333,11 @@
       </div>
       <div class="middle">
         <ul class="middle-ul">
-          <li class="middle-li"><p class="middle-p1 p">头像</p><p class="middle-p2 p"><span class="header"><img src="images/header1.png" alt=""></span><img src="images/jiantou-right.png" alt=""></p></li>
-          <li class="middle-li"><p class="middle-p1">用户名</p><p class="middle-p2"><span>马云</span><img src="images/jiantou-right.png" alt=""></p></li>
-          <li class="middle-li"><p class="middle-p1 p2">昵称</p><p class="middle-p2 p2"><span>mayun</span><img src="images/jiantou-right.png" alt=""></p></li>
-          <li class="middle-li"><p class="middle-p1">性别</p><p class="middle-p2"><span>男</span><img src="images/jiantou-right.png" alt=""></p></li>
-          <li class="middle-li"><p class="middle-p1">出生日期</p><p class="middle-p2 p3"><span>2017年02月13日</span><img src="images/jiantou-right.png" alt=""></p></li>
+          <li class="middle-li"><p class="middle-p1 p">头像</p><p class="middle-p2 p"><span class="header"><img src="images/header1.png" alt=""></span><img src="images/rightjiantou.png" alt=""></p></li>
+          <li class="middle-li"><p class="middle-p1">用户名</p><p class="middle-p2"><span>马云</span><img src="images/rightjiantou.png" alt=""></p></li>
+          <li class="middle-li"><p class="middle-p1 p2">昵称</p><p class="middle-p2 p2"><span>mayun</span><img src="images/rightjiantou.png" alt=""></p></li>
+          <li class="middle-li"><p class="middle-p1 p3">性别</p><p class="middle-p2 p3"><span>男</span><img src="images/rightjiantou.png" alt=""></p></li>
+          <li class="middle-li"><p class="middle-p1">出生日期</p><p class="middle-p2"><span><input  type="date"  name=""  value="" ></li>
         </ul>
 
       </div>
@@ -355,5 +393,35 @@
 
       })
     </script>
+
+    <!-- 性别 -->
+    <div class="xingbie">
+      <div class="xingbie-infor">
+        <p>修改性别</p>
+        <p>男</p>
+        <p>女</p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(function(){
+        $(".middle-li .p3").click(function(){
+          $(".xingbie").css("display","block");
+        });
+        $(".xingbie").click(function(){
+          $(this).css("display","none");
+        });
+        $(".xingbie-infor").click(function(event){
+          event.stopPropagation();
+        });
+
+      })
+    </script>
+
+    <!-- 生日 -->
+    <!-- <div class="birthday">
+      <div class="birthday-infor">
+        <input type="date" name="" value="">
+      </div>
+    </div> -->
   </body>
 </html>
