@@ -44,6 +44,7 @@
         display: inline-block;
         text-align: center;
         border-right: 1px solid #eee;
+
       }
       .wrap .wrap-left .left-span1 img{
         width: 46px;
@@ -71,18 +72,21 @@
         /*border-right: 1px solid #eee;*/
       }
       .wrap-middle-top{
-        width:1018px;
+        width:1214px;
         height: 56px;
-        line-height: 56px;
-        text-align: center;
+
+
       }
       .wrap-middle-top .input{
-        width: 90%;
+        width: 84%;
         height: 40px;
         line-height: 40px;
         outline-style: none;
         border: none;
         text-indent: 25px;
+        margin-top: 8px;
+        vertical-align: middle;
+        margin-left: 1px;
       }
       input::-webkit-input-placeholder {
         color:    #4488CF;
@@ -174,8 +178,9 @@
       .wrap .wrap-right{
         width: 196px;
         float: right;
-        height: 600px;
+        height: 544px;
         position: relative;
+        margin-top: 56px;
       }
       .wrap .wrap-right-p1{
         width: 100%;
@@ -183,27 +188,30 @@
 
         border-bottom: 1px solid #eee;
       }
-      .wrap .wrap-right-p1 span{
-        margin-top: 10px;
-      }
-      .wrap .wrap-right-p1 .wrap-right-span1{
+      .wrap .wrap-header{
+        width: 188px;
+        height: 56px;
         display: inline-block;
-        padding: 0 8px;
+        border-bottom: 1px solid #eee;
+      }
+      .wrap .wrap-header .wrap-header-span1{
+        display: inline-block;
+        padding: 3px 8px;
         font-size: 12px;
-        color: #77B7FE;
-        border: 1px solid #77B7FE;
-        margin-right: 30px;
-        margin-left: 15px;
+        color: #8BC1FF;
+        border: 1px solid #8BC1FF;
+        margin-right: 25px;
+        margin-left: 25px;
         vertical-align: middle;
       }
-      .wrap .wrap-right-p1 .wrap-right-span2{
+      .wrap .wrap-header .wrap-header-span2{
         display: inline-block;
         width: 40px;
         height: 40px;
         border-radius: 20px;
       }
-      .wrap .wrap-right-p1 .wrap-right-span2 img{
-
+      .wrap .wrap-header .wrap-header-span2 img{
+        display: inline-block;
         width: 40px;
         height: 40px;
         border-radius: 20px;
@@ -235,7 +243,7 @@
         height: 16px;
         border-radius: 8px;
         position: absolute;
-        top: 94px;
+        top: 38px;
         left: 55px;
         background: #FF6161;
         color: #fff;
@@ -294,6 +302,10 @@
       <div class="wrap-middle">
         <div class="wrap-middle-top">
           <input results="s" type="search"  name="" value=""  class="input" placeholder="请在此处搜索">
+          <p class="wrap-header">
+            <span class="wrap-header-span1">注销</span>
+            <span class="wrap-header-span2"><img src="images/weixinheader.jpg" alt=""></span>
+          </p>
         </div>
         <div class="wrap-middle-bottom">
           <table>
@@ -424,10 +436,7 @@
       </div>
 
       <div class="wrap-right">
-        <p class="wrap-right-p1">
-          <span class="wrap-right-span1">注销</span>
-          <span class="wrap-right-span2"><img src="images/weixinheader.jpg" alt=""></span>
-        </p>
+
         <p class="wrap-right-p2">
           <img src="images/news1.png" alt=""><span>2017-2-15</span>
           <p class="circle">10</p>
