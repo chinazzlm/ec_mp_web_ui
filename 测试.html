@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script src="js/Chart.js" type="text/javascript">  </script>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"type="text/javascript"></script>
     <style media="screen">
     *{
         margin: 0;
@@ -249,7 +251,8 @@
           </p>
         </div>
         <div class="infor">
-
+          <canvas id="canvas" width="400" height="200"></canvas>
+          <canvas id="canvas1" width="400" height="200" style="background:#fff;display:block;margin:136px 595px;"></canvas>
         </div>
 
 
@@ -280,5 +283,247 @@
         </p>
       </div>
     </div>
+    <script>
+
+
+  var lineChartData = {
+    labels : ["January","February","March","April","May","June","July"],
+    datasets : [
+      {
+        fillColor : "transparent",
+        strokeColor : "#939393",
+        pointColor : "#939393",
+        pointStrokeColor : "#939393",
+        data : [65,59,90,81,56,55,40]
+      },
+      {
+        fillColor : "transparent",
+        strokeColor : "#FC5579",
+        pointColor : "#FD839D",
+        pointStrokeColor : "#FD839D",
+        data : [28,48,40,19,96,27,100]
+      },
+      {
+        // 填充颜色
+        fillColor : "transparent",
+        // 描边颜色
+        strokeColor : "#2DB9FF",
+        pointColor : "#66A8FF",
+        pointStrokeColor : "#66A8FF",
+        data : [35,24,40,76,45,90,34]
+      }
+    ]
+
+  }
+  window.onload = function(){
+  var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData,defaults);
+  }
+  var defaults = {
+
+	//Boolean - I如果我们展示规模以上的图表数据
+	scaleOverlay : false,
+
+	//Boolean - 如果我们想要用硬编码的范围覆盖
+	scaleOverride : false,
+
+	//** Required if scaleOverride is true **
+	//Number - 步骤的数量在一个硬编码的规模
+	scaleSteps : null,
+	//Number - 值硬编码的规模
+	scaleStepWidth : null,
+	//Number - 规模起始值
+	scaleStartValue : null,
+
+	//String - 刻度线的颜色
+	scaleLineColor : "#666",
+
+	//Number - 刻度线的像素宽度
+	scaleLineWidth : 1,
+
+	//Boolean - 是否显示标签
+	scaleShowLabels : true,
+
+	//插值JS字符串,可以访问值
+	scaleLabel : "<%=value%>",
+
+	//String - 标尺刻度标尺刻度字体声明
+	scaleFontFamily : "'Arial'",
+
+	//Number - 规模的标签字体大小(以像素为单位)
+	scaleFontSize : 12,
+
+	//String - 规模的标签字体风格
+	scaleFontStyle : "normal",
+
+	//String - 规模的标签字体颜色
+	scaleFontColor : "#666",
+
+	///Boolean - 网格线是否在图所示
+	scaleShowGridLines : false,
+
+	// 网格宽度
+	scaleGridLineColor : "rgba(0,0,0,.05)",
+
+	// 网格颜色
+	scaleGridLineWidth : 1,
+
+	 // 是否使用贝塞尔曲线? 即:线条是否弯曲
+	bezierCurve : false,
+
+	// 是否显示点数
+	pointDot : true,
+
+	// 圆点的大小
+	pointDotRadius : 3,
+
+	 // 圆点的笔触宽度, 即:圆点外层边框大小
+	pointDotStrokeWidth : 1,
+
+	// 数据集行程
+	datasetStroke : true,
+
+	 // 线条的宽度, 即:数据集
+	datasetStrokeWidth : 2,
+
+	  // 是否填充数据集
+	datasetFill : true,
+
+	// 是否执行动画
+	animation : true,
+
+	 // 动画的时间
+	animationSteps : 40,
+
+	// 动画的特效
+	animationEasing : "easeOutQuart",
+
+	 // 动画完成时的执行函数
+	onAnimationComplete : null
+
+}
+
+  	</script>
+
+    <script>
+
+
+  var lineChartData1 = {
+    labels : ["January","February","March","April","May","June","July"],
+    datasets : [
+      {
+        fillColor : "transparent",
+        strokeColor : "#939393",
+        pointColor : "#939393",
+        pointStrokeColor : "#939393",
+        data : [65,59,90,81,56,55,40]
+      },
+      {
+        fillColor : "transparent",
+        strokeColor : "#FC5579",
+        pointColor : "#FD839D",
+        pointStrokeColor : "#FD839D",
+        data : [28,48,40,19,96,27,100]
+      },
+      {
+        // 填充颜色
+        fillColor : "transparent",
+        // 描边颜色
+        strokeColor : "#2DB9FF",
+        pointColor : "#66A8FF",
+        pointStrokeColor : "#66A8FF",
+        data : [35,24,40,76,45,90,34]
+      }
+    ]
+
+  }
+  $(function(){
+    var myLine = new Chart(document.getElementById("canvas1").getContext("2d")).Line(lineChartData1,defaults1);
+  })
+
+  var defaults1 = {
+
+  //Boolean - I如果我们展示规模以上的图表数据
+  scaleOverlay : false,
+
+  //Boolean - 如果我们想要用硬编码的范围覆盖
+  scaleOverride : false,
+
+  //** Required if scaleOverride is true **
+  //Number - 步骤的数量在一个硬编码的规模
+  scaleSteps : null,
+  //Number - 值硬编码的规模
+  scaleStepWidth : null,
+  //Number - 规模起始值
+  scaleStartValue : null,
+
+  //String - 刻度线的颜色
+  scaleLineColor : "#666",
+
+  //Number - 刻度线的像素宽度
+  scaleLineWidth : 1,
+
+  //Boolean - 是否显示标签
+  scaleShowLabels : true,
+
+  //插值JS字符串,可以访问值
+  scaleLabel : "<%=value%>",
+
+  //String - 标尺刻度标尺刻度字体声明
+  scaleFontFamily : "'Arial'",
+
+  //Number - 规模的标签字体大小(以像素为单位)
+  scaleFontSize : 12,
+
+  //String - 规模的标签字体风格
+  scaleFontStyle : "normal",
+
+  //String - 规模的标签字体颜色
+  scaleFontColor : "#666",
+
+  ///Boolean - 网格线是否在图所示
+  scaleShowGridLines : false,
+
+  // 网格宽度
+  scaleGridLineColor : "rgba(0,0,0,.05)",
+
+  // 网格颜色
+  scaleGridLineWidth : 1,
+
+   // 是否使用贝塞尔曲线? 即:线条是否弯曲
+  bezierCurve : true,
+
+  // 是否显示点数
+  pointDot : true,
+
+  // 圆点的大小
+  pointDotRadius : 3,
+
+   // 圆点的笔触宽度, 即:圆点外层边框大小
+  pointDotStrokeWidth : 1,
+
+  // 数据集行程
+  datasetStroke : true,
+
+   // 线条的宽度, 即:数据集
+  datasetStrokeWidth : 2,
+
+    // 是否填充数据集
+  datasetFill : true,
+
+  // 是否执行动画
+  animation : false,
+
+   // 动画的时间
+  animationSteps : 40,
+
+  // 动画的特效
+  animationEasing : "easeOutQuart",
+
+   // 动画完成时的执行函数
+  onAnimationComplete : null
+
+  }
+
+    </script>
   </body>
 </html>
