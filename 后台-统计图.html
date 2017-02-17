@@ -21,6 +21,9 @@
         text-decoration: none;
         color: #666;
       }
+      li{
+        list-style: none;
+      }
       .wrap{
         width: 1280px;
         margin: 0 auto;
@@ -50,8 +53,8 @@
       }
       .wrap .wrap-left .left-span1 img{
         width: 46px;
-        height: 14px;
-        margin-top: 21px;
+        height: 46px;
+        margin-top: 5px;
       }
       .wrap .wrap-left .left-span2{
         width: 100%;
@@ -114,16 +117,43 @@
         width: 1018px;
         height: 545px;
         background: #F4F4F4;
-        overflow-y: auto;
+        overflow:auto;
       }
-
+      .infor .infor-left{
+        width: 618px;
+        float: left;
+        margin: 25px 0 0 10px;
+        box-sizing: border-box;
+      }
+      .infor ul{
+        width: 100%;
+        display: flex;
+        border: 1px solid #c9c9c9;
+      }
+      .infor ul li{
+        flex: 1;
+        height: 27px;
+        line-height: 27px;
+        font-size: 12px;
+        border-right: 1px solid #c9c9c9;
+        box-sizing: border-box;
+        text-align: center;
+        color: #666;
+      }
+      .infor .infor-right{
+        width: 350px;
+        height: 545px;
+        float: right;
+        box-sizing: border-box;
+      }
       /*右边*/
     .wrap .wrap-right{
-        width: 196px;
+        width: 195px;
         float: right;
         height: 544px;
         position: relative;
         margin-top: 56px;
+        border-left: 1px solid #C9C9C9;
       }
       .wrap .wrap-right-p1{
         width: 100%;
@@ -227,6 +257,12 @@
         background: #7AB8FE;
         margin-top: 15px;
       }
+
+      canvas{
+        background:#fff;
+        display:block;
+        margin: 25px 0;
+      }
     </style>
   </head>
   <body>
@@ -234,12 +270,12 @@
       <div class="wrap-left">
         <span class="left-span1"><img src="images/logo.jpg" alt=""></span>
         <span class="left-span2"><img src="images/home.png" alt=""></span>
-        <span class="left-span2"><img src="images/add.png" alt=""></span>
-        <span class="left-span2"><img src="images/w-1.png" alt=""></span>
-        <span class="left-span2"><img src="images/w-1.png" alt=""></span>
+        <span class="left-span2"><img src="images/need.png" alt=""></span>
+        <span class="left-span2"><img src="images/play.png" alt=""></span>
+        <span class="left-span2"><img src="images/add1.png" alt=""></span>
+        <span class="left-span2"><img src="images/line.png" alt=""></span>
+        <span class="left-span2"><img src="images/warning.png" alt=""></span>
         <span class="left-span2"><img src="images/set.png" alt=""></span>
-
-
       </div>
 
       <div class="wrap-middle">
@@ -251,8 +287,145 @@
           </p>
         </div>
         <div class="infor">
-          <canvas id="canvas" width="400" height="200"></canvas>
-          <canvas id="canvas1" width="400" height="200" style="background:#fff;display:block;margin:136px 595px;"></canvas>
+          <div class="infor-left">
+            <ul>
+              <li>应用-本系统角色</li>
+              <li>备份频率</li>
+              <li>日期</li>
+              <li>开始时间</li>
+              <li>保留时间</li>
+              <li>数据量</li>
+            </ul>
+            <div class="infor-left-bottom">
+              <ul>
+                <li>事件服务器</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul>
+                <li>事件服务器</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul>
+                <li>事件服务器</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul>
+                <li>事件服务器</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul>
+                <li>事件服务器</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul>
+                <li>事件服务器</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul>
+                <li>事件服务器</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul>
+                <li>事件服务器</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul>
+                <li>事件服务器</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul>
+                <li>事件服务器</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul>
+                <li>事件服务器</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul>
+                <li>事件服务器</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul>
+                <li>事件服务器</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul>
+                <li>事件服务器</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <ul>
+                <li>事件服务器</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+
+
+            </div>
+          </div>
+          <div class="infor-right">
+            <canvas id="canvas" width="300" height="150" ></canvas>
+            <canvas id="canvas1" width="300" height="150" ></canvas>
+            <canvas id="canvas2" width="300" height="150" ></canvas>
+          </div>
         </div>
 
 
@@ -283,247 +456,365 @@
         </p>
       </div>
     </div>
-    <script>
 
-
-  var lineChartData = {
-    labels : ["January","February","March","April","May","June","July"],
-    datasets : [
-      {
-        fillColor : "transparent",
-        strokeColor : "#939393",
-        pointColor : "#939393",
-        pointStrokeColor : "#939393",
-        data : [65,59,90,81,56,55,40]
-      },
-      {
-        fillColor : "transparent",
-        strokeColor : "#FC5579",
-        pointColor : "#FD839D",
-        pointStrokeColor : "#FD839D",
-        data : [28,48,40,19,96,27,100]
-      },
-      {
-        // 填充颜色
-        fillColor : "transparent",
-        // 描边颜色
-        strokeColor : "#2DB9FF",
-        pointColor : "#66A8FF",
-        pointStrokeColor : "#66A8FF",
-        data : [35,24,40,76,45,90,34]
-      }
-    ]
-
-  }
-  window.onload = function(){
-  var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData,defaults);
-  }
-  var defaults = {
-
-	//Boolean - I如果我们展示规模以上的图表数据
-	scaleOverlay : false,
-
-	//Boolean - 如果我们想要用硬编码的范围覆盖
-	scaleOverride : false,
-
-	//** Required if scaleOverride is true **
-	//Number - 步骤的数量在一个硬编码的规模
-	scaleSteps : null,
-	//Number - 值硬编码的规模
-	scaleStepWidth : null,
-	//Number - 规模起始值
-	scaleStartValue : null,
-
-	//String - 刻度线的颜色
-	scaleLineColor : "#666",
-
-	//Number - 刻度线的像素宽度
-	scaleLineWidth : 1,
-
-	//Boolean - 是否显示标签
-	scaleShowLabels : true,
-
-	//插值JS字符串,可以访问值
-	scaleLabel : "<%=value%>",
-
-	//String - 标尺刻度标尺刻度字体声明
-	scaleFontFamily : "'Arial'",
-
-	//Number - 规模的标签字体大小(以像素为单位)
-	scaleFontSize : 12,
-
-	//String - 规模的标签字体风格
-	scaleFontStyle : "normal",
-
-	//String - 规模的标签字体颜色
-	scaleFontColor : "#666",
-
-	///Boolean - 网格线是否在图所示
-	scaleShowGridLines : false,
-
-	// 网格宽度
-	scaleGridLineColor : "rgba(0,0,0,.05)",
-
-	// 网格颜色
-	scaleGridLineWidth : 1,
-
-	 // 是否使用贝塞尔曲线? 即:线条是否弯曲
-	bezierCurve : false,
-
-	// 是否显示点数
-	pointDot : true,
-
-	// 圆点的大小
-	pointDotRadius : 3,
-
-	 // 圆点的笔触宽度, 即:圆点外层边框大小
-	pointDotStrokeWidth : 1,
-
-	// 数据集行程
-	datasetStroke : true,
-
-	 // 线条的宽度, 即:数据集
-	datasetStrokeWidth : 2,
-
-	  // 是否填充数据集
-	datasetFill : true,
-
-	// 是否执行动画
-	animation : true,
-
-	 // 动画的时间
-	animationSteps : 40,
-
-	// 动画的特效
-	animationEasing : "easeOutQuart",
-
-	 // 动画完成时的执行函数
-	onAnimationComplete : null
-
-}
-
-  	</script>
 
     <script>
+        var lineChartData = {
+        labels : ["January","February","March","April","May","June","July"],
+        datasets : [
+          {
+            fillColor : "transparent",
+            strokeColor : "#939393",
+            pointColor : "#939393",
+            pointStrokeColor : "#939393",
+            data : [65,59,90,81,56,55,40]
+          },
+          {
+            fillColor : "transparent",
+            strokeColor : "#FC5579",
+            pointColor : "#FD839D",
+            pointStrokeColor : "#FD839D",
+            data : [28,48,40,19,96,27,100]
+          },
+          {
+            // 填充颜色
+            fillColor : "transparent",
+            // 描边颜色
+            strokeColor : "#2DB9FF",
+            pointColor : "#66A8FF",
+            pointStrokeColor : "#66A8FF",
+            data : [35,24,40,76,45,90,34]
+          }
+        ]
 
-
-  var lineChartData1 = {
-    labels : ["January","February","March","April","May","June","July"],
-    datasets : [
-      {
-        fillColor : "transparent",
-        strokeColor : "#939393",
-        pointColor : "#939393",
-        pointStrokeColor : "#939393",
-        data : [65,59,90,81,56,55,40]
-      },
-      {
-        fillColor : "transparent",
-        strokeColor : "#FC5579",
-        pointColor : "#FD839D",
-        pointStrokeColor : "#FD839D",
-        data : [28,48,40,19,96,27,100]
-      },
-      {
-        // 填充颜色
-        fillColor : "transparent",
-        // 描边颜色
-        strokeColor : "#2DB9FF",
-        pointColor : "#66A8FF",
-        pointStrokeColor : "#66A8FF",
-        data : [35,24,40,76,45,90,34]
       }
-    ]
+      window.onload = function(){
+      var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData,defaults);
+      }
+      var defaults = {
 
-  }
-  $(function(){
-    var myLine = new Chart(document.getElementById("canvas1").getContext("2d")).Line(lineChartData1,defaults1);
-  })
+    	//Boolean - I如果我们展示规模以上的图表数据
+    	scaleOverlay : false,
 
-  var defaults1 = {
+    	//Boolean - 如果我们想要用硬编码的范围覆盖
+    	scaleOverride : false,
 
-  //Boolean - I如果我们展示规模以上的图表数据
-  scaleOverlay : false,
+    	//** Required if scaleOverride is true **
+    	//Number - 步骤的数量在一个硬编码的规模
+    	scaleSteps : null,
+    	//Number - 值硬编码的规模
+    	scaleStepWidth : null,
+    	//Number - 规模起始值
+    	scaleStartValue : null,
 
-  //Boolean - 如果我们想要用硬编码的范围覆盖
-  scaleOverride : false,
+    	//String - 刻度线的颜色
+    	scaleLineColor : "#666",
 
-  //** Required if scaleOverride is true **
-  //Number - 步骤的数量在一个硬编码的规模
-  scaleSteps : null,
-  //Number - 值硬编码的规模
-  scaleStepWidth : null,
-  //Number - 规模起始值
-  scaleStartValue : null,
+    	//Number - 刻度线的像素宽度
+    	scaleLineWidth : 1,
 
-  //String - 刻度线的颜色
-  scaleLineColor : "#666",
+    	//Boolean - 是否显示标签
+    	scaleShowLabels : true,
 
-  //Number - 刻度线的像素宽度
-  scaleLineWidth : 1,
+    	//插值JS字符串,可以访问值
+    	scaleLabel : "<%=value%>",
 
-  //Boolean - 是否显示标签
-  scaleShowLabels : true,
+    	//String - 标尺刻度标尺刻度字体声明
+    	scaleFontFamily : "'Arial'",
 
-  //插值JS字符串,可以访问值
-  scaleLabel : "<%=value%>",
+    	//Number - 规模的标签字体大小(以像素为单位)
+    	scaleFontSize : 12,
 
-  //String - 标尺刻度标尺刻度字体声明
-  scaleFontFamily : "'Arial'",
+    	//String - 规模的标签字体风格
+    	scaleFontStyle : "normal",
 
-  //Number - 规模的标签字体大小(以像素为单位)
-  scaleFontSize : 12,
+    	//String - 规模的标签字体颜色
+    	scaleFontColor : "#666",
 
-  //String - 规模的标签字体风格
-  scaleFontStyle : "normal",
+    	///Boolean - 网格线是否在图所示
+    	scaleShowGridLines : false,
 
-  //String - 规模的标签字体颜色
-  scaleFontColor : "#666",
+    	// 网格宽度
+    	scaleGridLineColor : "rgba(0,0,0,.05)",
 
-  ///Boolean - 网格线是否在图所示
-  scaleShowGridLines : false,
+    	// 网格颜色
+    	scaleGridLineWidth : 1,
 
-  // 网格宽度
-  scaleGridLineColor : "rgba(0,0,0,.05)",
+    	 // 是否使用贝塞尔曲线? 即:线条是否弯曲
+    	bezierCurve : false,
 
-  // 网格颜色
-  scaleGridLineWidth : 1,
+    	// 是否显示点数
+    	pointDot : true,
 
-   // 是否使用贝塞尔曲线? 即:线条是否弯曲
-  bezierCurve : true,
+    	// 圆点的大小
+    	pointDotRadius : 3,
 
-  // 是否显示点数
-  pointDot : true,
+    	 // 圆点的笔触宽度, 即:圆点外层边框大小
+    	pointDotStrokeWidth : 1,
 
-  // 圆点的大小
-  pointDotRadius : 3,
+    	// 数据集行程
+    	datasetStroke : true,
 
-   // 圆点的笔触宽度, 即:圆点外层边框大小
-  pointDotStrokeWidth : 1,
+    	 // 线条的宽度, 即:数据集
+    	datasetStrokeWidth : 2,
 
-  // 数据集行程
-  datasetStroke : true,
+    	  // 是否填充数据集
+    	datasetFill : true,
 
-   // 线条的宽度, 即:数据集
-  datasetStrokeWidth : 2,
+    	// 是否执行动画
+    	animation : true,
 
-    // 是否填充数据集
-  datasetFill : true,
+    	 // 动画的时间
+    	animationSteps : 40,
 
-  // 是否执行动画
-  animation : false,
+    	// 动画的特效
+    	animationEasing : "easeOutQuart",
 
-   // 动画的时间
-  animationSteps : 40,
+    	 // 动画完成时的执行函数
+    	onAnimationComplete : null
 
-  // 动画的特效
-  animationEasing : "easeOutQuart",
-
-   // 动画完成时的执行函数
-  onAnimationComplete : null
-
-  }
+      }
 
     </script>
+
+    <script>
+      var lineChartData1 = {
+        labels : ["January","February","March","April","May","June","July"],
+        datasets : [
+          {
+            fillColor : "transparent",
+            strokeColor : "#939393",
+            pointColor : "#939393",
+            pointStrokeColor : "#939393",
+            data : [65,59,90,81,56,55,40]
+          },
+          {
+            fillColor : "transparent",
+            strokeColor : "#FC5579",
+            pointColor : "#FD839D",
+            pointStrokeColor : "#FD839D",
+            data : [28,48,40,19,96,27,100]
+          },
+          {
+            // 填充颜色
+            fillColor : "transparent",
+            // 描边颜色
+            strokeColor : "#2DB9FF",
+            pointColor : "#66A8FF",
+            pointStrokeColor : "#66A8FF",
+            data : [35,24,40,76,45,90,34]
+          }
+        ]
+
+      }
+      $(function(){
+        var myLine = new Chart(document.getElementById("canvas1").getContext("2d")).Line(lineChartData1,defaults1);
+      })
+
+      var defaults1 = {
+
+      //Boolean - I如果我们展示规模以上的图表数据
+      scaleOverlay : false,
+
+      //Boolean - 如果我们想要用硬编码的范围覆盖
+      scaleOverride : false,
+
+      //** Required if scaleOverride is true **
+      //Number - 步骤的数量在一个硬编码的规模
+      scaleSteps : null,
+      //Number - 值硬编码的规模
+      scaleStepWidth : null,
+      //Number - 规模起始值
+      scaleStartValue : null,
+
+      //String - 刻度线的颜色
+      scaleLineColor : "#666",
+
+      //Number - 刻度线的像素宽度
+      scaleLineWidth : 1,
+
+      //Boolean - 是否显示标签
+      scaleShowLabels : true,
+
+      //插值JS字符串,可以访问值
+      scaleLabel : "<%=value%>",
+
+      //String - 标尺刻度标尺刻度字体声明
+      scaleFontFamily : "'Arial'",
+
+      //Number - 规模的标签字体大小(以像素为单位)
+      scaleFontSize : 12,
+
+      //String - 规模的标签字体风格
+      scaleFontStyle : "normal",
+
+      //String - 规模的标签字体颜色
+      scaleFontColor : "#666",
+
+      ///Boolean - 网格线是否在图所示
+      scaleShowGridLines : false,
+
+      // 网格宽度
+      scaleGridLineColor : "rgba(0,0,0,.05)",
+
+      // 网格颜色
+      scaleGridLineWidth : 1,
+
+       // 是否使用贝塞尔曲线? 即:线条是否弯曲
+      bezierCurve : true,
+
+      // 是否显示点数
+      pointDot : true,
+
+      // 圆点的大小
+      pointDotRadius : 3,
+
+       // 圆点的笔触宽度, 即:圆点外层边框大小
+      pointDotStrokeWidth : 1,
+
+      // 数据集行程
+      datasetStroke : true,
+
+       // 线条的宽度, 即:数据集
+      datasetStrokeWidth : 2,
+
+        // 是否填充数据集
+      datasetFill : true,
+
+      // 是否执行动画
+      animation : false,
+
+       // 动画的时间
+      animationSteps : 40,
+
+      // 动画的特效
+      animationEasing : "easeOutQuart",
+
+       // 动画完成时的执行函数
+      onAnimationComplete : null
+
+      }
+
+        </script>
+        <script>
+          var lineChartData1 = {
+            labels : ["January","February","March","April","May","June","July"],
+            datasets : [
+              {
+                fillColor : "transparent",
+                strokeColor : "#939393",
+                pointColor : "#939393",
+                pointStrokeColor : "#939393",
+                data : [65,59,90,81,56,55,40]
+              },
+              {
+                fillColor : "transparent",
+                strokeColor : "#FC5579",
+                pointColor : "#FD839D",
+                pointStrokeColor : "#FD839D",
+                data : [28,48,40,19,96,27,100]
+              },
+              {
+                // 填充颜色
+                fillColor : "transparent",
+                // 描边颜色
+                strokeColor : "#2DB9FF",
+                pointColor : "#66A8FF",
+                pointStrokeColor : "#66A8FF",
+                data : [35,24,40,76,45,90,34]
+              }
+            ]
+
+          }
+          $(function(){
+            var myLine = new Chart(document.getElementById("canvas2").getContext("2d")).Line(lineChartData1,defaults2);
+          })
+
+          var defaults2 = {
+
+          //Boolean - I如果我们展示规模以上的图表数据
+          scaleOverlay : false,
+
+          //Boolean - 如果我们想要用硬编码的范围覆盖
+          scaleOverride : false,
+
+          //** Required if scaleOverride is true **
+          //Number - 步骤的数量在一个硬编码的规模
+          scaleSteps : null,
+          //Number - 值硬编码的规模
+          scaleStepWidth : null,
+          //Number - 规模起始值
+          scaleStartValue : null,
+
+          //String - 刻度线的颜色
+          scaleLineColor : "#666",
+
+          //Number - 刻度线的像素宽度
+          scaleLineWidth : 1,
+
+          //Boolean - 是否显示标签
+          scaleShowLabels : true,
+
+          //插值JS字符串,可以访问值
+          scaleLabel : "<%=value%>",
+
+          //String - 标尺刻度标尺刻度字体声明
+          scaleFontFamily : "'Arial'",
+
+          //Number - 规模的标签字体大小(以像素为单位)
+          scaleFontSize : 12,
+
+          //String - 规模的标签字体风格
+          scaleFontStyle : "normal",
+
+          //String - 规模的标签字体颜色
+          scaleFontColor : "#666",
+
+          ///Boolean - 网格线是否在图所示
+          scaleShowGridLines : false,
+
+          // 网格宽度
+          scaleGridLineColor : "rgba(0,0,0,.05)",
+
+          // 网格颜色
+          scaleGridLineWidth : 1,
+
+           // 是否使用贝塞尔曲线? 即:线条是否弯曲
+          bezierCurve : true,
+
+          // 是否显示点数
+          pointDot : true,
+
+          // 圆点的大小
+          pointDotRadius : 3,
+
+           // 圆点的笔触宽度, 即:圆点外层边框大小
+          pointDotStrokeWidth : 1,
+
+          // 数据集行程
+          datasetStroke : true,
+
+           // 线条的宽度, 即:数据集
+          datasetStrokeWidth : 2,
+
+            // 是否填充数据集
+          datasetFill : true,
+
+          // 是否执行动画
+          animation : false,
+
+           // 动画的时间
+          animationSteps : 40,
+
+          // 动画的特效
+          animationEasing : "easeOutQuart",
+
+           // 动画完成时的执行函数
+          onAnimationComplete : null
+
+          }
+
+            </script>
+
   </body>
 </html>
