@@ -107,34 +107,39 @@
       .infor{
         width: 1018px;
         height: 545px;
-        background: #F4F4F4;
+        background: #E0EEEE;
         overflow-y: auto;
+        border-right: 1px solid #999;
       }
     .wrap .line{
         width: 100%;
         box-sizing: border-box;
         overflow: hidden;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #999;
 
       }
       .wrap .line .lineone{
         width: 158px;
         height: 26px;
         line-height: 26px;
-        border-right: 1px solid #eee;
+        border-right: 1px solid #999;
         float: left;
 
+      }
+      .wrap .line .lineone:last-child{
+        border-right: none;
       }
       .wrap .line .nav{
         width: 682px;
         height: 26px;
         line-height: 26px;
-        border-right: 1px solid #eee;
+        /*border-right: 1px solid #999;*/
         float: left;
         color: #666;
       }
       .wrap .line .color{
         color: #666;
+        height: 52px;
       }
       .wrap .line p:nth-child(3n+2){
         font-size: 12px;
@@ -159,11 +164,11 @@
       .wrap .line .lineone span{
         display: inline-block;
         width: 100%;
-        border-right: 1px solid #eee;
+        /*border-right: 1px solid #999;*/
         text-indent: 15px;
       }
       .wrap .line .lineone span:first-child{
-        border-bottom:1px solid #eee;
+        border-bottom:1px solid #999;
       }
       .wrap .line .twoline-last{
         height: 52px;
@@ -175,8 +180,11 @@
       .wrap .line .margin{
         line-height: 53px;
       }
+      .wrap .background p:last-child{
+        height: 52px;
+      }
       .background{
-        background: #fff;
+        /*background: #fff;*/
       }
       /*右边*/
     .wrap .wrap-right{
@@ -359,7 +367,7 @@
             <p class="lineone indent nav">HP DL380</p>
 
           </div>
-          <div class="line background">
+          <div class="line">
             <p class="lineone title">操作系统及补丁</p>
             <p class="lineone indent">版本</p>
             <p class="lineone indent nav">Win2KPro</p>
@@ -378,7 +386,7 @@
 
           </div>
 
-          <div class="line background">
+          <div class="line">
             <p class="lineone title">数据库信息</p>
             <p class="lineone indent">名称和版本</p>
             <p class="lineone indent nav">Oracle 10.2.0</p>
@@ -392,7 +400,7 @@
 
           </div>
 
-          <div class="line background">
+          <div class="line">
             <p class="lineone title">备份内容</p>
             <p class="lineone indent"></p>
             <p class="lineone indent nav">/Veritas/openv/Scripts/Ora_Hot_cmce.sh</p>
@@ -406,7 +414,7 @@
 
           </div>
 
-          <div class="line background">
+          <div class="line">
             <p class="lineone title">Archive处理</p>
             <p class="lineone indent"></p>
             <p class="lineone indent nav"></p>
@@ -420,7 +428,7 @@
 
           </div>
 
-          <div class="line background">
+          <div class="line">
             <p class="lineone title">日期</p>
             <p class="lineone indent"></p>
             <p class="lineone indent nav">Everyday</p>
@@ -434,7 +442,7 @@
 
           </div>
 
-          <div class="line background">
+          <div class="line">
             <p class="lineone title">保留时间</p>
             <p class="lineone indent"></p>
             <p class="lineone indent nav">14</p>
@@ -448,7 +456,7 @@
 
           </div>
 
-          <div class="line background">
+          <div class="line">
             <p class="lineone title">存储单元</p>
             <p class="lineone indent"></p>
             <p class="lineone indent nav">LAN_VTL</p>
@@ -462,7 +470,7 @@
 
           </div>
 
-          <div class="line background">
+          <div class="line">
             <p class="lineone title">排除列表</p>
             <p class="lineone indent"></p>
             <p class="lineone indent nav"></p>
@@ -476,7 +484,7 @@
 
           </div>
 
-          <div class="line background">
+          <div class="line">
             <p class="lineone title">多数据流</p>
             <p class="lineone indent"></p>
             <p class="lineone indent nav"></p>

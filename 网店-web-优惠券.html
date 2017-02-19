@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>order-center</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <style media="screen">
+      @media screen and (max-width:640px){
+        *{
+          padding: 0;
+          margin: 0;
+
+        }
+        a{
+          text-decoration: none;
+          color: #000;
+        }
+        li{
+          list-style: none;
+        }
+        html,body{
+          width: 100%;
+          height: 100%;
+          font: helvetica;
+
+        }
+         .top{
+          width: 100%;
+          height: 47px;
+          overflow: hidden;
+          border-bottom: 1px solid #e7e7e7;
+          box-shadow: 0 2px 5px #e7e7e7;
+          background: #fff;
+        }
+        .top .back{
+          width: 12.5333333%;
+          height: 47px;
+          float: left;
+          display: inline-block;
+          text-align: center;
+          line-height: 47px;
+
+        }
+        .top .back img{
+          width: 25px;
+          height: 25px;
+          vertical-align: middle;
+        }
+        .top .top-right{
+          width: 12.5333333%;
+          height: 47px;
+          float: right;
+          display: inline-block;
+          text-align: center;
+          line-height: 47px;
+          position: relative;
+        }
+        .top .top-right p{
+          display: inline-block;
+          width: 18px;
+          height: 14px;
+          line-height: 14px;
+          color: #fff;
+          position: absolute;
+          left: 19px;
+          top: 10px;
+          font-size: 12px;
+          background: #D81E06;
+          border-radius: 7px;
+          text-align: center;
+        }
+        .top .top-right img{
+          width: 25px;
+          height: 25px;
+          vertical-align: middle;
+        }
+        .top .top-title{
+          float: left;
+          width: 74.93333333%;
+          height: 47px;
+          line-height: 47px;
+          text-align: left;
+          color: #252525;
+          font-weight: 400;
+        }
+        /*具体内容*/
+        .content{
+          width: 100%;
+          overflow: hidden;
+        }
+        .content .nav-ul{
+          width: 89%;
+          margin: 15px auto 35px;
+          display: flex;
+        }
+        .content .nav-ul li{
+          flex: 1;
+          height: 36px;
+          line-height: 36px;
+          text-align: center;
+        }
+        .content .nav-ul li span{
+          display: inline-block;
+
+          height: 36px;
+          font-size: 14px;
+        }
+        .content .nav-ul li .nav-span1{
+          width: 60%;
+          border-bottom: 2px solid red;
+          box-sizing: border-box;
+        }
+        .content .nav-ul li .nav-span2{
+          display: inline-block;
+          width: 75%;
+          box-sizing: border-box;
+        }
+        .content .nav-ul li .nav-span3{
+          width: 70%;
+          box-sizing: border-box;
+        }
+
+        .footer{
+          width: 100%;
+          height: 46px;
+          line-height: 46px;
+          text-align: center;
+          background: #eee;
+          color: #999;
+          margin-top: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <div class="back">
+        <img src="images/back.png" alt="">
+      </div>
+      <p class="top-title">优惠券</p>
+      <div class="top-right"><img src="images/news.png" alt=""><p>15</p></div>
+    </div>
+
+    <!-- 具体内容 -->
+    <div class="content">
+      <div class="content-nav">
+        <ul class="nav-ul">
+          <li class="nav-li1 color"><span class="nav-span1">未使用(1)</span></li>
+          <li class="nav-li2"><span class="nav-span2">使用记录(1)</span></li>
+          <li class="nav-li3"><span class="nav-span3">已过期(3)</span></li>
+        </ul>
+      </div>
+      <div class="contentone">
+        <div class="quan">
+          <div class="quanleft">
+            <img src="images/youhuiquan1.png" alt="">
+          </div>
+          <div class="quanright">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      没有更多内容
+    </div>
+  </body>
+</html>
