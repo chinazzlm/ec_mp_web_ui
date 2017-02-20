@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>备份趋势告警</title>
+    <title>备份业务遵从性检测</title>
     <style media="screen">
     *{
         margin: 0;
@@ -213,17 +212,15 @@
         /*margin-left: 20px;*/
         text-indent: 44px;
       }
-
-      /*输入框*/
-      .wrap .infor-right .input2{
+      /*不遵从按钮*/
+      .infor .title-click{
         float: right;
-        width: 99.5%;
-        box-sizing: border-box;
-        outline-style: none;
-        border: none;
-        text-indent: 15px;
-        height: 27px;
-        line-height: 27px;
+        margin-right: 15px;
+        font-size: 12px;
+      }
+      .infor .title-click input{
+        vertical-align: middle;
+        margin-right: 5px;
       }
     </style>
   </head>
@@ -250,7 +247,7 @@
           </p>
         </div>
         <div class="infor">
-          <p class="title"><u>备份业务遵从性检测</u></p>
+          <p class="title"><u>备份业务遵从性检测</u><span class="title-click"><input type="checkbox" name="" value=""><u>仅显示不遵从</u></span></p>
           <div class="infor-left">
             <ul>
               <li>应用-本系统角色</li>
@@ -259,7 +256,7 @@
               <li>开始时间</li>
               <li>保留时间</li>
               <li>数据量</li>
-              <li>遵从筛选</li>
+              <li>是否遵从</li>
             </ul>
             <div class="infor-left-bottom">
               <ul>
@@ -269,7 +266,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li><u>仅显示不遵从</u></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -278,7 +275,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li><u>仅显示不遵从</u></li>
+                <li><img src="images/no.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -287,7 +284,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li><u>仅显示不遵从</u></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -296,7 +293,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li><u>仅显示不遵从</u></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -305,7 +302,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li><u>仅显示不遵从</u></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -314,7 +311,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li><u>仅显示不遵从</u></li>
+                <li><img src="images/no.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -323,7 +320,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li><u>仅显示不遵从</u></li>
+                <li><img src="images/no.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -332,7 +329,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li><u>仅显示不遵从</u></li>
+                <li><img src="images/no.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -341,7 +338,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li><u>仅显示不遵从</u></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -350,7 +347,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li><u>仅显示不遵从</u></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -359,7 +356,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li><u>仅显示不遵从</u></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -368,7 +365,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li><u>仅显示不遵从</u></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -377,7 +374,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li><u>仅显示不遵从</u></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -386,7 +383,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li><u>仅显示不遵从</u></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -395,27 +392,27 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li><u>仅显示不遵从</u></li>
+                <li><img src="images/no.png" alt=""></li>
               </ul>
             </div>
           </div>
           <div class="infor-right">
             <p>不遵从性详细描述</p>
-            <p><input type="text" name="" value="" class="input2" placeholder="此处输入"></p>
-            <p><input type="text" name="" value="" class="input2" placeholder="此处输入"></p>
-            <p><input type="text" name="" value="" class="input2" placeholder="此处输入"></p>
-            <p><input type="text" name="" value="" class="input2" placeholder="此处输入"></p>
-            <p><input type="text" name="" value="" class="input2" placeholder="此处输入"></p>
-            <p><input type="text" name="" value="" class="input2" placeholder="此处输入"></p>
-            <p><input type="text" name="" value="" class="input2" placeholder="此处输入"></p>
-            <p><input type="text" name="" value="" class="input2" placeholder="此处输入"></p>
-            <p><input type="text" name="" value="" class="input2" placeholder="此处输入"></p>
-            <p><input type="text" name="" value="" class="input2" placeholder="此处输入"></p>
-            <p><input type="text" name="" value="" class="input2" placeholder="此处输入"></p>
-            <p><input type="text" name="" value="" class="input2" placeholder="此处输入"></p>
-            <p><input type="text" name="" value="" class="input2" placeholder="此处输入"></p>
-            <p><input type="text" name="" value="" class="input2" placeholder="此处输入"></p>
-            <p><input type="text" name="" value="" class="input2" placeholder="此处输入"></p>
+            <p></p>
+            <p>开始时间2017-2-20不遵从</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>开始时间2017-2-20不遵从</p>
+            <p>开始时间2017-2-20不遵从</p>
+            <p>开始时间2017-2-20不遵从</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p>开始时间2017-2-20不遵从</p>
 
           </div>
 

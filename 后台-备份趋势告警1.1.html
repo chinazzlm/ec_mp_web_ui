@@ -125,6 +125,10 @@
         width: 100%;
         display: flex;
         border: 1px solid #c9c9c9;
+        border-bottom: none;
+      }
+      .infor ul:last-child{
+        border-bottom:  1px solid #c9c9c9;
       }
       .infor ul li{
         flex: 1;
@@ -135,6 +139,9 @@
         box-sizing: border-box;
         text-align: center;
         color: #666;
+      }
+      .infor ul li:last-child{
+        border-right: none;
       }
       .infor .infor-right{
         width: 350px;
@@ -191,6 +198,23 @@
         /*margin-left: 20px;*/
         text-indent: 44px;
       }
+
+      .infor .title-click{
+        /*float: right;*/
+        margin-left: 561px;
+        color: #666;
+        font-size: 12px;
+      }
+      .infor .title-click :hover{
+        color: #4488CF;
+        cursor: pointer;
+      }
+      .infor .title-click input{
+        width: 45px;
+        vertical-align: middle;
+
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -216,7 +240,7 @@
           </p>
         </div>
         <div class="infor">
-          <p class="title"><u>备份趋势告警</u></p>
+          <p class="title"><u>备份趋势告警</u><span class="title-click"><input type="text" name="" value="5"> % <u>检测</u></span></p>
           <div class="infor-left">
             <ul>
               <li>应用-本系统角色</li>
@@ -225,7 +249,7 @@
               <li>开始时间</li>
               <li>保留时间</li>
               <li>数据量</li>
-              <li>是否偏离</li>
+              <li>是否正常</li>
             </ul>
             <div class="infor-left-bottom">
               <ul>
@@ -235,7 +259,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -244,7 +268,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -253,7 +277,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -262,7 +286,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li><img src="images/no.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -271,7 +295,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li><img src="images/no.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -280,7 +304,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -289,7 +313,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -298,7 +322,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -307,7 +331,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li><img src="images/no.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -316,7 +340,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li><img src="images/no.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -325,7 +349,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -334,7 +358,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -343,7 +367,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -352,7 +376,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li><img src="images/yes.png" alt=""></li>
               </ul>
               <ul>
                 <li>事件服务器</li>
@@ -361,7 +385,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li><img src="images/no.png" alt=""></li>
               </ul>
 
 

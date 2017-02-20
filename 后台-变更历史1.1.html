@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>首页</title>
+    <title>变更历史</title>
     <style media="screen">
     *{
         margin: 0;
@@ -206,23 +206,10 @@
         border-bottom: 1px solid #c9c9c9;
       }
       /*右边*/
-    .wrap .wrap-right{
-        width: 195px;
-        float: right;
-        height: 544px;
-        position: relative;
-        margin-top: 56px;
-        border-left: 1px solid #C9C9C9;
-      }
-      .wrap .wrap-right-p1{
-        width: 100%;
-        height: 56px;
 
-        border-bottom: 1px solid #eee;
-      }
       .wrap .wrap-header{
-        width: 188px;
-        height: 56px;
+        width: 170px;
+        height: 52px;
         display: inline-block;
         border-bottom: 1px solid #eee;
       }
@@ -249,79 +236,12 @@
         border-radius: 20px;
         vertical-align: middle;
       }
-      .wrap .wrap-right-p2{
-        display: inline-block;
-
-      }
-      .wrap .wrap-right-p2 span{
-        display: inline-block;
-        vertical-align: middle;
-        margin-top: 32px;
-        font-size: 12px;
-        color: #999;
-        margin-left: 20px;
-        width: 67px;
-      }
-      .wrap .wrap-right-p2 img{
-        display: inline-block;
-        vertical-align: middle;
-        width: 48px;
-        height: 48px;
-        margin: 40px 0 0 20px;;
-
-      }
-      .circle{
-        width: 16px;
-        height: 16px;
-        border-radius: 8px;
-        position: absolute;
-        top: 38px;
-        left: 55px;
-        background: #FF6161;
-        color: #fff;
-        font-size: 12px;
-        line-height: 16px;
-        text-align: center;
-      }
-      .wrap .wrap-right-p3 span{
-        display: block;
-        margin: 8px 0 0 20px;
-        border-radius: 4px;
-      }
-      .wrap .wrap-right-p3 .right-span1{
-        width: 20%;
-        height: 3px;
-        background: #7AB8FE;
-        margin-top: 35px;
-      }
-      .wrap .wrap-right-p3 .right-span2{
-        width: 100%;
-        font-size: 12px;
-        color: #bcbcbc;
-      }
-      .wrap .wrap-right-p3 .right-span3{
-        width: 100%;
-        font-size: 12px;
-        color: #999;
-      }
-      .wrap .wrap-right-p3 .right-span4{
-        width: 70%;
-        height: 3px;
-        background: #7AB8FE;
-        margin-top: 15px;
-      }
-      .wrap .wrap-right-p3 .right-span5{
-        width: 45%;
-        height: 3px;
-        background: #7AB8FE;
-        margin-top: 15px;
-      }
 
       /*表格*/
       table{
         font-size: 12px;
         background: #fff;
-        margin: 50px 15px;
+        margin: 12px 15px;
       }
       tr{
         display: flex;
@@ -341,6 +261,23 @@
       }
       td:last-child{
         border-right:1px solid #999;
+      }
+      /*标题*/
+      .title{
+        width: 100%;
+        line-height: 46px;
+        height: 46px;
+        /*background: #E0E9E7;*/
+        font-size: 14px;
+        font-weight: bold;
+        color: #47A2FF;
+        /*margin-left: 20px;*/
+        text-indent: 44px;
+      }
+
+      td:hover{
+        color: #47A2FF;
+        cursor: pointer;
       }
     </style>
   </head>
@@ -366,56 +303,58 @@
           </p>
         </div>
         <div class="infor">
+          <p class="title"><u>变更历史</u></p>
           <table  cellspacing="0">
             <tr>
 
-              <td class="td2 td0">备份策略条数</td>
-              <td class="td3 td0">不遵从的条数</td>
-              <td class="td4 td0">进行中的备份策略</td>
-              <td class="td5 td0">待审计</td>
-              <td class="td5 td0">待部署</td>
-              <td class="td5 td0">检测失败</td>
+              <td class="td2 td0">变更时间</td>
+              <td class="td3 td0">发起人</td>
+              <td class="td4 td0">变更内容</td>
+              <td class="td5 td0">查看详细</td>
             </tr>
             <tr>
-              <td class="td2">&nbsp</td>
-              <td class="td3"></td>
-              <td class="td4"></td>
-              <td class="td5"></td>
-              <td class="td4"></td>
-              <td class="td5"></td>
+              <td class="td2">2017-2-20</td>
+              <td class="td3">张三</td>
+              <td class="td4">时间改为19：21</td>
+              <td class="td5"><u>点击查看</u></td>
             </tr>
-
-
+            <tr>
+              <td class="td2">2017-2-20</td>
+              <td class="td3">张三</td>
+              <td class="td4">时间改为19：21</td>
+              <td class="td5"><u>点击查看</u></td>
+            </tr>
+            <tr>
+              <td class="td2">2017-2-20</td>
+              <td class="td3">张三</td>
+              <td class="td4">时间改为19：21</td>
+              <td class="td5"><u>点击查看</u></td>
+            </tr>
+            <tr>
+              <td class="td2">2017-2-20</td>
+              <td class="td3">张三</td>
+              <td class="td4">时间改为19：21</td>
+              <td class="td5"><u>点击查看</u></td>
+            </tr>
+            <tr>
+              <td class="td2">2017-2-20</td>
+              <td class="td3">张三</td>
+              <td class="td4">时间改为19：21</td>
+              <td class="td5"><u>点击查看</u></td>
+            </tr>
+            <tr>
+              <td class="td2">2017-2-20</td>
+              <td class="td3">张三</td>
+              <td class="td4">时间改为19：21</td>
+              <td class="td5"><u>点击查看</u></td>
+            </tr>
           </table>
         </div>
 
 
       </div>
 
-      <div class="wrap-right">
 
-        <p class="wrap-right-p2">
-          <img src="images/news1.png" alt=""><span>2017-2-15</span>
-          <p class="circle">10</p>
-        </p>
-        <p class="wrap-right-p3">
-          <span class="right-span1"></span>
-          <span class="right-span2">2017-2-16</span>
-          <span class="right-span3">这里有一条通知</span>
-          <span class="right-span4"></span>
-          <span class="right-span2">2017-2-16</span>
-          <span class="right-span3">这里又是一条新的通知</span>
-          <span class="right-span5"></span>
-          <span class="right-span2">2017-2-16</span>
-          <span class="right-span3">这里又是一条新的通知</span>
-          <span class="right-span1"></span>
-          <span class="right-span2">2017-2-16</span>
-          <span class="right-span3">这里有一条通知</span>
-          <span class="right-span1"></span>
-          <span class="right-span2">2017-2-16</span>
-          <span class="right-span3">这里有一条通知</span>
-        </p>
-      </div>
     </div>
 
 
