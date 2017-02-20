@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>遵从性分析</title>
     <style media="screen">
     *{
         margin: 0;
@@ -11,29 +12,34 @@
       html,body{
         margin: 0;
         padding: 0;
+        height: 100%;
+        width: 100%;
         font-family: "PingHei","Lucida Grande", "Lucida Sans Unicode", "STHeiti", "Helvetica","Arial","Verdana","sans-serif";
         background: #E0E9E7;
+        overflow: hidden;
+
+      }
+      li{
+        list-style: none;
       }
       a{
         text-decoration: none;
         color: #666;
       }
-      li{
-        list-style: none;
-      }
       .wrap{
         width: 1280px;
+        height: 100%;
         margin: 0 auto;
         box-sizing: border-box;
         background: #fff;
-        overflow: hidden;
-        border-top: 1px solid #7b7b7b;
-        border-bottom: 1px solid #DEE1E4;
+        overflow:auto;
+        border-bottom: 5px solid #999;
+        overflow-x: hidden;
       }
       /*左边‘’*/
       .wrap .wrap-left{
         width: 66px;
-        height: 605px;
+        border-right: 1px solid #eee;
 
         float: left;
       }
@@ -50,8 +56,8 @@
       }
       .wrap .wrap-left .left-span1 img{
         width: 46px;
-      height: 14px;
-      margin-top: 21px;
+        height: 14px;
+        margin-top: 21px;
       }
       .wrap .wrap-left .left-span2{
         width: 100%;
@@ -68,13 +74,11 @@
       }
       /*中间*/
       .wrap .wrap-middle{
-        width: 1018px;
+        width: 1196px;
         float: left;
-        height: 600px;
-        /*border-right: 1px solid #eee;*/
       }
       .wrap-middle-top{
-        width:1214px;
+        width:1197px;
         height: 56px;
 
 
@@ -91,30 +95,25 @@
         margin-left: 1px;
       }
       input::-webkit-input-placeholder {
-        /*color:    #4488CF;*/
-        /*font-weight: bold;*/
-        text-indent: 25px;
+        color:    #4488CF;
+        font-weight: bold;
       }
       input:-moz-placeholder {
-          /*color:    #4488CF;*/
-          /*font-weight: bold;*/
-          text-indent: 25px;
+          color:    #4488CF;
+          font-weight: bold;
       }
       textarea::-webkit-input-placeholder {
-        /*color:    #4488CF;*/
-        /*font-weight: bold;*/
-        text-indent: 25px;
+        color:    #4488CF;
+        font-weight: bold;
       }
       textarea:-moz-placeholder {
-          /*color:    #4488CF;*/
-          /*font-weight: bold;*/
-          text-indent: 25px;
+          color:    #4488CF;
+          font-weight: bold;
       }
       .infor{
-        width: 1018px;
+        width: 1197px;
         height: 545px;
-        background: #F4F4F4;
-        overflow-y: auto;
+        border-right: 1px solid #C9C9C9;
       }
       .infor .infor-one{
         margin-bottom: 25px;
@@ -203,26 +202,10 @@
       .infor .infor-bottom .ul-size:last-child{
         border-bottom: 1px solid #c9c9c9;
       }
-      /*右边*/
-    .wrap .wrap-right{
-        width: 195px;
-        float: right;
-        height: 544px;
-        position: relative;
-        margin-top: 56px;
-        border-left: 1px solid #C9C9C9;
-      }
-      .wrap .wrap-right-p1{
-        width: 100%;
-        height: 56px;
-
-        border-bottom: 1px solid #eee;
-      }
       .wrap .wrap-header{
-        width: 188px;
-        height: 56px;
+        width: 170px;
+        height: 52px;
         display: inline-block;
-        border-bottom: 1px solid #eee;
       }
       .wrap .wrap-header .wrap-header-span1{
         display: inline-block;
@@ -247,97 +230,31 @@
         border-radius: 20px;
         vertical-align: middle;
       }
-      .wrap .wrap-right-p2{
-        display: inline-block;
-
-      }
-      .wrap .wrap-right-p2 span{
-        display: inline-block;
-        vertical-align: middle;
-        margin-top: 32px;
-        font-size: 12px;
-        color: #999;
-        margin-left: 20px;
-        width: 67px;
-      }
-      .wrap .wrap-right-p2 img{
-        display: inline-block;
-        vertical-align: middle;
-        width: 48px;
-        height: 48px;
-        margin: 40px 0 0 20px;;
-
-      }
-      .circle{
-        width: 16px;
-        height: 16px;
-        border-radius: 8px;
-        position: absolute;
-        top: 38px;
-        left: 55px;
-        background: #FF6161;
-        color: #fff;
-        font-size: 12px;
-        line-height: 16px;
-        text-align: center;
-      }
-      .wrap .wrap-right-p3 span{
-        display: block;
-        margin: 8px 0 0 20px;
-        border-radius: 4px;
-      }
-      .wrap .wrap-right-p3 .right-span1{
-        width: 20%;
-        height: 3px;
-        background: #7AB8FE;
-        margin-top: 35px;
-      }
-      .wrap .wrap-right-p3 .right-span2{
-        width: 100%;
-        font-size: 12px;
-        color: #bcbcbc;
-      }
-      .wrap .wrap-right-p3 .right-span3{
-        width: 100%;
-        font-size: 12px;
-        color: #999;
-      }
-      .wrap .wrap-right-p3 .right-span4{
-        width: 70%;
-        height: 3px;
-        background: #7AB8FE;
-        margin-top: 15px;
-      }
-      .wrap .wrap-right-p3 .right-span5{
-        width: 45%;
-        height: 3px;
-        background: #7AB8FE;
-        margin-top: 15px;
-      }
       /*标题*/
       .title{
         width: 100%;
         line-height: 46px;
         height: 46px;
-        background: #E0E9E7;
+        /*background: #E0E9E7;*/
         font-size: 14px;
         font-weight: bold;
         color: #47A2FF;
+        /*margin-left: 20px;*/
+        text-indent: 44px;
       }
     </style>
   </head>
   <body>
     <div class="wrap">
-      <p class="title"><u>备份策略需求列表</u></p>
       <div class="wrap-left">
         <span class="left-span1"><img src="images/logo.jpg" alt=""></span>
-        <span class="left-span2"><img src="images/home.png" alt=""></span>
-        <span class="left-span2"><img src="images/need.png" alt=""></span>
-        <span class="left-span2"><img src="images/play.png" alt=""></span>
-        <span class="left-span2"><img src="images/add1.png" alt=""></span>
-        <span class="left-span2"><img src="images/line.png" alt=""></span>
-        <span class="left-span2"><img src="images/warning.png" alt=""></span>
-        <span class="left-span2"><img src="images/set.png" alt=""></span>
+        <span class="left-span2"><a href="/"><img src="images/home.png" alt=""></a></span>
+        <span class="left-span2"><a href="/requirements"><img src="images/need.png" alt=""></a></span>
+        <span class="left-span2"><a href="/strategies"><img src="images/play.png" alt=""></a></span>
+        <span class="left-span2"><a href="/excute_list"><img src="images/add1.png" alt=""></a></span>
+        <span class="left-span2"><a href="/trend_alarms"><img src="images/line.png" alt=""></a></span>
+        <span class="left-span2"><a href="/excute_check"><img src="images/warning.png" alt=""></a></span>
+        <span class="left-span2"><a href="/users"><img src="images/set.png" alt=""></a></span>
       </div>
 
       <div class="wrap-middle">
@@ -349,6 +266,7 @@
           </p>
         </div>
         <div class="infor">
+          <p class="title"><u>遵从性分析</u></p>
           <div class="infor-one">
             <ul class="infor-header">
               <li class="li1">一</li>
@@ -568,30 +486,7 @@
 
       </div>
 
-      <div class="wrap-right">
 
-        <p class="wrap-right-p2">
-          <img src="images/news1.png" alt=""><span>2017-2-15</span>
-          <p class="circle">10</p>
-        </p>
-        <p class="wrap-right-p3">
-          <span class="right-span1"></span>
-          <span class="right-span2">2017-2-16</span>
-          <span class="right-span3">这里有一条通知</span>
-          <span class="right-span4"></span>
-          <span class="right-span2">2017-2-16</span>
-          <span class="right-span3">这里又是一条新的通知</span>
-          <span class="right-span5"></span>
-          <span class="right-span2">2017-2-16</span>
-          <span class="right-span3">这里又是一条新的通知</span>
-          <span class="right-span1"></span>
-          <span class="right-span2">2017-2-16</span>
-          <span class="right-span3">这里有一条通知</span>
-          <span class="right-span1"></span>
-          <span class="right-span2">2017-2-16</span>
-          <span class="right-span3">这里有一条通知</span>
-        </p>
-      </div>
     </div>
 
 

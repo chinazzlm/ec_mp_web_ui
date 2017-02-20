@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>用户列表</title>
+    <style media="screen">
+    *{
+        margin: 0;
+        padding: 0;
+      }
+      html,body{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        font-family: "PingHei","Lucida Grande", "Lucida Sans Unicode", "STHeiti", "Helvetica","Arial","Verdana","sans-serif";
+        background: #E0E9E7;
+        /*overflow: hidden;*/
+
+      }
+      a{
+        text-decoration: none;
+        color: #666;
+      }
+      .wrap{
+        width: 1280px;
+        height: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        background: #fff;
+        overflow:auto;
+        border-bottom: 5px solid #999;
+        overflow-x: hidden;
+      }
+      /*左边‘’*/
+      .wrap .wrap-left{
+        width: 66px;
+        height: 605px;
+
+        float: left;
+      }
+      .wrap .wrap-left span{
+        cursor: pointer;
+      }
+      .wrap .wrap-left .left-span1{
+        width: 100%;
+        height: 56px;
+        display: inline-block;
+        text-align: center;
+        border-right: 1px solid #eee;
+
+      }
+      .wrap .wrap-left .left-span1 img{
+        width: 46px;
+        height: 14px;
+        margin-top: 21px;
+      }
+      .wrap .wrap-left .left-span2{
+        width: 100%;
+        height: 25px;
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        margin-top: 35px;
+      }
+
+      .wrap .wrap-left .left-span2 img{
+        width: 25px;
+        height:25px;
+      }
+      /*中间*/
+      .wrap .wrap-middle{
+        width: 1197px;
+        float: left;
+        height: 600px;
+        /*border-right: 1px solid #eee;*/
+      }
+      .wrap-middle-top{
+        width:1214px;
+        height: 56px;
+        border-bottom: 1px solid #eee;
+
+      }
+      .wrap-middle-top .input{
+        width: 84%;
+        height: 40px;
+        line-height: 40px;
+        outline-style: none;
+        border: none;
+        text-indent: 25px;
+        margin-top: 8px;
+        vertical-align: middle;
+        margin-left: 1px;
+      }
+      input::-webkit-input-placeholder {
+        color:    #4488CF;
+        font-weight: bold;
+        text-indent: 15px;
+        font-size: 12px;
+      }
+      input:-moz-placeholder {
+          color:    #4488CF;
+          font-weight: bold;
+          text-indent: 15px;
+          font-size: 12px;
+      }
+      textarea::-webkit-input-placeholder {
+        color:    #4488CF;
+        font-weight: bold;
+        text-indent: 15px;
+        font-size: 12px;
+      }
+      textarea:-moz-placeholder {
+          color:    #4488CF;
+          font-weight: bold;
+          text-indent: 15px;
+          font-size: 12px;
+      }
+      .wrap-middle-bottom{
+        width:1197px;
+        height: 545px;
+      }
+      .wrap-middle-bottom table{
+        width: 100%;
+        font-size: 12px;
+        color: #666;
+      }
+      .wrap-middle-bottom tr{
+      }
+      .wrap-middle-bottom tr th{
+        display: inline-block;
+        margin: 0;
+        float: left;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+        padding: 0 54px;
+        background: #C8DDFA;
+        color: #fff;
+        /*font-weight: 400;*/
+        border-right: 1px solid #CCCCCC;
+        border-bottom: 1px solid #CCCCCC;
+        border-top: 1px solid #CCCCCC;
+      }
+      .wrap-middle-bottom tr th:first-child{
+        border-left: 1px solid #CCCCCC;
+      }
+      .wrap-middle-bottom tr td{
+        display: inline-block;
+        padding-top: 10px;
+        height: 35px;
+        font-size: 12px;
+        text-align: center;
+        border-right: 1px solid #CCCCCC;
+        border-bottom: 1px solid #CCCCCC;
+        word-wrap:break-word;
+        overflow:hidden;
+        background: #F1FAFB;
+        color: #666;
+      }
+      .wrap-middle-bottom tr .td0{
+        padding-top: 0;
+        height: 25px;
+        line-height: 25px;
+        background: #92CCE1;
+        font-size: 14px;
+      }
+
+      .wrap-middle-bottom tr .td1{
+        width:138px;
+        border-left: 1px solid #CCCCCC;
+      }
+      .wrap-middle-bottom tr .td2, .td3{
+        width:143px;
+      }
+      .wrap-middle-bottom tr .td4{
+        width:168px;
+      }
+      .wrap-middle-bottom tr .td5{
+        width:213px;
+      }
+      .wrap-middle-bottom tr .td6{
+        width:183px;
+      }
+      .wrap .wrap-header{
+        width: 170px;
+        height: 52px;
+        display: inline-block;
+      }
+      .wrap .wrap-header .wrap-header-span1{
+        display: inline-block;
+        padding: 3px 8px;
+        font-size: 12px;
+        color: #8BC1FF;
+        border: 1px solid #8BC1FF;
+        margin-right: 25px;
+        margin-left: 25px;
+        vertical-align: middle;
+      }
+      .wrap .wrap-header .wrap-header-span2{
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+      }
+      .wrap .wrap-header .wrap-header-span2 img{
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        vertical-align: middle;
+      }
+      /*标题*/
+      .title{
+        width: 100%;
+        line-height: 46px;
+        height: 46px;
+        /*background: #E0E9E7;*/
+        font-size: 14px;
+        font-weight: bold;
+        color: #47A2FF;
+        /*margin-left: 20px;*/
+        text-indent: 44px;
+        border-left: 1px solid #eee;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="wrap-left">
+        <span class="left-span1"><img src="images/logo.jpg" alt=""></span>
+        <span class="left-span2"><a href="/"><img src="images/home.png" alt=""></a></span>
+        <span class="left-span2"><a href="/requirements"><img src="images/need.png" alt=""></a></span>
+        <span class="left-span2"><a href="/strategies"><img src="images/play.png" alt=""></a></span>
+        <span class="left-span2"><a href="/excute_list"><img src="images/add1.png" alt=""></a></span>
+        <span class="left-span2"><a href="/trend_alarms"><img src="images/line.png" alt=""></a></span>
+        <span class="left-span2"><a href="/excute_check"><img src="images/warning.png" alt=""></a></span>
+        <span class="left-span2"><a href="/users"><img src="images/set.png" alt=""></a></span>
+      </div>
+
+      <div class="wrap-middle">
+        <div class="wrap-middle-top">
+          <input results="s" type="search"  name="" value=""  class="input" placeholder="请在此处搜索">
+          <p class="wrap-header">
+            <span class="wrap-header-span1">注销</span>
+            <span class="wrap-header-span2"><img src="images/weixinheader.jpg" alt=""></span>
+          </p>
+        </div>
+        <div class="wrap-middle-bottom">
+          <p class="title"><u>用户列表</u></p>
+          <table cellspacing="0">
+            <tr>
+              <td class="td1 td0">ID</td>
+              <td class="td2 td0">用户编号</td>
+              <td class="td3 td0">用户名称</td>
+              <td class="td4 td0">用户角色</td>
+              <td class="td5 td0">操作</td>
+            </tr>
+            <tr>
+              <td class="td1"><a href="#">1</a></td>
+              <td class="td2">001</td>
+              <td class="td3">包哥</td>
+              <td class="td4">系统管理员</td>
+              <td class="td5"><a href="">编辑</a></td>
+            </tr>
+            <tr>
+              <td class="td1"><a href="#">2</a></td>
+              <td class="td2">002</td>
+              <td class="td3">李哥</td>
+              <td class="td4">备份操作员</td>
+              <td class="td5"><a href="">编辑</a></td>
+            </tr>
+            <tr>
+              <td class="td1"><a href="#">3</a></td>
+              <td class="td2">003</td>
+              <td class="td3">犀利哥</td>
+              <td class="td4">备份审计员</td>
+              <td class="td5"><a href="">编辑</a></td>
+            </tr>
+            <tr>
+              <td class="td1"><a href="#">4</a></td>
+              <td class="td2">004</td>
+              <td class="td3">凤姐</td>
+              <td class="td4">数据库操作员</td>
+              <td class="td5"><a href="">编辑</a></td>
+            </tr>
+            <tr>
+              <td class="td1"><a href="#">5</a></td>
+              <td class="td2">005</td>
+              <td class="td3">王二</td>
+              <td class="td4">文件系统操作员</td>
+              <td class="td5"><a href="">编辑</a></td>
+            </tr>
+            <tr>
+              <td class="td1"><a href="#">6</a></td>
+              <td class="td2">006</td>
+              <td class="td3">张三疯</td>
+              <td class="td4">业务备份需求申请员</td>
+              <td class="td5"><a href="">编辑</a></td>
+            </tr>
+            <tr>
+              <td class="td1"><a href="#">7</a></td>
+              <td class="td2">007</td>
+              <td class="td3">包哥</td>
+              <td class="td4">系统管理员</td>
+              <td class="td5"><a href="">编辑</a></td>
+            </tr>
+            <tr>
+              <td class="td1"><a href="#">8</a></td>
+              <td class="td2">008</td>
+              <td class="td3">李哥</td>
+              <td class="td4">备份操作员</td>
+              <td class="td5"><a href="">编辑</a></td>
+            </tr>
+            <tr>
+              <td class="td1"><a href="#">9</a></td>
+              <td class="td2">009</td>
+              <td class="td3">犀利哥</td>
+              <td class="td4">备份审计员</td>
+              <td class="td5"><a href="">编辑</a></td>
+            </tr>
+            <tr>
+              <td class="td1"><a href="#">10</a></td>
+              <td class="td2">010</td>
+              <td class="td3">凤姐</td>
+              <td class="td4">数据库操作员</td>
+              <td class="td5"><a href="">编辑</a></td>
+            </tr>
+            <tr>
+              <td class="td1"><a href="#">11</a></td>
+              <td class="td2">011</td>
+              <td class="td3">王二</td>
+              <td class="td4">文件系统操作员</td>
+              <td class="td5"><a href="">编辑</a></td>
+            </tr>
+            <tr>
+              <td class="td1"><a href="#">12</a></td>
+              <td class="td2">012</td>
+              <td class="td3">张三疯</td>
+              <td class="td4">业务备份需求申请员</td>
+              <td class="td5"><a href="">编辑</a></td>
+            </tr>
+          </table>
+        <div class="" style="width:100%;height:56px;"></div>
+        </div>
+      </div>
+
+
+    </div>
+  </body>
+</html>

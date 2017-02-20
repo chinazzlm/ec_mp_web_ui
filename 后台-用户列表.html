@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>用户列表</title>
     <style media="screen">
     *{
         margin: 0;
@@ -11,8 +12,12 @@
       html,body{
         margin: 0;
         padding: 0;
+        height: 100%;
+        width: 100%;
         font-family: "PingHei","Lucida Grande", "Lucida Sans Unicode", "STHeiti", "Helvetica","Arial","Verdana","sans-serif";
-          background: #E0E9E7;
+        background: #E0E9E7;
+        overflow: hidden;
+
       }
       a{
         text-decoration: none;
@@ -20,17 +25,18 @@
       }
       .wrap{
         width: 1280px;
+        height: 100%;
         margin: 0 auto;
         box-sizing: border-box;
         background: #fff;
-        overflow: hidden;
-        border-top: 1px solid #7b7b7b;
-        border-bottom: 1px solid #DEE1E4;
+        overflow:auto;
+        border-bottom: 5px solid #999;
+        overflow-x: hidden;
       }
       /*左边‘’*/
       .wrap .wrap-left{
         width: 66px;
-        height: 605px;
+        border-right: 1px solid #eee;
 
         float: left;
       }
@@ -67,11 +73,11 @@
       .wrap .wrap-middle{
         width: 1018px;
         float: left;
-        height: 600px;
+        /*height: 600px;*/
         /*border-right: 1px solid #eee;*/
       }
       .wrap-middle-top{
-        width:1214px;
+        width:1197px;
         height: 56px;
 
 
@@ -104,21 +110,17 @@
           font-weight: bold;
       }
       .wrap-middle-bottom{
-        width: 1018px;
-        height: 545px;
-        background: #F4F4F4;
-        overflow: auto;
+        width: 1197px;
+        border-top: 1px solid #eee;
       }
       .wrap-middle-bottom table{
         width: 100%;
         font-size: 12px;
         color: #666;
-      }
-      .wrap-middle-bottom tr{
-        /*display: block;*/
+
       }
       .wrap-middle-bottom tr th{
-        /*display: inline-block;*/
+        display: inline-block;
         margin: 0;
         float: left;
         height: 30px;
@@ -136,10 +138,9 @@
         border-left: 1px solid #CCCCCC;
       }
       .wrap-middle-bottom tr td{
-        /*display: inline-block;*/
+        display: inline-block;
         padding-top: 10px;
         height: 35px;
-        float: left;
         font-size: 12px;
         text-align: center;
         border-right: 1px solid #CCCCCC;
@@ -175,9 +176,9 @@
       }
       /*右边*/
       .wrap .wrap-right{
-        width: 196px;
+        width: 179px;
         float: right;
-        height: 544px;
+        /*height: 544px;*/
         position: relative;
         margin-top: 56px;
       }
@@ -188,10 +189,10 @@
         border-bottom: 1px solid #eee;
       }
       .wrap .wrap-header{
-        width: 188px;
-        height: 56px;
+        width: 170px;
+        height: 52px;
         display: inline-block;
-        border-bottom: 1px solid #eee;
+        /*border-bottom: 1px solid #eee;*/
       }
       .wrap .wrap-header .wrap-header-span1{
         display: inline-block;
@@ -252,7 +253,8 @@
       }
       .wrap .wrap-right-p3 span{
         display: block;
-        margin: 8px 0 0 20px;
+        /*margin: 8px 0 0 20px;*/
+        text-indent: 20px;
         border-radius: 4px;
       }
       .wrap .wrap-right-p3 .right-span1{
@@ -288,26 +290,27 @@
         width: 100%;
         line-height: 46px;
         height: 46px;
-        background: #E0E9E7;
+        /*background: #E0E9E7;*/
         font-size: 14px;
         font-weight: bold;
         color: #47A2FF;
+        /*margin-left: 20px;*/
+        text-indent: 44px;
       }
     </style>
   </head>
   <body>
     <div class="wrap">
-      <p class="title"><u>主页</u></p>
+      <!-- <p class="title"><u>用户列表</u></p> -->
       <div class="wrap-left">
         <span class="left-span1"><img src="images/logo.jpg" alt=""></span>
-        <span class="left-span2"><img src="images/home.png" alt=""></span>
-        <span class="left-span2"><img src="images/need.png" alt=""></span>
-        <span class="left-span2"><img src="images/play.png" alt=""></span>
-        <span class="left-span2"><img src="images/add1.png" alt=""></span>
-        <span class="left-span2"><img src="images/line.png" alt=""></span>
-        <span class="left-span2"><img src="images/warning.png" alt=""></span>
-        <span class="left-span2"><img src="images/set.png" alt=""></span>
-
+        <span class="left-span2"><a href="/"><img src="images/home.png" alt=""></a></span>
+        <span class="left-span2"><a href="/requirements"><img src="images/need.png" alt=""></a></span>
+        <span class="left-span2"><a href="/strategies"><img src="images/play.png" alt=""></a></span>
+        <span class="left-span2"><a href="/excute_list"><img src="images/add1.png" alt=""></a></span>
+        <span class="left-span2"><a href="/trend_alarms"><img src="images/line.png" alt=""></a></span>
+        <span class="left-span2"><a href="/excute_check"><img src="images/warning.png" alt=""></a></span>
+        <span class="left-span2"><a href="/users"><img src="images/set.png" alt=""></a></span>
       </div>
 
       <div class="wrap-middle">
@@ -318,135 +321,109 @@
             <span class="wrap-header-span2"><img src="images/weixinheader.jpg" alt=""></span>
           </p>
         </div>
+
         <div class="wrap-middle-bottom">
-          <table ellspaceing="0">
-
+          <p class="title"><u>用户列表</u></p>
+          <table cellspacing="0">
             <tr>
-              <th>应用</th>
-              <th>用于备份的主机名和IP地址</th>
-              <th>硬件平台</th>
-              <th>操作系统及补丁</th>
-              <th>数据库信息</th>
-
+              <td class="td1 td0">ID</td>
+              <td class="td2 td0">用户编号</td>
+              <td class="td3 td0">用户名称</td>
+              <td class="td4 td0">用户角色</td>
+              <td class="td5 td0">操作</td>
             </tr>
             <tr>
-              <td class="td1 td0">本系统角色</td>
-              <td class="td2 td0">主机名</td>
-              <td class="td3 td0">IP地址</td>
-              <td class="td4 td0">主机型号</td>
-              <td class="td5 td0">版本</td>
-              <td class="td6 td0">名称和版本</td>
+              <td class="td1"><a href="#">1</a></td>
+              <td class="td2">001</td>
+              <td class="td3">包哥</td>
+              <td class="td4">系统管理员</td>
+              <td class="td5"><a href="">编辑</a></td>
             </tr>
             <tr>
-              <td class="td1"><a href="#">事件服务器</a></td>
-              <td class="td2">ECC-EVENT2</td>
-              <td class="td3">84.4.83.13</td>
-              <td class="td4">HP DL380</td>
-              <td class="td5">Win2KPro</td>
-              <td class="td6">Oracle 10.2.0</td>
+              <td class="td1"><a href="#">2</a></td>
+              <td class="td2">002</td>
+              <td class="td3">李哥</td>
+              <td class="td4">备份操作员</td>
+              <td class="td5"><a href="">编辑</a></td>
             </tr>
             <tr>
-              <td class="td1"><a href="#">事件服务器</a></td>
-              <td class="td2">ECC-EVENT2</td>
-              <td class="td3">84.4.83.13</td>
-              <td class="td4">HP DL380</td>
-              <td class="td5">Win2KPro</td>
-              <td class="td6">Oracle 10.2.0</td>
+              <td class="td1"><a href="#">3</a></td>
+              <td class="td2">003</td>
+              <td class="td3">犀利哥</td>
+              <td class="td4">备份审计员</td>
+              <td class="td5"><a href="">编辑</a></td>
             </tr>
             <tr>
-              <td class="td1"><a href="#">事件服务器</a></td>
-              <td class="td2">ECC-EVENT2</td>
-              <td class="td3">84.4.83.13</td>
-              <td class="td4">HP DL380</td>
-              <td class="td5">Win2KPro</td>
-              <td class="td6">Oracle 10.2.0</td>
+              <td class="td1"><a href="#">4</a></td>
+              <td class="td2">004</td>
+              <td class="td3">凤姐</td>
+              <td class="td4">数据库操作员</td>
+              <td class="td5"><a href="">编辑</a></td>
             </tr>
             <tr>
-              <td class="td1"><a href="#">事件服务器</a></td>
-              <td class="td2">ECC-EVENT2</td>
-              <td class="td3">84.4.83.13</td>
-              <td class="td4">HP DL380</td>
-              <td class="td5">Win2KPro</td>
-              <td class="td6">Oracle 10.2.0</td>
+              <td class="td1"><a href="#">5</a></td>
+              <td class="td2">005</td>
+              <td class="td3">王二</td>
+              <td class="td4">文件系统操作员</td>
+              <td class="td5"><a href="">编辑</a></td>
             </tr>
             <tr>
-              <td class="td1"><a href="#">事件服务器</a></td>
-              <td class="td2">ECC-EVENT2</td>
-              <td class="td3">84.4.83.13</td>
-              <td class="td4">HP DL380</td>
-              <td class="td5">Win2KPro</td>
-              <td class="td6">Oracle 10.2.0</td>
+              <td class="td1"><a href="#">6</a></td>
+              <td class="td2">006</td>
+              <td class="td3">张三疯</td>
+              <td class="td4">业务备份需求申请员</td>
+              <td class="td5"><a href="">编辑</a></td>
             </tr>
             <tr>
-              <td class="td1"><a href="#">事件服务器</a></td>
-              <td class="td2">ECC-EVENT2</td>
-              <td class="td3">84.4.83.13</td>
-              <td class="td4">HP DL380</td>
-              <td class="td5">Win2KPro</td>
-              <td class="td6">Oracle 10.2.0</td>
+              <td class="td1"><a href="#">7</a></td>
+              <td class="td2">007</td>
+              <td class="td3">包哥</td>
+              <td class="td4">系统管理员</td>
+              <td class="td5"><a href="">编辑</a></td>
             </tr>
             <tr>
-              <td class="td1"><a href="#">事件服务器</a></td>
-              <td class="td2">ECC-EVENT2</td>
-              <td class="td3">84.4.83.13</td>
-              <td class="td4">HP DL380</td>
-              <td class="td5">Win2KPro</td>
-              <td class="td6">Oracle 10.2.0</td>
+              <td class="td1"><a href="#">8</a></td>
+              <td class="td2">008</td>
+              <td class="td3">李哥</td>
+              <td class="td4">备份操作员</td>
+              <td class="td5"><a href="">编辑</a></td>
             </tr>
             <tr>
-              <td class="td1"><a href="#">事件服务器</a></td>
-              <td class="td2">ECC-EVENT2</td>
-              <td class="td3">84.4.83.13</td>
-              <td class="td4">HP DL380</td>
-              <td class="td5">Win2KPro</td>
-              <td class="td6">Oracle 10.2.0</td>
+              <td class="td1"><a href="#">9</a></td>
+              <td class="td2">009</td>
+              <td class="td3">犀利哥</td>
+              <td class="td4">备份审计员</td>
+              <td class="td5"><a href="">编辑</a></td>
             </tr>
             <tr>
-              <td class="td1"><a href="#">事件服务器</a></td>
-              <td class="td2">ECC-EVENT2</td>
-              <td class="td3">84.4.83.13</td>
-              <td class="td4">HP DL380</td>
-              <td class="td5">Win2KPro</td>
-              <td class="td6">Oracle 10.2.0</td>
+              <td class="td1"><a href="#">10</a></td>
+              <td class="td2">010</td>
+              <td class="td3">凤姐</td>
+              <td class="td4">数据库操作员</td>
+              <td class="td5"><a href="">编辑</a></td>
             </tr>
             <tr>
-              <td class="td1"><a href="#">事件服务器</a></td>
-              <td class="td2">ECC-EVENT2</td>
-              <td class="td3">84.4.83.13</td>
-              <td class="td4">HP DL380</td>
-              <td class="td5">Win2KPro</td>
-              <td class="td6">Oracle 10.2.0</td>
+              <td class="td1"><a href="#">11</a></td>
+              <td class="td2">011</td>
+              <td class="td3">王二</td>
+              <td class="td4">文件系统操作员</td>
+              <td class="td5"><a href="">编辑</a></td>
             </tr>
             <tr>
-              <td class="td1"><a href="#">事件服务器</a></td>
-              <td class="td2">ECC-EVENT2</td>
-              <td class="td3">84.4.83.13</td>
-              <td class="td4">HP DL380</td>
-              <td class="td5">Win2KPro</td>
-              <td class="td6">Oracle 10.2.0</td>
+              <td class="td1"><a href="#">12</a></td>
+              <td class="td2">012</td>
+              <td class="td3">张三疯</td>
+              <td class="td4">业务备份需求申请员</td>
+              <td class="td5"><a href="">编辑</a></td>
             </tr>
-            <tr>
-              <td class="td1"><a href="#">事件服务器</a></td>
-              <td class="td2">ECC-EVENT2</td>
-              <td class="td3">84.4.83.13</td>
-              <td class="td4">HP DL380</td>
-              <td class="td5">Win2KPro</td>
-              <td class="td6">Oracle 10.2.0</td>
-            </tr>
-            <tr>
-              <td class="td1"><a href="#">事件服务器</a></td>
-              <td class="td2">ECC-EVENT2</td>
-              <td class="td3">84.4.83.13</td>
-              <td class="td4">HP DL380</td>
-              <td class="td5">Win2KPro</td>
-              <td class="td6">Oracle 10.2.0</td>
-            </tr>
-
           </table>
+          <!-- <div class="" style="width:100%;height:50px;background:#f4f4f4;">
+
+          </div> -->
         </div>
       </div>
 
-      <div class="wrap-right">
+      <!-- <div class="wrap-right">
 
         <p class="wrap-right-p2">
           <img src="images/news1.png" alt=""><span>2017-2-15</span>
@@ -469,7 +446,7 @@
           <span class="right-span2">2017-2-16</span>
           <span class="right-span3">这里有一条通知</span>
         </p>
-      </div>
+      </div> -->
     </div>
   </body>
 </html>
