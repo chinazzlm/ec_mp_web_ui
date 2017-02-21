@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>设置</title>
+    <title>更换手机号</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
     <meta name="format-detection" content="telephone=no" />  
     <style media="screen">
@@ -111,15 +111,34 @@
             background: #fff;
           }
           .middle .middle-li p{
-            width: 50%;
+
             float: left;
             font-weight: 400;
             font-size: 16px;
             height: 47px;
             line-height: 47px;
           }
+          .middle .middle-li .middle-p1{
+            width: 50%;
+          }
           .middle .middle-li .middle-p2{
+            width: 50%;
             text-align: right;
+          }
+          .middle .middle-li .middle-p3{
+            width: 20%;
+
+          }
+          .middle .middle-li .middle-p4{
+            width: 60%;
+            margin-left: 25px;
+          }
+          .middle .middle-li .middle-p4 input{
+            width: 100%;
+            height: 47px;
+            line-height: 47px;
+            outline-style: none;
+            border: none;
           }
           .middle .middle-li .middle-p2 img{
             width: 20px;
@@ -127,22 +146,30 @@
             vertical-align: middle;
           }
           .middle .middle-li:last-child{
-            margin-top: 26px
+            /*margin-top: 16px*/
 
           }
-          .footer{
+          .middle-title{
             width: 100%;
-            height: 56px;
-            text-align: center;
-            line-height: 56px;
-            font-size: 16px;
-            font-weight: 400;
+            height: 26px;
+            font-size: 12px;
+            color: #999;
+            text-indent: 5px;
+          }
+          .submit{
+            width: 89%;
+            margin: 0 auto;
+          }
+          .submit-click{
+            width: 100%;
+            outline-style: none;
+            border: none;
+            height: 40px;
+            line-height: 40px;
             background: #D81E06;
             color: #fff;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            font-size: 16px;
+            border-radius: 4px;
           }
       }
     </style>
@@ -153,22 +180,18 @@
         <div class="back">
           <img src="images/back.png" alt="">
         </div>
-        <p class="top-title">设置</p>
+        <p class="top-title">换绑手机号</p>
         <div class="top-right"><img src="images/news.png" alt=""><p>15</p></div>
       </div>
       <div class="middle">
+        <p class="middle-title">请输入你需要绑定的新手机号</p>
         <ul class="middle-ul">
-          <li class="middle-li"><p class="middle-p1">个人信息</p><p class="middle-p2"><img src="images/jiantou-right.png" alt=""></p></li>
-          <li class="middle-li"><p class="middle-p1">地址管理</p><p class="middle-p2"><img src="images/jiantou-right.png" alt=""></p></li>
-          <li class="middle-li"><p class="middle-p1">赠票资质</p><p class="middle-p2"><img src="images/jiantou-right.png" alt=""></p></li>
-          <li class="middle-li"><p class="middle-p1">账户安全</p><p class="middle-p2"><img src="images/jiantou-right.png" alt=""></p></li>
-          <li class="middle-li"><p class="middle-p1">关于我们</p><p class="middle-p2"><img src="images/jiantou-right.png" alt=""></p></li>
-        </ul>
-
+          <li class="middle-li"><p class="middle-p1">国家和地区</p><p class="middle-p2"><span>中国大陆 86</span><img src="images/jiantou-right.png" alt=""></p></li>
+          <li class="middle-li"><p class="middle-p3">新手机号</p><p class="middle-p4"><input type="text" name="" value="" placeholder="请输入手机号"></p></li>
       </div>
-    </div>
-    <div class="footer">
-      退出当前帐号
+      <div class="submit">
+        <input type="submit" name="" value="下 一 步" class="submit-click">
+      </div>
     </div>
   </body>
 </html>
