@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>备份策略需求申请</title>
-    <!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"type="text/javascript"></script> -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"type="text/javascript"></script>
     <style media="screen">
     *{
         margin: 0;
@@ -270,7 +270,13 @@
         display: none;
       }
       .excel-l10 .data1{
+        width: 37px;
+        border: 1px solid #999;
+        overflow: hidden;
+        position: absolute;
+        top: 19px;
         left: 185px;
+        display: none;
       }
       .excel-l10 .data span{
         display: inline-block;
@@ -281,7 +287,19 @@
         box-sizing: border-box;
         border-bottom: 1px solid #999;
       }
+      .excel-l10 .data1 span{
+        display: inline-block;
+        text-align: center;
+        width: 37px;
+        height: 20px;
+        line-height:20px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #999;
+      }
       .excel-l10 .data span:last-child{
+        border-bottom:none;
+      }
+      .excel-l10 .data1 span:last-child{
         border-bottom:none;
       }
       .excel .margin-top{
@@ -403,6 +421,15 @@
               <input type="text" name="" value="" class="inputtwo sclect inputthree" data-rola="data"></li>
 
             </ul>
+            <p style="width:92%;margin:0 auto;font-size:12px;margin-top:37px;margin-bottom:6px;color:#D42828;margin-bottom:16px;">备份当日作业发起建议时间段</p>
+            <ul class="excel-ul2 margin-top">
+              <li class="excel-l10 "><span>开始</span>
+              &nbsp
+              <input type="text" name="" value="" class="inputtwo inputthree">
+              &nbsp结束 &nbsp
+              <input type="text" name="" value="" class="inputtwo sclect inputthree" data-rola="data"></li>
+
+            </ul>
           </div>
           <div class="excel-linetwo">
             <p style="width:92%;margin:0 auto;font-size:12px;margin-top:16px;margin-bottom:16px;font-weight:bold;color:#7A8CF0">备份历史趋势分析(默认为100，即允许任何差异)</p>
@@ -434,8 +461,8 @@
                   &nbsp
                   <input type="text" name="" value="" class="inputtwo">
                   &nbsp/次 &nbsp
-                  <input type="text" name="" value="" class="inputtwo sclect" data-rola="data">
-                  <p class="data data1"><span>日</span><span>周</span><span>月</span><span>季</span><span>年</span></p>
+                  <input type="text" name="" value="" class="inputtwo sclect1 " data-rola="data">
+                  <p class="data1"><span>日</span><span>周</span><span>月</span><span>季</span><span>年</span></p>
                 </li>
 
               </ul>
@@ -457,7 +484,9 @@
       $(function(){
         $(".excel .excel-ul2 li .sclect").click(function(){
           $(".data").toggle();
-
+        });
+        $(".excel .excel-ul2 li .sclect1").click(function(){
+          $(".data1").toggle();
         })
       })
     </script>
