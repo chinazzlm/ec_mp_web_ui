@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>备份策略需求列表</title>
+    <title>备份策略列表</title>
     <style media="screen">
     *{
         margin: 0;
@@ -71,10 +71,10 @@
       }
       /*中间*/
       .wrap .wrap-middle{
-        width: 1018px;
+        width: 1196px;
         float: left;
-        /*height: 600px;*/
-        border-left: 1px solid #ccc;
+        min-height: 550px;
+        border-left:1px solid #ccc;
       }
       .wrap-middle-top{
         width:1197px;
@@ -288,17 +288,27 @@
         /*margin-left: 20px;*/
         text-indent: 44px;
       }
-      /*不遵从按钮*/
-      .wrap-middle-bottom .title-click{
-        float: right;
-        margin-right: 15px;
-        font-size: 12px;
+      .judge{
+        width: 100%;
+        text-align: right;
+        height: 76px;
+
       }
-      .wrap-middle-bottom .title-click span{
-        vertical-align: top;
-        margin-right: 5px;
-        font-size: 16px;
+      .judge span{
         display: inline-block;
+        padding: 3px 8px;
+        font-size: 12px;
+        color: #fff;
+        border-radius: 4px;
+        margin: 20px 15px 0;
+        cursor: pointer;
+        font-weight: 400;
+      }
+      .judge span:first-child{
+        background: #7b6ad0;
+      }
+      .judge span:last-child{
+        background: #FF4400;
       }
     </style>
   </head>
@@ -325,27 +335,17 @@
           </p>
         </div>
         <div class="wrap-middle-bottom">
-          <p class="title"><u>备份策略需求列表</u><span class="title-click"><span>+</span><u>新建需求</u></span></p>
+          <p class="title"><u>备份策略列表</u></p>
           <table cellspacing="0">
             <tr>
-              <th>应用</th>
-              <th colspan="2">用于备份的主机名和IP地址</th>
-              <th>硬件平台</th>
-              <th>操作系统及补丁</th>
-              <th>数据库信息</th>
-              <th>流程状态</th>
-              <th>编辑</th>
+              <th>策略名</th>
+              <th>应用名</th>
+              <th>子应用名</th>
+              <th>主机名</th>
+              <th>IP地址</th>
+              <th>备份保留周期</th>
             </tr>
-            <tr>
-              <td class="td1 td0">本系统角色</td>
-              <td class="td2 td0">主机名</td>
-              <td class="td3 td0">IP地址</td>
-              <td class="td4 td0">主机型号</td>
-              <td class="td5 td0">版本</td>
-              <td class="td6 td0">名称和版本</td>
-              <td class="td6 td0"></td>
-              <td class="td6 td0"></td>
-            </tr>
+
             <tr>
               <td class="td1"><a href="requirement_view">CTI数据库服务器</a></td>
               <td class="td2">SP595FAP</td>
@@ -353,8 +353,8 @@
               <td class="td4">IBM P595-F</td>
               <td class="td5">AIX 5.2</td>
               <td class="td6">Oracle9i Svr</td>
-              <td class="td6">待审计</td>
-              <td class="td6"><a href="#">[<a href="requirement_edit">编辑</a>]</a></td>
+
+
 
             </tr>
             <tr>
@@ -364,8 +364,8 @@
               <td class="td4">HP DL380</td>
               <td class="td5">Win2KPro</td>
               <td class="td6">Oracle 10.2.0</td>
-              <td class="td6">待审计</td>
-              <td class="td6"><a href="#">[<a href="requirement_edit">编辑</a>]</a></td>
+
+
 
             </tr>
             <tr>
@@ -375,8 +375,8 @@
               <td class="td4">HP DL380</td>
               <td class="td5">Win2KPro</td>
               <td class="td6">Oracle 10.2.0</td>
-              <td class="td6 ">待部署</td>
-              <td class="td6"><a href="#">[<a href="requirement_edit">编辑</a>]</a></td>
+
+
 
             </tr>
             <tr>
@@ -386,8 +386,8 @@
               <td class="td4"></td>
               <td class="td5">Win2KPro</td>
               <td class="td6">Oracle 10.2.0</td>
-              <td class="td6 ">待部署</td>
-              <td class="td6"><a href="#">[<a href="requirement_edit">编辑</a>]</a></td>
+
+
 
             </tr>
             <tr>
@@ -397,8 +397,8 @@
               <td class="td4">HP DL380</td>
               <td class="td5">Win2KPro</td>
               <td class="td6">Oracle 10.2.0</td>
-              <td class="td6 ">已审计</td>
-              <td class="td6"><a href="#">[<a href="requirement_edit">编辑</a>]</a></td>
+
+
 
             </tr>
             <tr>
@@ -408,8 +408,8 @@
               <td class="td4">HP DL380</td>
               <td class="td5">Win2KPro</td>
               <td class="td6">Oracle 10.2.0</td>
-              <td class="td6 ">已审计</td>
-              <td class="td6"><a href="#">[<a href="requirement_edit">编辑</a>]</a></td>
+
+
 
             </tr>
             <tr>
@@ -419,8 +419,8 @@
               <td class="td4">HP DL380</td>
               <td class="td5">Win2KPro</td>
               <td class="td6"></td>
-              <td class="td6 ">已审计</td>
-              <td class="td6"><a href="#">[<a href="requirement_edit">编辑</a>]</a></td>
+
+
 
             </tr>
             <tr>
@@ -430,8 +430,8 @@
               <td class="td4">HP DL380</td>
               <td class="td5">Win2KPro</td>
               <td class="td6">Oracle 10.2.0</td>
-              <td class="td6 ">待部署</td>
-              <td class="td6"><a href="#">[<a href="requirement_edit">编辑</a>]</a></td>
+
+
 
             </tr>
             <tr>
@@ -441,8 +441,8 @@
               <td class="td4">HP DL380</td>
               <td class="td5">Win2KPro</td>
               <td class="td6">Oracle 10.2.0</td>
-              <td class="td6 ">待部署</td>
-              <td class="td6"><a href="#">[<a href="requirement_edit">编辑</a>]</a></td>
+
+
 
             </tr>
             <tr>
@@ -452,8 +452,8 @@
               <td class="td4">HP DL380</td>
               <td class="td5">Win2KPro</td>
               <td class="td6">Oracle 10.2.0</td>
-              <td class="td6 ">已审计</td>
-              <td class="td6"><a href="#">[<a href="requirement_edit">编辑</a>]</a></td>
+
+
 
             </tr>
             <tr>
@@ -463,8 +463,8 @@
               <td class="td4">HP DL380</td>
               <td class="td5">Win2KPro</td>
               <td class="td6"></td>
-              <td class="td6 ">已审计</td>
-              <td class="td6"><a href="#">[<a href="requirement_edit">编辑</a>]</a></td>
+
+
 
             </tr>
             <tr>
@@ -474,8 +474,8 @@
               <td class="td4">HP DL380</td>
               <td class="td5">Win2KPro</td>
               <td class="td6">Oracle 10.2.0</td>
-              <td class="td6 ">待部署</td>
-              <td class="td6"><a href="#">[<a href="requirement_edit">编辑</a>]</a></td>
+
+
 
             </tr>
             <tr>
@@ -485,11 +485,13 @@
               <td class="td4">HP DL380</td>
               <td class="td5">Win2KPro</td>
               <td class="td6">Oracle 10.2.0</td>
-              <td class="td6 ">待部署</td>
-              <td class="td6"><a href="#">[<a href="requirement_edit">编辑</a>]</a></td>
+
+
 
             </tr>
+
           </table>
+          <p class="judge"><span>修改</span><span>删 除</span></p>
         </div>
         <div class="" style="width:100%;height:56px;"></div>
       </div>
