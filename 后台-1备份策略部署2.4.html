@@ -3,8 +3,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>备份策略需求确认</title>
-    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"type="text/javascript"></script>
+    <title>备份策略设计及评审</title>
+    <!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"type="text/javascript"></script> -->
     <style media="screen">
     *{
         margin: 0;
@@ -76,10 +76,12 @@
       }
       /*中间*/
       .wrap .wrap-middle{
-        width: 1196px;
+        width: 1197px;
         float: left;
+        /*height: 600px;*/
         min-height: 550px;
         border-left:1px solid #eee;
+        box-sizing: border-box;
       }
       .wrap-middle-top{
         width:1214px;
@@ -155,13 +157,14 @@
       /*表格部分*/
       .wrap .excel{
         width: 888px;
-        height: 757px;
+        height: 640px;
         border: 1px solid #999;
         margin: 20px auto 0;
       }
       .excel .excel-lineone{
         border-bottom: 1px solid #77787a;
-        padding-bottom: 11px;
+        padding-bottom: 25px;
+        margin-bottom: 10px;
       }
       .excel .excel-title{
         width: 91%;
@@ -197,7 +200,7 @@
         font-size: 12px;
         margin-right: 2px;
         outline-style: none;
-        margin-right: 10px;
+        margin-right: 8px;
         float: right;
       }
       .excel .excel-ul li .input1{
@@ -219,7 +222,6 @@
           font-weight: normal;
       }
       .excel .excel-linetwo{
-        border-bottom: 1px solid #77787a;
         padding-bottom: 11px;
       }
       .excel .excel-ul2{
@@ -258,7 +260,7 @@
         width: 306px;
       }
       .excel .excel-ul2 .excel-l1 span{
-        margin-right: 0;
+        margin-right: 1px;
       }
       .excel-l10 .data{
         width: 37px;
@@ -270,24 +272,9 @@
         display: none;
       }
       .excel-l10 .data1{
-        width: 37px;
-        border: 1px solid #999;
-        overflow: hidden;
-        position: absolute;
-        top: 19px;
         left: 185px;
-        display: none;
       }
       .excel-l10 .data span{
-        display: inline-block;
-        text-align: center;
-        width: 37px;
-        height: 20px;
-        line-height:20px;
-        box-sizing: border-box;
-        border-bottom: 1px solid #999;
-      }
-      .excel-l10 .data1 span{
         display: inline-block;
         text-align: center;
         width: 37px;
@@ -299,14 +286,11 @@
       .excel-l10 .data span:last-child{
         border-bottom:none;
       }
-      .excel-l10 .data1 span:last-child{
-        border-bottom:none;
-      }
       .excel .margin-top{
-        margin-top: 4px;
+        margin-top: 15px;
       }
       .excel .margin-top .excel-l10 span{
-        margin-right: 15px;
+        margin-right: 1px;
       }
       .excel .margin-top li{
         width: 600px;
@@ -315,14 +299,14 @@
         width: 140px;
       }
       .excel .margin-top li .sclect{
-        margin-left: 57px;
+        margin-left: 18px;
       }
       .excel .margin-top1 .excel-l10 span{
         display: inline-block;
-        width: 180px;
+        width: 64px;
       }
       .excel .margin-top1 .excel-l10 .inputthree{
-        width: 40px;
+        width: 305px;
       }
       .excel .excel-ul2 .li-width{
         width: 300px;
@@ -340,15 +324,35 @@
         overflow: auto;
       }
       .excel .submitbottom{
-        width: 92%;
+        width: 98%;
         margin: 0 auto;
         text-align: right;
-        margin-top: 40px;
+        margin-top:28px;
       }
       .excel .submitbottom input{
         margin-left: 15px;
         padding: 0 9px;
       }
+      .excel .excel-ul .li-width3{
+        width: 20%;
+      }
+
+    /*新样式更改*/
+    .excel .margin-top .excel-l16 span {
+      margin-right: -15px;
+    }
+    .excel .excel-ul .li-width3{
+      width: 20%;
+    }
+    .excel .excel-ul .li-width4{
+      width: 30%;
+    }
+    .excel .margin-top .excel-l10 .inputfour{
+      margin-right: 71px;
+    }
+    .excel .margin-top2 {
+      margin-top: 20px;
+    }
     </style>
   </head>
   <body>
@@ -376,7 +380,7 @@
 
         <!-- 表格部分 -->
         <div class="excel">
-          <p class="excel-title">备份策略需求确认</p>
+          <p class="excel-title">备份策略设计及评审</p>
           <div class="excel-lineone">
             <ul class="excel-ul">
               <li><span>应用名</span><input type="text" name="" value="" readonly= readonly class="input1"></li>
@@ -385,18 +389,18 @@
               <li><span>服务器类型</span><input type="text" name="" value="" readonly= readonly class="input4"></li>
             </ul>
             <ul class="excel-ul">
-              <li><span>IP地址</span><input type="text" name="" value=""readonly= readonly class="input1"></li>
-              <li><span>操作系统及补丁</span><input type="text" name="" readonly= readonly value="" class="input2"></li>
-              <li><span>备份文件类型</span><input type="text" name="" readonly= readonly value="" class="input3"></li>
-              <li><span>数据库类型</span><input type="text" name="" readonly= readonly value="" class="input4"></li>
+              <li><span>IP地址</span><input type="text" name="" value="" readonly= readonly class="input1"></li>
+              <li><span>操作系统及补丁</span><input type="text" name="" value="" readonly= readonly class="input2"></li>
+              <li><span>备份文件类型</span><input type="text" name="" value="" readonly= readonly class="input3"></li>
+              <li><span>数据库类型</span><input type="text" name="" value="" readonly= readonly class="input4"></li>
             </ul>
             <ul class="excel-ul excel-ul1">
-              <li><span>已有策略</span><input type="text" name="" value="" readonly= readonly class="input1"></li>
               <li><span>大数据类型</span><input type="text" name="" value="" readonly= readonly class="input6"></li>
               <li><span>文件类型</span><input type="text" name="" value="" readonly= readonly class="input7"></li>
             </ul>
           </div>
           <div class="excel-linetwo">
+
             <ul class="excel-ul2">
               <li class="excel-l10 excel-l1">
                 <span>备份频率</span>
@@ -404,89 +408,66 @@
                 <input type="text" name="" value="" readonly= readonly class="inputtwo">
                 &nbsp/次 &nbsp
                 <input type="text" name="" value="" readonly= readonly class="inputtwo sclect" data-rola="data">
-                <p class="data"><span>日</span><span>周</span><span>月</span><span>季</span><span>年</span></p>
+                <p data-rola="data" class="data"><span>日</span><span>周</span><span>月</span><span>季</span><span>年</span></p>
               </li>
-              <li class="excel-l11"><span class="excel-span1">特殊备注</span><input type="text" name="" value="" readonly= readonly></li>
             </ul>
             <ul class="excel-ul2">
-              <li class="excel-l10 "><span>保存周期</span>&nbsp<input type="text" name="" value="" readonly= readonly class="inputtwo"></li>
-              <li class="excel-l11 "><span class="excel-span1">特殊备注</span><input type="text" name="" value="" readonly= readonly></li>
+              <li class="excel-l10 excel-l1">
+                <span>保存周期</span>
+                &nbsp
+                <input type="text" name="" value="" readonly= readonly class="inputtwo sclect" data-rola="data">
+                <p data-rola="data" class="data"><span>日</span><span>周</span><span>月</span><span>季</span><span>年</span></p>
+              </li>
             </ul>
-            <p style="width:92%;margin:0 auto;font-size:12px;margin-top:37px;margin-bottom:6px;color:#D42828;margin-bottom:16px;">备份当日应用空闲时间段</p>
+            <p style="width:92%;margin:0 auto;font-size:12px;margin-top:37px;margin-bottom:6px;color:#D42828;margin-bottom:16px;">备份当日作业发起时间段</p>
             <ul class="excel-ul2 margin-top">
               <li class="excel-l10 "><span>开始</span>
-              &nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
               <input type="text" name="" value="" readonly= readonly class="inputtwo inputthree">
-              &nbsp结束 &nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp备份策略生效时间 &nbsp
               <input type="text" name="" value="" readonly= readonly class="inputtwo sclect inputthree" data-rola="data"></li>
 
             </ul>
-            <p style="width:92%;margin:0 auto;font-size:12px;margin-top:37px;margin-bottom:6px;color:#D42828;margin-bottom:16px;">备份当日作业发起建议时间段</p>
             <ul class="excel-ul2 margin-top">
-              <li class="excel-l10 "><span>开始</span>
+              <li class="excel-l10 "><span>备份角色</span>
               &nbsp
-              <input type="text" name="" value="" readonly= readonly class="inputtwo inputthree">
-              &nbsp结束 &nbsp
-              <input type="text" name="" value="" readonly= readonly class="inputtwo sclect inputthree" data-rola="data"></li>
+              <input type="text" name="" value="" readonly= readonly class="inputtwo inputthree inputfour">
+              &nbsp连接设备 &nbsp
+              <input type="text" name="" value="" readonly= readonly class="inputtwo sclect inputthree " data-rola="data"></li>
 
             </ul>
-          </div>
-          <div class="excel-linetwo">
-            <p style="width:92%;margin:0 auto;font-size:12px;margin-top:16px;margin-bottom:16px;font-weight:bold;color:#7A8CF0">备份历史趋势分析(默认为100，即允许任何差异)</p>
             <ul class="excel-ul2 margin-top margin-top1">
-              <li class="excel-l10 "><span>历史备份完成时间差异容忍度</span>
+              <li class="excel-l10 excel-l16"><span>备份内容</span>
               &nbsp
               <input type="text" name="" value="" readonly= readonly class="inputtwo inputthree">
-              &nbsp%
             </ul>
-            <ul class="excel-ul2 margin-top margin-top1">
-              <li class="excel-l10 "><span>历史备份完成数据量差异容忍度</span>
-              &nbsp
-              <input type="text" name="" value="" readonly= readonly class="inputtwo inputthree">
-              &nbsp%
-            </ul>
-            <ul class="excel-ul2 margin-top margin-top1">
-              <li class="excel-l10 "><span>历史备份完成文件数目差异容忍度</span>
-              &nbsp
-              <input type="text" name="" value="" readonly= readonly class="inputtwo inputthree">
-              &nbsp%
-            </ul>
-          </div>
-          <p style="width:92%;margin:0 auto;font-size:12px;margin-top:16px;margin-bottom:16px;font-weight:bold;color:#5DAE8B">首次备份启动时间</p>
-          <div class="excel-linetwo">
-
-              <ul class="excel-ul2 ">
-                <li class="excel-l10 excel-l1 li-width">
-                  <span>备份策略审计频率</span>
-                  &nbsp
-                  <input type="text" name="" value="" readonly= readonly class="inputtwo">
-                  &nbsp/次 &nbsp
-                  <input type="text" name="" value="" readonly= readonly class="inputtwo sclect1 " data-rola="data">
-                  <p class="data1"><span>日</span><span>周</span><span>月</span><span>季</span><span>年</span></p>
-                </li>
-
+            <div class="excel-lineone">
+              <ul class="excel-ul">
+                <li><span>Schedule</span><input type="text" name="" value="" readonly= readonly class="input1"></li>
+                <li><span>存储单元</span><input type="text" name="" value="" readonly= readonly class="input2"></li>
+                <li class="li-width3"><span>磁带池</span><input type="text" name="" value="" readonly= readonly class="input3"></li>
+                <li class="li-width4"><span>Archive 处理</span><input type="text" name="" value="" readonly= readonly class="input4"></li>
               </ul>
 
-          </div>
-          <div class="bottom">
-            <p style="width:92%;margin:0 auto;font-size:12px;margin-top:16px;margin-bottom:16px;font-weight:bold;color:#2D7D8F;text-align:left;">其他描述</p>
-            <textarea></textarea>
-          </div>
-          <p class="submitbottom">
-            <input type="submit" name="" value="返 回" readonly= readonly>
-            <input type="submit" name="" value="提 交" readonly= readonly>
-          </p>
-        </div>
+            </div>
+            <ul class="excel-ul2 margin-top margin-top1 margin-top2">
+              <li class="excel-l10 excel-l16"><span>备份内容</span>
+              &nbsp
+              <input type="text" name="" value="" readonly= readonly readonly= readonly class="inputtwo inputthree">
+            </ul>
 
+        </div>
+        <p class="submitbottom">
+          <input type="submit" name="" value="返 回">
+          <input type="submit" name="" value="工 单 完 成 提 交">
+        </p>
       </div>
     </div>
     <script type="text/javascript">
       $(function(){
         $(".excel .excel-ul2 li .sclect").click(function(){
           $(".data").toggle();
-        });
-        $(".excel .excel-ul2 li .sclect1").click(function(){
-          $(".data1").toggle();
+
         })
       })
     </script>

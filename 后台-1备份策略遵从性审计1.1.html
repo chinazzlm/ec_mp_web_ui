@@ -74,7 +74,7 @@
       }
       /*中间*/
       .wrap .wrap-middle{
-        width: 1196px;
+        width: 1195px;
         float: left;
         min-height: 550px;
         border-left:1px solid #eee;
@@ -114,63 +114,7 @@
         border-top: 1px solid #eee;
         overflow: hidden;
       }
-      .infor .three,.two{
-        overflow: hidden;
-        display: inline-block;
-        width: 624px;
-      }
-      .infor .infor-left{
-        width: 600px;
-        float: left;
-        margin: 0 0 0 10px;
-        box-sizing: border-box;
-      }
-      .infor ul{
-        width: 100%;
-        display: flex;
-        border: 1px solid #c9c9c9;
-        border-bottom: none;
-      }
-      .infor ul:last-child{
-        border-bottom:1px solid #c9c9c9;
-      }
-      .infor ul li{
-        flex: 1;
-        height: 27px;
-        line-height: 27px;
-        font-size: 12px;
-        border-right: 1px solid #c9c9c9;
-        box-sizing: border-box;
-        text-align: center;
-        color: #666;
-      }
-      .infor ul li:last-child{
-        cursor: pointer;
-        border-right: none;
-      }
-      .infor ul li:last-child :hover{
-        color: #47A2FF;
-      }
-      .infor .infor-right{
-        width: 350px;
-        height: 545px;
-        float: left;
-        box-sizing: border-box;
-      }
-      .infor .infor-right p{
-        width: 400px;
-        height: 27px;
-        line-height: 27px;
-        font-size: 12px;
-        color: #666;
-        border: 1px solid #c9c9c9;
-        border-left:none;
-        text-indent: 15px;
-        border-bottom: none;
-      }
-      .infor .infor-right p:last-child{
-        border-bottom:1px solid #c9c9c9;
-      }
+
       .wrap .wrap-header{
         width: 170px;
         height: 52px;
@@ -200,47 +144,23 @@
         border-radius: 20px;
         vertical-align: middle;
       }
-      canvas{
-        background:#fff;
-        display:block;
-        margin: 25px 0;
-      }
-      #canvas{
-        margin: 0;
-      }
-      /*标题*/
-      .title{
-        width: 100%;
-        line-height: 46px;
-        height: 46px;
-        display: inline-block;
-        font-size: 14px;
-        font-weight: bold;
-        color: #47A2FF;
-        /*margin-left: 20px;*/
-        text-indent: 44px;
-      }
-      /*不遵从按钮*/
-      .infor .title-click{
-        float: right;
-        margin-right: 15px;
-        font-size: 12px;
-      }
-      .infor .title-click input{
-        vertical-align: middle;
-        margin-right: 5px;
-      }
+
 
       /*one的样式*/
       .infor .one{
         width: 282px;
-        height: 195px;
+        height: 43px;
         background: #BFE2CC;
         position: relative;
         text-align: center;
         margin-left: 10px;
         margin-top: 10px;
         display: inline-block;
+      }
+      .infor .antherone{
+        display: inline-block;
+        margin-left: 25px;
+        font-size: 12px;
       }
       .infor .one input{
         height: 18px;
@@ -251,11 +171,12 @@
       .infor .one .one-select{
         width: 151px;
         display:block;
-        border: 1px solid #fff;
+        border: 1px solid #eee;
         position: absolute;
-        top: 53px;
-        left: 65px;
-        /*display: none;*/
+        top: 34px;
+        left: 99px;
+        display: none;
+        background: #fff;
       }
       .infor .one .one-select span{
         width: 100%;
@@ -267,15 +188,40 @@
         border-bottom: 1px solid #fff;
       }
       .infor .content{
-        display: inline-block;
-        width: 300px;
-        float: left;
+        width: 1188px;
         margin-right: 226px;
       }
-      .infor .two{
-        margin-top: 10px;
-        padding-bottom: 141px;
-        border-bottom: 1px solid #999;
+      /*infor-left*/
+      .infor .infor-left{
+        width: 300px;
+        float: left;
+        margin-left: 10px;
+        border: 1px solid #ccc;
+        border-left: none;
+        margin-right: 100px;
+        margin-top: 50px;
+      }
+      .infor .infor-left ul{
+        display: flex;
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+
+      }
+      .infor .infor-left ul li{
+        flex: 1;
+        border-left: 1px solid #ccc;
+        text-align: center;
+        height: 26px;
+        line-height: 26px;
+      }
+      .infor .infor-right{
+        width:527px;
+        float: left;
+        margin-left: 10px;
+        border: 1px solid #ccc;
+        border-left: none;
+        margin-right: 100px;
+        margin-left: 100px;
       }
     </style>
   </head>
@@ -304,6 +250,7 @@
         <div class="infor">
           <div class="content">
             <div class="one">
+              业务分类
               <input type="text" name="" value="" class="one-input">
               <p class="one-select">
                 <span>A类应用</span>
@@ -312,87 +259,108 @@
                 <span>D类应用</span>
               </p>
             </div>
-            <div class="one">
-              <input type="text" name="" value="" class="one-input">
-              <p class="one-select">
-                <span>A类应用</span>
-                <span>B类应用</span>
-                <span>C类应用</span>
-                <span>D类应用</span>
-              </p>
+            <div class="antherone">
+              <span>主机名 <input type="text" name="" value="">  </span>
+              <span>主机名 <input type="text" name="" value="">  </span>
+              <span>主机名 <input type="text" name="" value="">  </span>
+              <span><input type="submit" name="" value="查 看"></span>
             </div>
+
           </div>
-          <div class="two">
-            <div class="infor-left">
-              <ul>
-                <li>序号</li>
-                <li>策略号</li>
-                <li>是否差异</li>
-              </ul>
-              <div class="infor-left-bottom">
-                <ul>
-                  <li></li>
-                  <li></li>
-                  <li><img src="images/yes.png" alt=""></li>
-                </ul>
-              </div>
-            </div>
+          <div class="infor-left">
+            <ul>
+              <li>序号</li>
+              <li>策略号</li>
+              <li>是否差异</li>
+            </ul>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
           </div>
-          <div class="three">
-            <p class="title"><span class="title-click"><input type="checkbox" name="" value=""><u>仅显示不遵从</u></span></p>
-            <div class="infor-left">
-              <ul>
-                <li>比对项字段</li>
-                <li>业务需求</li>
-                <li>实际部署</li>
-                <li>是否遵从</li>
-              </ul>
-              <div class="infor-left-bottom">
-                <ul>
-                  <li>备份频率</li>
-
-
-                  <li></li>
-                  <li></li>
-                  <li><img src="images/yes.png" alt=""></li>
-                </ul>
-                <ul>
-                  <li>日期</li>
-
-
-                  <li></li>
-                  <li></li>
-                  <li><img src="images/yes.png" alt=""></li>
-                </ul>
-                <ul>
-                  <li>开始时间</li>
-
-
-                  <li></li>
-                  <li></li>
-                  <li><img src="images/yes.png" alt=""></li>
-                </ul>
-                <ul>
-                  <li>保留时间</li>
-
-
-                  <li></li>
-                  <li></li>
-                  <li><img src="images/yes.png" alt=""></li>
-                </ul>
-                <ul>
-                  <li>数据量</li>
-
-
-                  <li></li>
-                  <li></li>
-                  <li><img src="images/yes.png" alt=""></li>
-                </ul>
-
-              </div>
-            </div>
+          <div class="infor-right infor-left">
+            <ul>
+              <li>比对项字段</li>
+              <li>业务需求</li>
+              <li>实际部署</li>
+              <li>是否遵从</li>
+            </ul>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li><img src="images/yes.png" alt=""></li>
+            </ul>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li><img src="images/no.png" alt=""></li>
+            </ul>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li><img src="images/yes.png" alt=""></li>
+            </ul>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li><img src="images/no.png" alt=""></li>
+            </ul>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li><img src="images/yes.png" alt=""></li>
+            </ul>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li><img src="images/no.png" alt=""></li>
+            </ul>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li><img src="images/yes.png" alt=""></li>
+            </ul>
           </div>
         </div>
+        <p style="text-align:right;margin-top:35px;"><input type="submit" name="" value="导 出" style="margin-right:150px;"></p>
         <div class="" style="width:100%;height:56px;"></div>
       </div>
     </div>
