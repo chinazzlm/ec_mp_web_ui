@@ -14,10 +14,10 @@
         margin: 0;
         padding: 0;
         height: 100%;
-        width: 100%;
+        /*width: 100%;*/
         font-family: "PingHei","Lucida Grande", "Lucida Sans Unicode", "STHeiti", "Helvetica","Arial","Verdana","sans-serif";
         background: #E0E9E7;
-        overflow: hidden;
+
 
       }
       li{
@@ -29,13 +29,12 @@
       }
       .wrap{
         width: 1280px;
+        min-width: 1280px;
         height: 100%;
         margin: 0 auto;
         box-sizing: border-box;
         background: #fff;
-        overflow:auto;
-        border-bottom: 5px solid #999;
-        overflow-x: hidden;
+
       }
       /*左边‘’*/
       .wrap .wrap-left{
@@ -66,7 +65,7 @@
         display: inline-block;
         text-align: center;
         vertical-align: middle;
-        margin-top: 35px;
+        margin-top: 25px;
       }
 
       .wrap .wrap-left .left-span2 img{
@@ -274,20 +273,91 @@
       .infor .infor-left ul .li-width{
         width: 134px;
       }
+      /*标题*/
+      .title{
+        width: 100%;
+        line-height: 46px;
+        height: 46px;
+        /*background: #E0E9E7;*/
+        font-size: 14px;
+        font-weight: bold;
+        color: #47A2FF;
+        /*margin-left: 20px;*/
+        text-indent: 44px;
+      }
+      /*左侧菜单提示信息样式*/
+      .wrap .wrap-left p{
+        position: absolute;
+        display: inline-block;
+        padding: 2px 9px;
+        color: #A92429;
+        font-size: 12px;
+        display: none;
+        background: #fff;
+        z-index: 99;
+      }
+      .wrap .wrap-left .hover1{
+        top:82px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover2{
+        top:132px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover3{
+        top:184px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover4{
+        top:233px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover5{
+        top:285px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover6{
+        top:332px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover7{
+        top:382px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover8{
+        top:434px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover9{
+        top:484px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover10{
+        top:536px;
+        left: 90px;
+      }
+      .wrap .wrap-left span:hover p{
+        display: block;
+      }
     </style>
   </head>
   <body>
     <div class="wrap">
       <div class="wrap-left">
         <span class="left-span1"><img src="images/logo.jpg" alt=""></span>
-        <span class="left-span2"><a href="/"><img src="images/home.png" alt=""></a></span>
-        <span class="left-span2"><a href="/requirements"><img src="images/need.png" alt=""></a></span>
-        <span class="left-span2"><a href="/excute_list"><img src="images/add1.png" alt=""></a></span>
-        <span class="left-span2"><a href="/strategies"><img src="images/play.png" alt=""></a></span>
-
-        <span class="left-span2"><a href="/trend_alarms"><img src="images/line.png" alt=""></a></span>
-        <span class="left-span2"><a href="/excute_check"><img src="images/warning.png" alt=""></a></span>
-        <span class="left-span2"><a href="/users"><img src="images/set.png" alt=""></a></span>
+        <span class="left-span2">
+          <a href="/"><img src="images/home.png" alt=""></a>
+          <p class="hover1">首页</p>
+        </span>
+        <span class="left-span2"><a href="#"><img src="images/need.png" alt=""></a><p class="hover2">备份策略需求申请</p></span>
+        <span class="left-span2"><a href="#"><img src="images/add1.png" alt=""></a><p class="hover3">备份策略需求变更申请</p></span>
+        <span class="left-span2"><a href="#"><img src="images/play.png" alt=""></a><p class="hover4">备份策略查询</p></span>
+        <span class="left-span2"><a href="#"><img src="images/line.png" alt=""></a><p class="hover5">备份策略遵从性审计</p></span>
+        <span class="left-span2"><a href="#"><img src="images/warning.png" alt=""></a><p class="hover6">备份副本趋势告警分析</p></span>
+        <span class="left-span2"><a href="#"><img src="images/chaxun1.png" alt=""></a><p class="hover7">备份策略需求查询</p></span>
+        <span class="left-span2"><a href="#"><img src="images/chaxun2.png" alt=""></a><p class="hover8">备份策略需求变更查询</p></span>
+        <span class="left-span2"><a href="#"><img src="images/shanchu.png" alt=""></a><p class="hover9">备份策略需求删除查询</p></span>
+        <span class="left-span2"><a href="/users"><img src="images/set.png" alt=""></a><p class="hover10">设置</p></span>
       </div>
 
       <div class="wrap-middle">
@@ -299,10 +369,11 @@
           </p>
         </div>
         <div class="infor">
+          <p class="title"><u>备份副本趋势告警分析</u></p>
           <div class="content">
             <div class="one">
               业务分类
-              <input type="text" name="" value="" class="one-input">
+              <input type="text" name="" value="A类应用" class="one-input">
               <p class="one-select">
                 <span>A类应用</span>
                 <span>B类应用</span>
@@ -312,9 +383,9 @@
             </div>
             <div class="antherone">
               <span>主机名 <input type="text" name="" value="">  </span>
-              <span>主机名 <input type="text" name="" value="">  </span>
-              <span>主机名 <input type="text" name="" value="">  </span>
-              <span><input type="submit" name="" value="查 看"></span>
+              <span>IP地址 <input type="text" name="" value="">  </span>
+              <span>应用名称 <input type="text" name="" value="">  </span>
+              <span><input type="submit" name="" value="查 询"></span>
             </div>
 
           </div>
@@ -394,10 +465,9 @@
           </div>
           <div class="infor-right infor-left">
             <canvas id="canvas1" width="300" height="150" ></canvas>
-            <canvas id="canvas2" width="300" height="150" ></canvas>
           </div>
         </div>
-        <p style="text-align:right;margin-top:35px;"><input type="submit" name="" value="导 出" style="margin-right:111px;"></p>
+        <p style="text-align:right;margin-top:35px;"><input type="submit" name="" value="导 出" style="margin-right:520px;"></p>
         <div class="" style="width:100%;height:56px;"></div>
 
       </div>
@@ -405,7 +475,14 @@
 
     <script src="js/Chart.js" type="text/javascript">  </script>
     <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"type="text/javascript"></script>
-
+    <!-- 分类应用 -->
+  <script type="text/javascript">
+  $(function(){
+    $(".one-input").click(function(){
+      $(".one-select").toggle();
+    })
+  })
+  </script>
 
     <script>
       var lineChartData1 = {
@@ -556,95 +633,7 @@
             ]
 
           }
-          $(function(){
-            var myLine = new Chart(document.getElementById("canvas2").getContext("2d")).Line(lineChartData2,defaults2);
-          })
 
-          var defaults2 = {
-
-          //Boolean - I如果我们展示规模以上的图表数据
-          scaleOverlay : false,
-
-          //Boolean - 如果我们想要用硬编码的范围覆盖
-          scaleOverride : false,
-
-          //** Required if scaleOverride is true **
-          //Number - 步骤的数量在一个硬编码的规模
-          scaleSteps : null,
-          //Number - 值硬编码的规模
-          scaleStepWidth : null,
-          //Number - 规模起始值
-          scaleStartValue : null,
-
-          //String - 刻度线的颜色
-          scaleLineColor : "#666",
-
-          //Number - 刻度线的像素宽度
-          scaleLineWidth : 1,
-
-          //Boolean - 是否显示标签
-          scaleShowLabels : true,
-
-          //插值JS字符串,可以访问值
-          scaleLabel : "<%=value%>",
-
-          //String - 标尺刻度标尺刻度字体声明
-          scaleFontFamily : "'Arial'",
-
-          //Number - 规模的标签字体大小(以像素为单位)
-          scaleFontSize : 12,
-
-          //String - 规模的标签字体风格
-          scaleFontStyle : "normal",
-
-          //String - 规模的标签字体颜色
-          scaleFontColor : "#666",
-
-          ///Boolean - 网格线是否在图所示
-          scaleShowGridLines : false,
-
-          // 网格宽度
-          scaleGridLineColor : "rgba(0,0,0,.05)",
-
-          // 网格颜色
-          scaleGridLineWidth : 1,
-
-           // 是否使用贝塞尔曲线? 即:线条是否弯曲
-          bezierCurve : false,
-
-          // 是否显示点数
-          pointDot : true,
-
-          // 圆点的大小
-          pointDotRadius : 3,
-
-           // 圆点的笔触宽度, 即:圆点外层边框大小
-          pointDotStrokeWidth : 1,
-
-          // 数据集行程
-          datasetStroke : true,
-
-           // 线条的宽度, 即:数据集
-          datasetStrokeWidth : 2,
-
-            // 是否填充数据集
-          datasetFill : true,
-
-          // 是否执行动画
-          animation : false,
-
-           // 动画的时间
-          animationSteps : 40,
-
-          // 动画的特效
-          animationEasing : "easeOutQuart",
-
-           // 动画完成时的执行函数
-          onAnimationComplete : null
-
-          }
-
-            </script>
 
   </body>
 </html>

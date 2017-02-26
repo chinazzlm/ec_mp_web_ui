@@ -36,7 +36,6 @@
         box-sizing: border-box;
         background: #fff;
         overflow:auto;
-        overflow-x: hidden;
       }
       /*左边‘’*/
       .wrap .wrap-left{
@@ -67,7 +66,7 @@
         display: inline-block;
         text-align: center;
         vertical-align: middle;
-        margin-top: 35px;
+        margin-top: 25px;
       }
 
       .wrap .wrap-left .left-span2 img{
@@ -82,13 +81,13 @@
         border-left:1px solid #eee;
       }
       .wrap-middle-top{
-        width:1214px;
+        width:1196px;
         height: 56px;
         border-bottom: 1px solid #eee;
 
       }
       .wrap-middle-top .input{
-        width: 84%;
+        width: 83%;
         height: 40px;
         line-height: 40px;
         outline-style: none;
@@ -349,20 +348,76 @@
         margin-left: 15px;
         padding: 0 9px;
       }
+      /*左侧菜单提示信息样式*/
+      .wrap .wrap-left p{
+        position: absolute;
+        display: inline-block;
+        padding: 2px 9px;
+        color: #A92429;
+        font-size: 12px;
+        display: none;
+        background: #fff;
+        z-index: 99;
+      }
+      .wrap .wrap-left .hover1{
+        top:82px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover2{
+        top:132px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover3{
+        top:184px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover4{
+        top:233px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover5{
+        top:285px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover6{
+        top:332px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover7{
+        top:382px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover8{
+        top:434px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover9{
+        top:484px;
+        left: 90px;
+      }
+      .wrap .wrap-left .hover10{
+        top:536px;
+        left: 90px;
+      }
+      .wrap .wrap-left span:hover p{
+        display: block;
+      }
     </style>
   </head>
   <body>
     <div class="wrap">
       <div class="wrap-left">
         <span class="left-span1"><img src="images/logo.jpg" alt=""></span>
-        <span class="left-span2"><a href="/"><img src="images/home.png" alt=""></a></span>
-        <span class="left-span2"><a href="/requirements"><img src="images/need.png" alt=""></a></span>
-        <span class="left-span2"><a href="/excute_list"><img src="images/add1.png" alt=""></a></span>
-        <span class="left-span2"><a href="/strategies"><img src="images/play.png" alt=""></a></span>
-
-        <span class="left-span2"><a href="/trend_alarms"><img src="images/line.png" alt=""></a></span>
-        <span class="left-span2"><a href="/excute_check"><img src="images/warning.png" alt=""></a></span>
-        <span class="left-span2"><a href="/users"><img src="images/set.png" alt=""></a></span>
+        <span class="left-span2"><a href="/"><img src="images/home.png" alt=""></a><p class="hover1">首页</p></span>
+        <span class="left-span2"><a href="#"><img src="images/need.png" alt=""></a><p class="hover2">备份策略需求申请</p></span>
+        <span class="left-span2"><a href="#"><img src="images/add1.png" alt=""></a><p class="hover3">备份策略需求变更申请</p></span>
+        <span class="left-span2"><a href="#"><img src="images/play.png" alt=""></a><p class="hover4">备份策略查询</p></span>
+        <span class="left-span2"><a href="#"><img src="images/line.png" alt=""></a><p class="hover5">备份策略遵从性审计</p></span>
+        <span class="left-span2"><a href="#"><img src="images/warning.png" alt=""></a><p class="hover6">备份副本趋势告警分析</p></span>
+        <span class="left-span2"><a href="#"><img src="images/chaxun1.png" alt=""></a><p class="hover7">备份策略需求查询</p></span>
+        <span class="left-span2"><a href="#"><img src="images/chaxun2.png" alt=""></a><p class="hover8">备份策略需求变更查询</p></span>
+        <span class="left-span2"><a href="#"><img src="images/shanchu.png" alt=""></a><p class="hover9">备份策略需求删除查询</p></span>
+        <span class="left-span2"><a href="/users"><img src="images/set.png" alt=""></a><p class="hover10">设置</p></span>
       </div>
 
       <div class="wrap-middle">
