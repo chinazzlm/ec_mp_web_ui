@@ -115,7 +115,15 @@
         .login p span:last-child{
           float: right;
         }
-
+        .verificationimg{
+          position: absolute;
+          top: 2px;
+          right: 0;
+        }
+        #img{
+          width: 90px;
+          height: 34px;
+        }
       }
     </style>
   </head>
@@ -226,13 +234,12 @@
                 <input type="text" value={this.state.username} placeholder="请输入帐号" id="username" className="accountNum" onChange={this.handleChange} />
               </div>
               <div className="password">
-                <img src="images/password.png"alt="" className="passwordImg position" />
-                <input type="password" value={this.state.password} placeholder="请输入密码" id="password" className="passwordNum" onChange={this.handleChange} />
+                 <input type="password" value={this.state.password} placeholder="请输入密码" id="password" className="passwordNum" onChange={this.handleChange} />
               </div>
               <div className="verification">
                 <img src="images/verification.png" alt="" className="verificationImg position" />
                 <input type="text" value={this.state.vertify} placeholder="请输入验证码" id="vertify" className="verificationNum" onChange={this.handleChange} />
-                <span><img id="img" src={this.state.src} onClick = {this.handleVertify}/></span>
+                <span className="verificationimg"><img  id="img" src={this.state.src="images/personImg.jpg"} onClick = {this.handleVertify}/></span>
               </div>
               <div className="checkbox">
                 <span className="checkboxone"><input type="checkbox" value=""  className="checkboxNum" />记住密码</span>
