@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
     <meta name="format-detection" content="telephone=no" />
-    <title>填写订单</title>
+    <title>确认订单</title>
     <style media="screen">
       @media screen and (max-width:640px){
         *{
@@ -352,7 +352,13 @@
           height: 40px;
           display: inline-block;
           vertical-align: bottom;
+          text-align: center;
 
+        }
+        .footer .footer-left span{
+          width: 100%;
+          font-size: 16px;
+          line-height: 40px;
         }
         .footer .footer-center{
           width: 50%;
@@ -371,11 +377,10 @@
           font-size: 16px;
           display: inline-block;
           line-height: 40px;
-
-
         }
-
-
+        .footer-center .footer-center-top span:first-child{
+          color: #666;
+        }
         .footer-right{
           display: inline-block;
           width: 25%;
@@ -572,13 +577,72 @@
           padding: 3px 9px;
           border-radius: 3px;
         }
+        /*点击立即购买弹出付款选择层*/
+        .buyNow{
+          width: 86%;
+          background: #fff;
+          position: fixed;
+          top: 175px;
+          left: 7%;
+          z-index: 99;
+          display: none;
+          border-radius: 4px;
+        }
+        .buyNow li{
+          width: 100%;
+          height: 47px;
+          border-bottom: 1px solid #eee;
+          display: flex;
+          margin-bottom: 10px;
+          margin-top: 10px;
+        }
+        .buyNow li span{
+          display: inline-block;
+          height: 47px;
+          font-size: 14px;
+        }
+        .buyNow li .buyNow-ul-li1 img{
+          width: 40px;
+          height: 35px;
+          margin-top: 6px;
+        }
+        .buyNow li .buyNow-ul-li1{
+          width: 12.5%;
+          padding-left: 10px;
+        }
+        .buyNow li .buyNow-ul-li2{
+          width: 75%;
+          padding-left: 10px;
+          line-height: 23px;
+        }
+        .buyNow li .buyNow-ul-li3{
+          width: 12.5%;
+          text-align: center;
+
+        }
+        .buyNow li .buyNow-ul-li3 img{
+          margin-top: 13.5px;
+        }
+        .tanchuceng{
+          width: 100%;
+          height: 100%;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: #000;
+          opacity: 0.5;
+          z-index: 9;
+          display: none;
+        }
       }
     </style>
   </head>
   <body>
     <div class="head">
       <span class="jiantou"><img src="images/jiantou.png" alt=""></span>
-      <span class="title">购物车</span>
+      <span class="title">确认订单</span>
       <span class="menu"><img src="images/menu.png" alt=""></span>
     </div>
     <div class="line"></div>
@@ -690,7 +754,7 @@
     <div style="width:100%;height:68px;background:#fff;"></div>
     <div class="footer">
       <div class="footer-left">
-
+        <span>共一件</span>
       </div>
       <div class="footer-center">
         <p class="footer-center-top"><span>合计：</span><span>￥</span><span>111111 </span></p>
@@ -856,7 +920,6 @@
         <div class="middle-shouhuoren sure-submit">
           <input type="submit" name="" value="确 定" class="input3">
           <input type="submit" name="" value="取 消" class="input3">
-
         </div>
       </div>
     </div>
@@ -879,5 +942,29 @@
         $(".nav").toggle();
       })
     </script>
+
+
+    <!-- 点击立即购买弹出付款选择层 -->
+    <div class="buyNow">
+      <ul class="buyNow-ul">
+        <li><span class="buyNow-ul-li1"><img src="images/weixinzhifu.png" alt=""></span><span class="buyNow-ul-li2"><p>微信支付</p><p>微信安全支付</p></span><span class="buyNow-ul-li3"><img src="images/rightjiantou.png" alt=""></span></li>
+        <li><span class="buyNow-ul-li1"><img src="images/zhifubaozhifu.png" alt=""></span><span class="buyNow-ul-li2"><p>支付宝支付</p><p>支付宝安全支付</p></span><span class="buyNow-ul-li3"><img src="images/rightjiantou.png" alt=""></span></li>
+        <li><span class="buyNow-ul-li1"><img src="images/yinlianzhifu.png" alt=""></span><span class="buyNow-ul-li2"><p>银联支付</p><p>银联安全支付</p></span><span class="buyNow-ul-li3"><img src="images/rightjiantou.png" alt=""></span></li>
+      </ul>
+    </div>
+    <div class="tanchuceng"></div>
+    <script type="text/javascript">
+    $(function(){
+      $(".footer .footer-right").click(function(){
+        $(".buyNow").show();
+        $(".tanchuceng").show();
+      });
+      $(".tanchuceng").click(function(){
+        $(this).hide();
+        $(".buyNow").hide();
+      })
+    });
+    </script>
+
   </body>
 </html>
