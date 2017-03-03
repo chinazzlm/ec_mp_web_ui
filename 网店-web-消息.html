@@ -147,15 +147,23 @@
     };
     // 中间部分
     class Middle extends React.Component {
+      constructor(props) {
+          super(props);
+          this.state = {items: []};
+      }
+      componentDidMount() {
+        var hh = [{time:'2017/3/1',title:'您有可领取的会员卡',img:'images/i-9.png',word:'您可领取"金锣火腿肠"满100元减20元优惠券.'}
+          ,{time:'2017/3/1',title:'您有可领取的会员卡',img:'images/i-9.png',word:'您可领取"金锣火腿肠"满100元减20元优惠券.'}
+          ,{time:'2017/3/1',title:'您有可领取的会员卡',img:'images/i-9.png',word:'您可领取"金锣火腿肠"满100元减20元优惠券.'}];
+        this.setState({items:hh});
+      }
       render() {
           return (
             <div className="middle">
-              <News/>
-              <News/>
-              <News/>
-              <News/>
-              <News/>
-              <News/>
+            {this.state.items.map(item => (
+                <News item={item} />
+              ))
+            }
             </div>
           );
       }
@@ -165,12 +173,12 @@
       render() {
           return (
             <div className="news">
-              <p className="newsTime"><span>2017/3/1</span></p>
+              <p className="newsTime"><span>{this.props.item.time}</span></p>
               <div className="newsInfor">
-                <p className="newsTitle">您有可领取的会员卡</p>
+                <p className="newsTitle">{this.props.item.title}</p>
                 <div className="newscontent">
-                  <p className="newsimg"><img src="images/i-9.png" alt="" /></p>
-                  <p className="newsword">您可领取"金锣火腿肠"满100元减20元优惠券.</p>
+                  <p className="newsimg"><img src={this.props.item.img} alt="" /></p>
+                  <p className="newsword">{this.props.item.word}</p>
                 </div>
               </div>
             </div>
