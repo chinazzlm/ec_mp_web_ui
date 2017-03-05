@@ -126,6 +126,19 @@
           margin: 0 auto;
           position: relative;
         }
+        .address1{
+          width: 96%;
+          height: 63px;
+          line-height: 31.5px;
+          text-align: center;
+          font-size: 30px;
+          font-weight: bold;
+          margin: 0 auto;
+          position: relative;
+        }
+        .address1 p:last-child{
+          font-size: 16px;
+        }
         .address .address-infor .address-infor-warp{
           width: 100%;
           line-height: 30px;
@@ -636,6 +649,122 @@
           z-index: 9;
           display: none;
         }
+
+        /*发票弹出层*/
+        .fapiao{
+          width: 94%;
+          /*height: 207px;*/
+          background: #fff;
+          position: fixed;
+          top: 175px;
+          left: 3%;
+          right: 3%;
+          border-top: 1px solid #eee;
+          z-index: 99999999;
+          display: none;
+        }
+        .fapiao p{
+          width: 100%;
+          margin: 0 auto;
+          line-height: 20px;
+          font-size: 16px;
+          color: #000;
+          overflow: hidden;
+          text-indent: 10px;
+          margin-top: 10px;
+          background: #F3F3F3;
+        }
+        .fapiao .fapiao-infor .fapiao-title{
+          width: 90%;
+          display: flex;
+          justify-content:space-between;
+          margin: 10px auto 0;
+        }
+        .fapiao .fapiao-infor .fapiao-title li{
+          width: 30%;
+          font-size: 14px;
+          line-height: 20px;
+          height: 20px;
+          text-align: center;
+        }
+        .fapiao .fapiao-infor .fapiao-title li:first-child{
+          border: 1px solid #E1383B;
+        }
+        .fapiao .fapiaotaitou{
+          width: 90%;
+          margin: 0 auto;
+          box-sizing: border-box;
+          background: #fff;
+          margin-top: 20px;
+        }
+        .fapiao .fapiaotaitou1{
+          border: 1px solid #666;
+          position: relative;
+          padding: 4px 8px;
+        }
+        .fapiao .fapiaotaitou-span1{
+          display: inline-block;
+          box-sizing: border-box;
+          width: 30%;
+          font-size: 14px;
+          float: left;
+          text-align: left;
+        }
+        .fapiao .fapiaotaitou .fapiaotaitou-span2{
+          display: inline-block;
+          box-sizing: border-box;
+          width: 66%;
+          border: 1px solid #E1383B;
+        }
+        .fapiao .fapiao-infor .fapiaotaitou-span3{
+          display: inline-block;
+          width: 100%;
+          display: flex;
+          justify-content:space-between;
+          margin-top: 10px;
+          border: none;
+        }
+        .fapiao .fapiao-infor .fapiaotaitou-span3 span{
+          width: 20%;
+          font-size: 14px;
+          text-align: center;
+          box-sizing: border-box;
+        }
+        .fapiao .fapiao-infor .fapiaotaitou-span3 .spancolor{
+          border: 1px solid #E1383B;
+        }
+        .fapiao .fapiaotaitou1 input{
+          width: 100%;
+          border: none;
+          height: 22px;
+          line-height: 22px;
+        }
+        .fapiao .fapiaotaitou-span4{
+          display: inline-block;
+          box-sizing: border-box;
+          width: 100%;
+          font-size: 14px;
+          text-align: left;
+        }
+        .fapiao .fapiaosubmit{
+          width: 90%;
+          margin: 20px auto;
+        }
+        .fapiao .fapiaosubmit input{
+          width: 52px;
+          height: 24px;
+          border-radius: 4px;
+          color: #fff;
+
+          border: none;
+        }
+        .fapiao .fapiaosubmit .fapiaosubmit1{
+          background: #E1383B;
+          margin-right: 15px;
+        }
+        .fapiao .fapiaosubmit .fapiaosubmit2{
+          color: #666;
+        }
       }
     </style>
   </head>
@@ -680,6 +809,10 @@
         <p><span><img src="images/address.png" alt=""></span><span>上海市宝山区呼兰路911弄11号3号楼101A</span></p>
       </div>
       <span class="jiantou-right"><img src="images/jiantou-right.png" alt=""></span>
+    </div>
+    <div class="address1">
+      <p>+</p>
+      <p>添加新地址</p>
     </div>
     <div class="line"></div>
     <div class="white"></div>
@@ -880,6 +1013,10 @@
           $(".partone3").css("display","none");
           $(".opacity").css("display","none");
         });
+        $(".opacity").click(function(){
+          $(this).hide();
+          $(".partone3").css("display","none");
+        })
       });
     </script>
 
@@ -933,6 +1070,27 @@
         $(".input3").click(function(){
           // $(".opacity").css("display","none");
           $(".new-address").css("display","none");
+        });
+        $(".opacity").click(function(){
+          $(this).hide();
+          $(".new-address").css("display","none");
+        })
+      });
+    </script>
+    <script type="text/javascript">
+      $(function(){
+        $(".address1").click(function(){
+          $(".partone3").animate({bottom:"-375px"},300);
+          $(".tanchuceng").css("display","block");
+          $(".new-address").css("display","block");
+        });
+        $(".input3").click(function(){
+          $(".tanchuceng").css("display","none");
+          $(".new-address").css("display","none");
+        });
+        $(".tanchuceng").click(function(){
+          $(this).hide();
+          $(".new-address").css("display","none");
         })
       });
     </script>
@@ -966,5 +1124,52 @@
     });
     </script>
 
+
+      <!-- 发票弹出层 -->
+    <div class="fapiao">
+      <p>发票信息: &nbsp;普通发票</p>
+      <div class="fapiao-infor">
+        <p class="fapiaotaitou"><span class="fapiaotaitou-span1">发票抬头：</span><span class="fapiaotaitou-span2">个人</span></p>
+        <div class="fapiaotaitou fapiaotaitou1"><input type="text" name="" value="上海佑佑信息科技有限公司"></div>
+        <div class="fapiaotaitou">
+          <span class="fapiaotaitou-span4">发票抬头：</span>
+          <div class="fapiaotaitou-span2 fapiaotaitou-span3">
+            <span class="spancolor">明细</span>
+            <span>办公用品</span>
+            <span>电脑配件</span>
+            <span>耗材</span>
+          </div>
+        </div>
+      </div>
+      <div class="fapiaosubmit">
+        <input type="submit" name="" value="保存" class="fapiaosubmit1">
+        <input type="submit" name="" value="取消" class="fapiaosubmit2">
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(function(){
+        $(".invoice").click(function(){
+          $(".fapiao").show();
+          $(".tanchuceng").show();
+
+        });
+        $(".fapiaotaitou-span3 span").click(function(){
+          $(".fapiaotaitou-span3 span").removeClass("spancolor");
+          $(this).addClass("spancolor");
+        });
+        $(".fapiaosubmit .fapiaosubmit1").click(function(){
+          $(".fapiao").hide();
+          $(".tanchuceng").hide();
+        });
+        $(".fapiaosubmit .fapiaosubmit2").click(function(){
+          $(".fapiao").hide();
+          $(".tanchuceng").hide();
+        });
+        $(".tanchuceng").click(function(){
+          $(".fapiao").hide();
+          $(".tanchuceng").hide();
+        })
+      })
+    </script>
   </body>
 </html>

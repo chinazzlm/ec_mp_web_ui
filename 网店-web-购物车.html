@@ -113,14 +113,17 @@
         }
         .circle{
           display: inline-block;
-          width: 20px;
-          height: 20px;
-          background: url(images/circle.png) no-repeat 0 0;
+          width: 16px;
+          height: 16px;
+
           position: absolute;
           top: 32px;
           left: 6px;
         }
-
+        .circle img{
+          width: 16px;
+          height: 16px;
+        }
         .list .img{
           display: inline-block;
           width: 88px;
@@ -155,10 +158,15 @@
           overflow: hidden;
         }
         .infor .infor-one{
-          height: 30px;
+          height: 35px;
           font-size: 13px;
           vertical-align: top;
           width: 100%;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+
         }
         .infor .infor-two{
           font-size: 13px;
@@ -172,9 +180,26 @@
 
         .infor .infor-three .add span{
           display: inline-block;
-          padding: 1px 10px;
+          width: 16px;
+          height: 14px;
           border: 1px solid #bbbbbb;
+          text-align: center;
 
+        }
+        .infor .infor-three .add span:first-child{
+          border-right: none;
+        }
+        .infor .infor-three .add span:last-child{
+          border-left: none;
+        }
+        input{
+          width: 16px;
+          height: 14px;
+          line-height: 14px;
+          border: none;
+          vertical-align:top;
+          box-sizing: border-box;
+          text-align: center;
         }
         .infor .infor-four{
           font-size: 12px;
@@ -193,11 +218,15 @@
         }
         .footer .footer-left .bottom{
           display: inline-block;
-          width: 20px;
-          height: 20px;
-          background: url(images/circle.png) no-repeat 0 0;
+          width: 16px;
+          height: 16px;
+
           vertical-align: middle;
           margin:0 6px;
+        }
+        .footer .footer-left .bottom img{
+          width: 16px;
+          height: 16px;
         }
         .footer .footer-left .all{
           vertical-align: middle;
@@ -279,67 +308,67 @@
       </ul>
     </div>
     <div class="list">
-      <span class="circle"></span>
+      <span class="circle"><img src="images/circle.png" alt=""></span>
       <span class="img"><img src="images/shuijao.jpg" alt=""></span>
       <div class="infor">
         <p class="infor-one">APPLE iPhone6（128G  白色 4.7英寸）sdsdsd</p>
         <p class="infor-two"></p>
-        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span>1</span><span>+</span></p></div>
+        ·
         <p class="infor-four">删除</p>
 
       </div>
     </div>
     <div class="list">
-      <span class="circle"></span>
+      <span class="circle"><img src="images/circle.png" alt=""></span>
       <span class="img"><img src="images/shuijao.jpg" alt=""></span>
       <div class="infor">
         <p class="infor-one">APPLE iPhone6（128G  白色 4.7英寸）sdsdsd</p>
         <p class="infor-two"></p>
-        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span>1</span><span>+</span></p></div>
+        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span><input type="number" maxlength="2" name="" value="1"  ></span><span>+</span></p></div>
         <p class="infor-four">删除</p>
 
       </div>
     </div>
     <div class="list">
-      <span class="circle"></span>
+      <span class="circle"><img src="images/circle.png" alt=""></span>
       <span class="img"><img src="images/shuijao.jpg" alt=""></span>
       <div class="infor">
         <p class="infor-one">APPLE iPhone6（128G  白色 4.7英寸）sdsdsd</p>
         <p class="infor-two"></p>
-        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span>1</span><span>+</span></p></div>
+        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span><input type="number" maxlength="2" name="" value="1"  ></span><span>+</span></p></div>
         <p class="infor-four">删除</p>
 
       </div>
     </div>
     <div class="list">
-      <span class="circle"></span>
+      <span class="circle"><img src="images/circle.png" alt=""></span>
       <span class="img"><img src="images/shuijao.jpg" alt=""></span>
       <div class="infor">
         <p class="infor-one">APPLE iPhone6（128G  白色 4.7英寸）sdsdsd</p>
         <p class="infor-two"></p>
-        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span>1</span><span>+</span></p></div>
+        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span><input type="number" maxlength="2" name="" value="1"  ></span><span>+</span></p></div>
         <p class="infor-four">删除</p>
 
       </div>
     </div>
     <div class="list">
-      <span class="circle"></span>
+      <span class="circle"><img src="images/circle.png" alt=""></span>
       <span class="img"><img src="images/shuijao.jpg" alt=""></span>
       <div class="infor">
         <p class="infor-one">APPLE iPhone6</p>
         <p class="infor-two"></p>
-        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span>1</span><span>+</span></p></div>
+        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span><input type="number" maxlength="2" name="" value="1"  ></span><span>+</span></p></div>
         <p class="infor-four">删除</p>
 
       </div>
     </div>
     <div class="list">
-      <span class="circle"></span>
+      <span class="circle"><img src="images/circle.png" alt=""></span>
       <span class="img"><img src="images/shuijao.jpg" alt=""></span>
       <div class="infor">
-        <p class="infor-one">APPLE iPhone6（128G  白色 4.7英寸）sdsdsdssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+        <p class="infor-one">APPLE iPhone6（128G  白色 4.7英寸）后果是剪短发哦哦是怕事人塑料袋v</p>
         <p class="infor-two"></p>
-        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span>1</span><span>+</span></p></div>
+        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span><input type="number" maxlength="2" name="" value="1"  ></span><span>+</span></p></div>
         <p class="infor-four">删除</p>
 
       </div>
@@ -348,7 +377,7 @@
     <div style="width:100%;height:68px;background:#fff;"></div>
     <div class="footer">
       <div class="footer-left">
-        <span class="bottom"></span>
+        <span class="bottom"><img src="images/circle.png" alt=""></span>
         <span class="all">全选</span>
       </div>
       <div class="footer-center">
@@ -368,5 +397,30 @@
       })
     </script>
 
+    <!-- 点击circle更换图片地址 -->
+    <script type="text/javascript">
+      $(function(){
+        $(".circle img").click(function(){
+          var circleImg=$(this).attr("src");
+          if(circleImg=="images/circle.png"){
+            $(this).attr("src","images/xuanzhong.png");
+          }else {
+            $(this).attr("src","images/circle.png");
+          };
+        });
+        $(".footer .footer-left").click(function(){
+          var allImg=$(".footer .footer-left img").attr("src");
+
+            if(allImg=="images/circle.png"){
+              $(".footer .footer-left img").attr("src","images/xuanzhong.png");
+                $(".circle img").attr("src","images/xuanzhong.png");
+            }else {
+              $(".footer .footer-left img").attr("src","images/circle.png");
+                $(".circle img").attr("src","images/circle.png");
+            }
+
+        })
+      })
+    </script>
   </body>
 </html>
