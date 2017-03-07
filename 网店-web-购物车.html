@@ -5,7 +5,7 @@
     <title>购物车</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
     <meta name="format-detection" content="telephone=no" />
-    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script src="js\jquery-3.1.1.min.js"></script>
     <style media="screen">
       @media screen and (max-width:640px){
         *{
@@ -94,10 +94,10 @@
         }
         .nav ul li .nav-bottom{
           display: inline-block;
-
+		      width: 100%;
           line-height: 40px;
         }
-        .nav ul li .nav-bottom a{
+        .nav ul li a{
           color: #fff;
         }
         .nav .nav-car{
@@ -107,9 +107,15 @@
           color: #fff;
         }
         .list{
-          position: relative;
+          width: 100%;
           overflow: hidden;
-          margin: 10px 0
+          margin: 10px 0;
+        }
+        .list li{
+          width: 100%;
+          height: 84px;
+          position: relative;
+          margin-bottom: 15px;
         }
         .circle{
           display: inline-block;
@@ -124,11 +130,19 @@
           width: 16px;
           height: 16px;
         }
-        .list .img{
+        .list_infor{
+          background: #f4f4f4;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 99;
+          overflow: hidden;
+        }
+      .list .img{
           display: inline-block;
-          width: 88px;
+          width: 23.4666%;
           height: 88px;
-          padding-left:40px;
+          padding-left:10.66666%;
         }
         .list .img img{
           width: 100%;
@@ -139,8 +153,8 @@
           display: inline-block;
           font-size: 12px;
           vertical-align: top;
-          max-width: 53.3333333%;
-          width: 53.3333333%;
+          max-width: 60.3333333%;
+          width: 60.3333333%;
         }
         .infor .infor-three .price{
           display: inline-block;
@@ -156,6 +170,7 @@
           vertical-align: middle;
           float: right;
           overflow: hidden;
+		      width: 60px;
         }
         .infor .infor-one{
           height: 35px;
@@ -170,8 +185,8 @@
         }
         .infor .infor-two{
           font-size: 13px;
-          height: 35px;
-          line-height: 35px;
+          height: 20px;
+          line-height: 20px;
         }
         .infor .infor-three .red{
           font-size: 16px;
@@ -179,34 +194,43 @@
         }
 
         .infor .infor-three .add span{
-          display: inline-block;
-          width: 16px;
-          height: 14px;
-          border: 1px solid #bbbbbb;
-          text-align: center;
+    			box-sizing: border-box;
+    			float: left;
+
 
         }
         .infor .infor-three .add span:first-child{
-          border-right: none;
+         border: 1px solid #bbbbbb;
+    		 display: inline-block;
+    		 width: 20px;
+    		 height:20px;
+         line-height: 20px;
+    		 text-align: center;
+    		 border-right: 0;
         }
         .infor .infor-three .add span:last-child{
-          border-left: none;
+          border: 1px solid #bbbbbb;
+		      display: inline-block;
+          width: 20px;
+          height: 20px;
+          line-height: 20px;
+    		  text-align: center;
+    		  border-left: 0px;
         }
         input{
-          width: 16px;
-          height: 14px;
+          width: 20px;
+          height: 20px;
           line-height: 14px;
-          border: none;
+          border: 1px solid #bbbbbb;
           vertical-align:top;
           box-sizing: border-box;
           text-align: center;
         }
-        .infor .infor-four{
-          font-size: 12px;
-          display: inline-block;
-          padding-top: 10px;
-          float: right;
-        }
+        input {
+    			-webkit-appearance: none;
+    			border-radius: 0;
+    			-webkit-border-radius:0;
+    		}
         .footer{
           font-size: 0;
           position: fixed;
@@ -215,6 +239,7 @@
           right: 0;
           background: #fff;
           border-top: 1px solid #999;
+          height: 57px;
         }
         .footer .footer-left .bottom{
           display: inline-block;
@@ -244,7 +269,7 @@
           width: 50%;
           display: inline-block;
           vertical-align: middle;
-          margin-top: 10px;
+          /*margin-top: 10px;*/
         }
         .footer .footer-right{
           width: 25%;
@@ -264,10 +289,22 @@
           width: 25%;
           text-align: center;
           line-height: 58px;
-          background: #ff7043;
+          background: #D81E06;
           color: #fff;
           font-size: 14px;
           vertical-align: bottom;
+        }
+        .behind {
+            width: 68px;
+            height: 84px;
+            line-height: 84px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: #D81E06;
+            text-align: center;
+            color: #fff;
         }
       }
     </style>
@@ -307,73 +344,52 @@
         </li>
       </ul>
     </div>
-    <div class="list">
-      <span class="circle"><img src="images/circle.png" alt=""></span>
-      <span class="img"><img src="images/shuijao.jpg" alt=""></span>
-      <div class="infor">
-        <p class="infor-one">APPLE iPhone6（128G  白色 4.7英寸）sdsdsd</p>
-        <p class="infor-two"></p>
-        ·
-        <p class="infor-four">删除</p>
-
-      </div>
+    <div class="content">
+      <ul class="list">
+        <li>
+          <div class="behind">
+            删除
+          </div>
+          <div class="list_infor">
+            <span class="circle"><img src="images/circle.png" alt=""></span>
+            <span class="img"><img src="images/shuijao.jpg" alt=""></span>
+            <div class="infor">
+              <p class="infor-one">APPLE iPhone6（128G  白色 4.7英寸）sdsdsd</p>
+              <p class="infor-two"></p>
+              <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span><input type="number" maxlength="2" name="" value="1"  ></span><span>+</span></p></div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="behind">
+            删除
+          </div>
+          <div class="list_infor">
+            <span class="circle"><img src="images/circle.png" alt=""></span>
+            <span class="img"><img src="images/shuijao.jpg" alt=""></span>
+            <div class="infor">
+              <p class="infor-one">APPLE iPhone6（128G  白色 4.7英寸）sdsdsd</p>
+              <p class="infor-two"></p>
+              <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span><input type="number" maxlength="2" name="" value="1"  ></span><span>+</span></p></div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="behind">
+            删除
+          </div>
+          <div class="list_infor">
+            <span class="circle"><img src="images/circle.png" alt=""></span>
+            <span class="img"><img src="images/shuijao.jpg" alt=""></span>
+            <div class="infor">
+              <p class="infor-one">APPLE iPhone6（128G  白色 4.7英寸）sdsdsd</p>
+              <p class="infor-two"></p>
+              <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span><input type="number" maxlength="2" name="" value="1"  ></span><span>+</span></p></div>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
-    <div class="list">
-      <span class="circle"><img src="images/circle.png" alt=""></span>
-      <span class="img"><img src="images/shuijao.jpg" alt=""></span>
-      <div class="infor">
-        <p class="infor-one">APPLE iPhone6（128G  白色 4.7英寸）sdsdsd</p>
-        <p class="infor-two"></p>
-        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span><input type="number" maxlength="2" name="" value="1"  ></span><span>+</span></p></div>
-        <p class="infor-four">删除</p>
-
-      </div>
-    </div>
-    <div class="list">
-      <span class="circle"><img src="images/circle.png" alt=""></span>
-      <span class="img"><img src="images/shuijao.jpg" alt=""></span>
-      <div class="infor">
-        <p class="infor-one">APPLE iPhone6（128G  白色 4.7英寸）sdsdsd</p>
-        <p class="infor-two"></p>
-        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span><input type="number" maxlength="2" name="" value="1"  ></span><span>+</span></p></div>
-        <p class="infor-four">删除</p>
-
-      </div>
-    </div>
-    <div class="list">
-      <span class="circle"><img src="images/circle.png" alt=""></span>
-      <span class="img"><img src="images/shuijao.jpg" alt=""></span>
-      <div class="infor">
-        <p class="infor-one">APPLE iPhone6（128G  白色 4.7英寸）sdsdsd</p>
-        <p class="infor-two"></p>
-        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span><input type="number" maxlength="2" name="" value="1"  ></span><span>+</span></p></div>
-        <p class="infor-four">删除</p>
-
-      </div>
-    </div>
-    <div class="list">
-      <span class="circle"><img src="images/circle.png" alt=""></span>
-      <span class="img"><img src="images/shuijao.jpg" alt=""></span>
-      <div class="infor">
-        <p class="infor-one">APPLE iPhone6</p>
-        <p class="infor-two"></p>
-        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span><input type="number" maxlength="2" name="" value="1"  ></span><span>+</span></p></div>
-        <p class="infor-four">删除</p>
-
-      </div>
-    </div>
-    <div class="list">
-      <span class="circle"><img src="images/circle.png" alt=""></span>
-      <span class="img"><img src="images/shuijao.jpg" alt=""></span>
-      <div class="infor">
-        <p class="infor-one">APPLE iPhone6（128G  白色 4.7英寸）后果是剪短发哦哦是怕事人塑料袋v</p>
-        <p class="infor-two"></p>
-        <div class="infor-three"><span class="price">￥</span><span class="price red">5666</span><p class="add"><span>-</span><span><input type="number" maxlength="2" name="" value="1"  ></span><span>+</span></p></div>
-        <p class="infor-four">删除</p>
-
-      </div>
-    </div>
-
     <div style="width:100%;height:68px;background:#fff;"></div>
     <div class="footer">
       <div class="footer-left">
@@ -400,7 +416,7 @@
     <!-- 点击circle更换图片地址 -->
     <script type="text/javascript">
       $(function(){
-        $(".circle img").click(function(){
+        $(".circle img").on("touchstart",function(e){
           var circleImg=$(this).attr("src");
           if(circleImg=="images/circle.png"){
             $(this).attr("src","images/xuanzhong.png");
@@ -420,6 +436,47 @@
             }
 
         })
+      })
+    </script>
+
+    <!-- 滑动删除 -->
+    <script type="text/javascript">
+      $(function(){
+        $(".list_infor").css("max-width",$(window).width());
+        var touchPage;
+        var change = 0;
+        $(".list_infor")
+        .on("touchstart",function(e){
+            var touch = e.targetTouches[0];//touches数组对象获得屏幕上所有的touch，取第一个touch
+            touchPage=e.targetTouches[0].pageX; //获取第一个点的X坐标
+            // alert(touchPage);
+        })
+        .on("touchmove",function(e){
+          e.preventDefault();
+          var touch = e.targetTouches[0];//touches数组对象获得屏幕上所有的touch，取第一个touch
+          change=touch.pageX-touchPage;
+          console.log(change);
+          if(change<-160){
+            change=-160;
+          }
+          $(this).css("left",change);
+
+        })
+        .on("touchend",function(){
+          if(change>-20){
+            $(this).animate({"left":"0"},200);
+          }else {
+            $(this).animate({"left":"-68px"},50);
+          }
+        });
+
+        $('.behind').on('click', function(e) {
+            e.preventDefault()
+            $(this).parents('li').slideUp('fast', function() {
+                $(this).remove()
+            })
+        })
+
       })
     </script>
   </body>
