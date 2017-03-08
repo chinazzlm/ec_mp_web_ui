@@ -390,7 +390,7 @@
         .top-service p{
           width: 96%;
           margin: 0 auto;
-          border-bottom: 1px solid #bbbbbb;
+          /*border-bottom: 1px solid #bbbbbb;*/
           padding-bottom: 8px;
         }
         .top-service p .span1{
@@ -674,63 +674,66 @@
         .footernav{
           width: 100%;
           height: 47px;
-          display: flex;
-          /*padding-bottom: 5px;*/
           position: fixed;
           bottom: 0;
           left: 0;
           right: 0;
           background: #fff;
           border-top: 1px solid #eee;
+          overflow: hidden;
+
         }
         .footernav li{
-          width: 25%;
-          height:47px;
-          font-size: 14px;
-          box-sizing: border-box;
-          list-style: none;
           text-align: center;
-
+          float: left;
+          height: 47px;
+          position: relative;
         }
-
-        .footernav .footernavli1,.footernavli2{
+        .footernav li a{
+          display: inline-block;
+          width: 100%;
+          height: 47px;
+        }
+        .footernav .footernavLi{
+          width: 14.666%;
+          padding-top: 5px;
+        }
+        .footernav .footernavLi1{
+          width:28%;
           line-height: 47px;
-          font-size: 12px;
-          font-weight: bold;
         }
-        .footernav .footernavli1{
-          background: #F46F00;
+        .footernav .footernavLi2{
+          background: #FF6600
         }
-        .footernav .footernavli2{
-          background: #D81E06;
+        .footernav .footernavLi3{
+          background: #D81E06
         }
-        .footernav .footernavli1 a,.footernavli2 a{
+        .footernav .footernavLi1 a{
           color: #fff;
         }
-        .footernav li p img{
+        .footernav li p{
+          font-size: 12px;
+        }
+        .footernav li img{
           width: 22px;
           height: 22px;
         }
-        .footernav li .footernav-word{
-          padding-bottom: 5px;
-          position: relative;
-          font-size: 12px;
-        }
         .footernav li .footernav-wordnum{
-          position: absolute;
-          top: -26px;
-          left: 34px;
-          background:#D81E06;
-          color: #fff;
+          display: inline-block;
           width: 16px;
           height: 16px;
-          line-height: 16px;
           border-radius: 8px;
+          text-align: center;
+          line-height: 16px;
+          background: #D81E06;
+          color: #fff;
           font-size: 12px;
-          color: 000;
+          position: absolute;
+          top: 3px;
+          left: 27px;
         }
         /*详情*/
-        .warp1{
+    .warp1{
           width: 100%;
           display: none;
         }
@@ -819,7 +822,7 @@
        }
        /*全部评论*/
        /*具体内容*/
-       .warp2{
+      .warp2{
          width: 100%;
          overflow: hidden;
          display: none;
@@ -1620,15 +1623,15 @@
     </div>
     <div style="background:#fff;height:75px;width:100%"></div>
     <ul class="footernav">
-        <li><a href="#"><p><img src="images/shouye1.png" alt="" /></p><p class="footernav-word">首页</p></a></li>
-        <li><a href="#"><p><img src="images/shoucang.png" alt="" /></p><p class="footernav-word">收藏</p></a></li>
-        <li><a href="#"><p><img src="images/gouwuche1.png" alt="" /></p><p class="footernav-word">购物车<span class="footernav-wordnum">99</span></p></a></li>
-        <li class="footernavli1"><a href="#"><p>加入购物车</p></a></li>
-        <li class="footernavli2"><a href="#"><p>立即购买</p></a></li>
+        <li class="footernavLi"><a href=""><p class="footernav_p1"><img src="images/shouye1.png" alt="" /></p><p class="footernav-word">首页</p></a></li>
+        <li class="footernavLi"><a href=""><p class="footernav_p1"><img src="images/shoucang.png" alt="" /></p><p class="footernav-word">收藏</p></a></li>
+        <li class="footernavLi"><a href=""><p class="footernav_p1"><img src="images/car.png" alt="" /></p><p class="footernav-word">购物车<span class="footernav-wordnum">99</span></p></a></li>
+        <li class="footernavLi1 footernavLi2"><a href="#"><p>加入购物车</p></a></li>
+        <li class="footernavLi1 footernavLi3"><a href="#"><p>立即购买</p></a></li>
       </ul>
     <script type="text/javascript">
       $(function(){
-        $(".head p").click(function(){
+        $(".head .head-p1").click(function(){
           $(".middle").hide();
           $(".warp1").hide();
           $(".warp2").hide();

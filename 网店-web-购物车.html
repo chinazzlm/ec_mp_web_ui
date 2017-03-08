@@ -141,12 +141,12 @@
       .list .img{
           display: inline-block;
           width: 23.4666%;
-          height: 88px;
+          height: 84px;
           padding-left:10.66666%;
         }
         .list .img img{
           width: 100%;
-          height: 88px;
+          height: 84px;
           vertical-align: middle;
         }
         .infor{
@@ -173,7 +173,8 @@
 		      width: 60px;
         }
         .infor .infor-one{
-          height: 35px;
+          height: 40px;
+          line-height: 20px;
           font-size: 13px;
           vertical-align: top;
           width: 100%;
@@ -469,7 +470,7 @@
             $(this).animate({"left":"-68px"},50);
           }
         });
-
+        // 点击删除一行
         $('.behind').on('click', function(e) {
             e.preventDefault()
             $(this).parents('li').slideUp('fast', function() {
