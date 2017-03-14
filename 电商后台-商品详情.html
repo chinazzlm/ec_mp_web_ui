@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>首页</title>
+    <title>商品列表</title>
     <script src="js/react.min.js"></script>
     <script src="js/react-dom.min.js"></script>
     <script src="js/browser.min.js"></script>
@@ -16,6 +16,7 @@
         font-family: "\5FAE\8F6F\96C5\9ED1", Tahoma, Verdana, sans-serif, "微软雅黑";
         padding: 0;
         margin: 0;
+        overflow-x: hidden;
       }
       li{
         list-style: none;
@@ -23,7 +24,6 @@
     .wrap{
         width: 100%;
         height: 768px;
-        overflow: auto;
         background: #E7E8EA;
         border: 1px solid #212629;
       }
@@ -54,46 +54,25 @@
         width: 100%;
       }
       .wrapLeftNav_ul li{
-        height: 22px;
-        line-height: 22px;
+        /*height: 22px;
+        line-height: 22px;*/
         margin-bottom: 10px;
         font-size: 14px;
         color: #a6a7a7;
+        overflow: hidden;
       }
       .wrapLeftNav_ul li.on{
         background: #d94f45;
         color: #fff;
-        height: 44px;
-        line-height: 44px;
+        /*height: 44px;
+        line-height: 44px;*/
         animation: myfirst ease  0.5s;
         -moz-animation: myfirst ease  0.5s;	/* Firefox */
         -webkit-animation: myfirst  ease 0.5s;	/* Safari 和 Chrome */
         -o-animation: myfirst ease  0.5s;
       }
-      @keyframes myfirst
-        {
-        from {line-height:22px;}
-        to {line-height:44px;}
-        }
 
-        @-moz-keyframes myfirst /* Firefox */
-        {
-        from {line-height:22px;}
-        to {line-height:44px;}
-        }
-
-        @-webkit-keyframes myfirst /* Safari and Chrome */
-        {
-        from {line-height:22px;}
-        to {line-height:44px;}
-        }
-
-        @-o-keyframes myfirst /* Opera */
-        {
-        from {height:22px;}
-        to {height:44px;}
-        }
-      .wrapLeftNav_ul li img{
+      .wrapLeftNav_ul li span img{
         width: 20px;
         height: 20px;
         margin-left: 10px;
@@ -119,7 +98,7 @@
       .wrapRightHead_left{
         position: relative;
         float: left;
-        width: 1020px;
+        width: 87.2354%;
       }
       .wrapRightHead_left span img{
         width: 20px;
@@ -151,7 +130,7 @@
       }
       .wrapRightHead_right{
         float: right;
-        width: 149px;
+        width: 11.3748%;
         font-size: 14px;
         text-align: left;
         color: #666;
@@ -162,6 +141,55 @@
         margin-left: 15px;
         margin-right: 10px;
         vertical-align: middle;
+      }
+      /*二级导航*/
+      .second_nav{
+        width: 100%;
+      }
+      .second_nav .second_navInfor{
+        width: 100%;
+        height: 25px;
+        line-height: 25px;
+      }
+      .second_nav .second_navInfor p{
+        display: inline-block;
+        width: 50%;
+        font-size: 12px;
+      }
+      .second_nav .second_navInfor img{
+        margin-left: 20px;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+      }
+
+      /*右侧下面部分*/
+      .wrapRightMain{
+        width: 100%;
+        height: 726px;
+      }
+
+      /*表格样式*/
+      table{
+        width: 90%;
+        background: #fff;
+        border-bottom:1px solid #CFCFCF;
+        border-right: 1px solid #CFCFCF;
+        margin: 235px auto;
+      }
+      th,td{
+        border: 1px solid #CFCFCF;
+        border-right: none;
+        border-bottom: none;
+        font-size: 12px;
+        width: 11.111%;
+        text-align: center;
+        height: 32px;
+        color: #A8ACAD;
+      }
+      th{
+        font-size: 16px;
+        color: #5A6A6C;
       }
     }
     </style>
@@ -217,18 +245,20 @@
         }
         // 3
         componentDidMount() {
-          var hh = [{img:'images/shouye1.png',img2:'images/shouye-4.png',word:'首页'}
-            ,{img:'images/shouye1.png',img2:'images/shouye-4.png',word:'导航一'}
-            ,{img:'images/shouye1.png',img2:'images/shouye-4.png',word:'导航二'}
-            ,{img:'images/shouye1.png',img2:'images/shouye-4.png',word:'导航三'}
-            ,{img:'images/shouye1.png',img2:'images/shouye-4.png',word:'导航四'}
-            ,{img:'images/shouye1.png',img2:'images/shouye-4.png',word:'导航五'}
-            ,{img:'images/shouye1.png',img2:'images/shouye-4.png',word:'导航六'}];
+          var hh = [{img:'images/shouye1.png',img2:'images/shouye-4.png',word:'首页',child:[]}
+            ,{img:'images/htshangpin1.png',img2:'images/htshangpin2.png',word:'商品',child:[{img:'images/shouye-4.png',word:'子节点'},{img:'images/shouye-4.png',word:'子节点'}]}
+            ,{img:'images/htkucun1.png',img2:'images/htkucun2.png',word:'库存',child:[{img:'images/shouye-4.png',word:'子节点'}]}
+            ,{img:'images/htwuliu1.png',img2:'images/htwuliu2.png',word:'物流',child:[{img:'images/shouye-4.png',word:'子节点'}]}
+            ,{img:'images/htdingdan1.png',img2:'images/htdingdan2.png',word:'订单',child:[{img:'images/shouye-4.png',word:'子节点'}]}
+            ,{img:'images/htmendian1.png',img2:'images/htmendian2.png',word:'门店',child:[{img:'images/shouye-4.png',word:'子节点'}]}
+            ,{img:'images/htzhanghao1.png',img2:'images/htzhanghao2.png',word:'帐号',child:[{img:'images/shouye-4.png',word:'子节点'}]}
+            ,{img:'images/hthuiyuan1.png',img2:'images/hthuiyuan2.png',word:'会员',child:[{img:'images/shouye-4.png',word:'子节点'}]}];
           this.setState({items:hh});
         }
 
         // 1
         render() {
+
             return (
               <div className="wrapLeftNav">
                 <ul className="wrapLeftNav_ul">
@@ -245,35 +275,60 @@
             super(props);
             // 初始化一个空对象
             this.handleClick = this.handleClick.bind(this);
+            // 二级导航状态
+            this.state={show:false};
         }
 
         handleClick(e){
           this.props.setSelected(this.props.item.word);
-        }
+          this.setState({show:!this.state.show});
 
+        }
         render() {
+
             var c = "";
             var img = this.props.item.img;
             if(this.props.selected==this.props.item.word){
               c = "on";
               img = this.props.item.img2;
             }
+            var d = (<div>{this.props.item.child.map(item => (
+                <Secondnav item={item}  />))
+            }</div>);
+            if (!this.state.show) {
+              d = <div></div>;
+            };
 
             return (
               <li className={c} onClick={this.handleClick}>
                 <span><img src={img} alt="" /></span>
                 <span className="wrapLeftNav_word">{this.props.item.word}</span>
+                {d}
               </li>
             );
         }
       };
-
+      // 二级导航
+      class Secondnav extends React.Component {
+        render() {
+          var img=this.props.item.img;
+            return (
+              <div className="second_nav">
+                <div className="second_navInfor">
+                  <img src={img} />
+                  <p>{this.props.item.word}</p>
+                </div>
+              </div>
+            );
+        }
+      };
       // 右侧
       class Right extends React.Component {
         render() {
             return (
               <div className="wrapRight">
                 <WrapRightHead/>
+                <WrapRightMain/>
               </div>
             );
         }
@@ -296,6 +351,84 @@
             );
         }
       };
+
+      // 右侧下部表格
+      class WrapRightMain extends React.Component {
+        render() {
+            return (
+              <div className="wrapRightMain">
+                <Table/>
+              </div>
+            );
+        }
+      };
+
+      // 表格
+      class Table extends React.Component {
+        constructor(props) {
+            super(props);
+            // 初始化一个空对象
+            this.state = {tabitems: [],tabtritems:[]};
+        }
+        componentDidMount() {
+          var tt = [{th:'商品名称'},{th:'数量'},{th:'价格(元)'},{th:'折扣(元)'},{th:'重量、(kg)'},{th:'编码'},{th:'付款方式'},{th:'流水号'},{th:'金额(元)'}];
+          this.setState({tabitems:tt});
+          var tr=[{tr}];
+          this.setState({tabtritems:tr});
+        }
+        render() {
+
+            return (
+              <table cellPadding="0" cellSpacing="0">
+                <tr>
+                  {this.state.tabitems.map(item => (
+                      <Th item={item} />))
+                  }
+                </tr>
+                {this.state.tabtritems.map(item => (
+                    <Tr item={item} />))
+                }
+              </table>
+            );
+        }
+      };
+      class Tr extends React.Component {
+        constructor(props) {
+            super(props);
+            // 初始化一个空对象
+            this.state = {tabtditems:[]};
+        }
+        componentDidMount() {
+          var td=[{td:"2017-02-13"},{td:"000000009"},{td:"100000"},{td:"宝山呼兰路店"},{td:"11111111"},{td:"2222222"},{td:"3424"},{td:"2"},{td:"100"}];
+          this.setState({tabtditems:td});
+        }
+
+        render() {
+
+            return (
+              <tr>
+              {this.state.tabtditems.map(item => (
+                  <Td item={item} />))
+              }
+              </tr>
+            );
+        }
+      };
+      class Th extends React.Component {
+        render() {
+            return (
+            <th>{this.props.item.th}</th>
+            );
+        }
+      };
+      class Td extends React.Component {
+        render() {
+            return (
+            <td>{this.props.item.td}</td>
+            );
+        }
+      };
+
       // 返回到页面
       ReactDOM.render(
         <Wrap/>,
@@ -303,14 +436,5 @@
       );
     </script>
 
-
-    <!-- <script type="text/javascript">
-      $(function(){
-        $(".wrapLeftNav_ul li").click(function(){
-
-          alert("ff");
-        });
-      });
-    </script> -->
   </body>
 </html>

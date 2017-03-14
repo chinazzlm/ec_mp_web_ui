@@ -78,6 +78,7 @@
         constructor(props) {
             super(props);
             this.jump = this.jump.bind(this);
+            this.move = this.move.bind(this);
             this.onTouchStart = this.onTouchStart.bind(this);
             this.onTouchMove = this.onTouchMove.bind(this);
             this.onTouchEnd = this.onTouchEnd.bind(this);
@@ -87,28 +88,84 @@
 
         }
         jump(){
-          var s = this.state.selected + 1;
-          if (s > this.state.items.length) {
-            s = 1;
+          var widthUl=this.state.widthUl/3;
+          this.move(-widthUl-1);
+        }
+        move(change) {
+          var imgLength=this.state.items.length;
+          var widthUl=this.state.widthUl;
+
+          if(change>widthUl/3){
+            change=widthUl;
+          }else if(change<-widthUl/3) {
+            change=-widthUl;
+          } else {
+            change=0;
           }
-          this.setState({selected:s});
+
+          var changeall_one=this.state.changeall_one+change;
+          var changeall_two=this.state.changeall_two+change;
+
+          // ul的宽度
+          var ulWidthAll=widthUl*imgLength;
+
+          if (changeall_one < -ulWidthAll) {
+            //往右移动两个ul宽度
+            changeall_one = changeall_one+2*ulWidthAll;
+          }
+          if (changeall_one >= ulWidthAll) {
+            //往左移动两个ul宽度
+            changeall_one = changeall_one-2*ulWidthAll;
+          }
+
+          if (changeall_two < -ulWidthAll) {
+            //往右移动两个ul宽度
+            changeall_two = changeall_two+2*ulWidthAll;
+          }
+          if (changeall_two >= ulWidthAll) {
+            //往左移动两个ul宽度
+            changeall_two = changeall_two-2*ulWidthAll;
+          }
+
+          var viewPage1=Math.round(changeall_one/widthUl);
+          var viewPage2=Math.round(changeall_two/widthUl);
+          var viewPage = 0;
+          if (viewPage1<=0) {
+            viewPage=viewPage1;
+          } else if (viewPage2 < 0) {
+            viewPage=viewPage2;
+          }
+          viewPage = Math.abs(viewPage);
+          if (viewPage == imgLength) {
+            viewPage = 0;
+          }
+          var selected = this.state.items[viewPage].id;
+
+          this.setState({changeall_one:changeall_one,changeall_two:changeall_two,selected:selected});
+
+          var left_one = $(".lunbo_ul_one").position().left;
+          var left_two = $(".lunbo_ul_two").position().left;
+
+          if (Math.abs(changeall_one-left_one)<=widthUl) {
+            $(".lunbo_ul_one").animate({"left":changeall_one},500);
+          } else {
+            $(".lunbo_ul_one").css("left",changeall_one);
+          }
+          if (Math.abs(changeall_two-left_two)<=widthUl) {
+            $(".lunbo_ul_two").animate({"left":changeall_two},500);
+          } else {
+            $(".lunbo_ul_two").css("left",changeall_two);
+          }
         }
         componentDidMount() {
-          var hh = [
-            {id:1,img:'images/back-9.jpg'}
-            ,{id:2,img:'images/back-10.jpg'}
-            ,{id:3,img:'images/back-11.jpg'}
-            ,{id:4,img:'images/back-12.jpg'}
-          ];
-
-
           var widthUl=$(window).width();
+          var imgLength=this.props.items.length;
           this.setState({widthUl:widthUl});
-          var changeall_two = -4*widthUl;
+          var changeall_two = -imgLength*widthUl;
           $(".lunbo_ul_two").css("left",changeall_two);
-          this.setState({items:hh,widthUl:widthUl,changeall_two:changeall_two});
+          this.setState({items:this.props.items,widthUl:widthUl,changeall_two:changeall_two});
 
-          setInterval(this.jump,500);
+          // setInterval(this.jump,1500);
         }
 
         onTouchStart(e){
@@ -126,81 +183,45 @@
           var left_two=this.state.changeall_two+change;
 
           this.setState({change:change});
-          // console.log(change);
 
           var imgLength=this.state.items.length;
           var widthUl=this.state.widthUl;
           // ul的宽度
           var ulWidthAll=widthUl*imgLength;
 
-          if (left_one < -ulWidthAll+10) {
+          if (left_one < -ulWidthAll+1) {
             //往右移动两个ul宽度
             left_one = left_one+2*ulWidthAll;
           }
-          if (left_one > ulWidthAll-10) {
+          if (left_one > ulWidthAll) {
             //往左移动两个ul宽度
             left_one = left_one-2*ulWidthAll;
           }
 
-          if (left_two < -ulWidthAll+10) {
+          if (left_two < -ulWidthAll) {
             //往右移动两个ul宽度
             left_two = left_two+2*ulWidthAll;
           }
-          if (left_two > ulWidthAll-10) {
+          if (left_two > ulWidthAll) {
             //往左移动两个ul宽度
             left_two = left_two-2*ulWidthAll;
           }
 
-          $(".lunbo_ul_one").css("left",left_one);
-          $(".lunbo_ul_two").css("left",left_two);
+          // $(".lunbo_ul_one").css("left",left_one);
+          // $(".lunbo_ul_two").css("left",left_two);
         }
         onTouchEnd(e){
-          var imgLength=this.state.items.length;
           var widthUl=this.state.widthUl;
           var change = this.state.change;
 
-          if(change>widthUl/3){
-            change=widthUl;
-          }else if(change<-widthUl/3) {
-            change=-widthUl;
-          } else {
-            change=0;
-          }
-          console.log(change);
-
-          var changeall_one=this.state.changeall_one+change;
-          var changeall_two=this.state.changeall_two+change;
-
-          // ul的宽度
-          var ulWidthAll=widthUl*imgLength;
-
-          //
-          if (changeall_one < -ulWidthAll) {
-            //往右移动两个ul宽度
-            changeall_one = changeall_one+2*ulWidthAll;
-          } else if (changeall_one > ulWidthAll) {
-            //往左移动两个ul宽度
-            changeall_one = changeall_one-2*ulWidthAll;
-          } else {
-            $(".lunbo_ul_one").animate({"left":changeall_one},500);
-          }
-
-          if (changeall_two < -ulWidthAll) {
-            //往右移动两个ul宽度
-            changeall_two = changeall_two+2*ulWidthAll;
-          } else if (changeall_two > ulWidthAll) {
-            //往左移动两个ul宽度
-            changeall_two = changeall_two-2*ulWidthAll;
-          } else {
-            $(".lunbo_ul_two").animate({"left":changeall_two},500);
-          }
-
-          this.setState({changeall_one:changeall_one,changeall_two:changeall_two});
+          this.move(change);
         }
         render() {
           // 初始化
           var widthUl=this.state.widthUl;
-          $(".lunbo_ul").css("width",4*widthUl);
+          var imgLength=this.props.items.length;
+          console.log(imgLength);
+          $(".lunbo_ul").css("width",imgLength*widthUl);
           $(".lunbo").css("width",widthUl);
 
           return (
@@ -261,8 +282,13 @@
         }
       };
       // 返回到页面
+      var items = [
+        {id:1,img:'images/back-9.jpg'}
+        ,{id:2,img:'images/back-10.jpg'}
+        ,{id:3,img:'images/back-11.jpg'}
+      ];
       ReactDOM.render(
-        <Lunbo/>,
+        <Lunbo items={items} />,
         document.getElementById("example")
       );
     </script>
