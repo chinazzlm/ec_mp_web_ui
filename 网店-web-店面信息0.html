@@ -141,14 +141,18 @@
   <body>
     <div id="example"></div>
     <script type="text/javascript">
-      function getMiddleData(parmas,cb) {
-        var hh = [{img:'images/i-9.png',word1:'宝山呼兰路善淘一店',word2:'宝山区呼兰路911弄11号博济智慧园',img1:'images/zuji.png'}
-          ,{img:'images/i-9.png',word1:'宝山呼兰路善淘二店',word2:'宝山区呼兰路911弄11号博济智慧园',img1:'images/zuji.png'}
-          ,{img:'images/i-9.png',word1:'宝山呼兰路善淘三店',word2:'宝山区呼兰路911弄11号博济智慧园',img1:'images/zuji.png'}];
-          var selected=["宝山呼兰路善淘一店","宝山呼兰路善淘二店"];
-          cb({items:hh,selected:selected});
-      }
+    // 查询页面需要的数据
+    // params变量查询参数
+    function getMiddleData(params,cb) {
+      var hh = [{img:'images/i-9.png',word1:'宝山呼兰路善淘一店',word2:'宝山区呼兰路911弄11号博济智慧园',img1:'images/zuji.png'}
+        ,{img:'images/i-9.png',word1:'宝山呼兰路善淘二店',word2:'宝山区呼兰路911弄11号博济智慧园',img1:'images/zuji.png'}
+        ,{img:'images/i-9.png',word1:'宝山呼兰路善淘三店',word2:'宝山区呼兰路911弄11号博济智慧园',img1:'images/zuji.png'}];
+      var selected = ["宝山呼兰路善淘一店","宝山呼兰路善淘二店"];
+
+      cb({items:hh,selected:selected});
+    }
     </script>
+
     <script type="text/babel">
     // 框架
     class Warp extends React.Component {
@@ -186,10 +190,10 @@
       }
       // 3
       componentDidMount() {
+        // 获取页面变量的回调函数
         getMiddleData({},function(data) {
           this.setState(data);
         }.bind(this));
-
       }
       // 1
       render() {
