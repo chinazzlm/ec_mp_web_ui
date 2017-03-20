@@ -52,11 +52,27 @@
         width: 96%;
         margin: 0 auto;
       }
+      .newsLi{
+        margin: 20px auto;
+      }
       .newsTitle{
         width: 100%;
         font-size: 16px;
         color: #666;
         font-weight: 400;
+      }
+
+      .newsTime{
+        font-size: 14px;
+        color: #666;
+        background: #fff;
+        line-height: 25px;
+      }
+      .newsWord{
+        font-size: 14px;
+        color: #666;
+        background: #fff;
+        line-height: 25px;
       }
     }
     </style>
@@ -94,12 +110,12 @@
           this.state = {newsInfor: []};
       }
       componentDidMount() {
-        var infor = [{title:"实体店开业啦！！！",time:"2017/3/17",word:"开业啦！"}
-                    ,{title:"实体店开业啦！！！",time:"2017/3/17",word:"开业啦！"}
-                    ,{title:"实体店开业啦！！！",time:"2017/3/17",word:"开业啦！"}
-                    ,{title:"实体店开业啦！！！",time:"2017/3/17",word:"开业啦！"}
-                    ,{title:"实体店开业啦！！！",time:"2017/3/17",word:"开业啦！"}
-                    ,{title:"实体店开业啦！！！",time:"2017/3/17",word:"开业啦！"}];
+        var infor = [{title:"实体店开业啦！！！",time:"2017/3/17",word:"开业啦！身份是身份额外思考法时空访客会更好开据美女健康减肥吗据哦出口拉动看来时间付款世乒赛如果快速开发示范可父母分开吗婆婆为库萨克，商品房i哦佛法僧索赔俄方派开发商破溃破发思考片刻司法考试考"}
+                    ,{title:"实体店重新开业啦！！！",time:"2017/3/17",word:"开业啦！"}
+                    ,{title:"实体店又开业啦！！！",time:"2017/3/17",word:"开业啦！"}
+                    ,{title:"实体店歇业啦！！！",time:"2017/3/17",word:"开业啦！"}
+                    ,{title:"实体店又歇业啦啦！！！",time:"2017/3/17",word:"开业啦！"}
+                    ,{title:"实体店又开业啦！！！",time:"2017/3/17",word:"开业啦！"}];
                    this.setState({newsInfor:infor});
       }
       render() {
@@ -116,7 +132,7 @@
     class NewsInforLi extends React.Component {
       render() {
           return (
-            <li><p className="newsTitle">{this.props.item.title}</p><p className="newsTime">{this.props.item.time}</p><p className="newsWord">{this.props.item.word}</p></li>
+            <li className="newsLi"><p className="newsTitle"><u>{this.props.item.title}</u></p><p className="newsTime">{this.props.item.time}</p><p className="newsWord">{this.props.item.word}</p></li>
           );
       }
     };

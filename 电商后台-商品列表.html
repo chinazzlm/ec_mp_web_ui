@@ -271,7 +271,27 @@
   </head>
   <body>
     <div id="example"></div>
+    <script type="text/javascript">
+      function getTableData(params,cb) {
+        //表头
+        var tt = [{name:'date',title:'日期',width:'10%',sort:true}
+        ,{name:'order_no',title:'订单号',width:'10%',sort:true}
+        ,{name:'3',title:'订单人',width:'10%',sort:true}
+        ,{name:'4',title:'门店',sort:true}
+        ,{name:'5',title:'实付(元)',width:'10%',sort:true}
+        ,{name:'6',title:'找零(元)',width:'10%',sort:true}
+        ,{name:'7',title:'抹零(元)',width:'10%',sort:true}
+        ,{name:'8',title:'状态',width:'10%'}];
 
+        //表格内容
+        var tdItems=[{date:"2017-02-13",order_no:"000000009","3":"1000000","4":"宝山呼兰路店","8":"2"}
+                    ,{date:"2017-02-13",order_no:"000000009","3":"1000000","4":"宝山呼兰路店","8":"2"}];
+
+        //分页数据
+
+        cb({tabthitems:tt,tabtritems:tdItems,allNum:1006,everyNum:20})
+      }
+    </script>
     <script type="text/babel">
       // 框架
       class Wrap extends React.Component {
@@ -434,25 +454,42 @@
         constructor(props) {
             super(props);
             this.setPage=this.setPage.bind(this);
+            this.handleSort=this.handleSort.bind(this);
+            this.loadData=this.loadData.bind(this);
             // 初始化一个空对象
-            this.state = {allNum:1006,everyNum:20,thisPage:2};
+            this.state = {tabthitems:[],tabtritems:[],allNum:0,everyNum:20,thisPage:1,sort:{name:"",dir:""}};
+        }
+        loadData() {
+          var params = {thisPage:this.state.thisPage,sort:this.state.sort};
+
+          getTableData(params,function(data) {
+            this.setState(data);
+          }.bind(this));
+        }
+        componentDidMount() {
+          this.loadData();
         }
         setPage(thisPage) {
           this.setState({thisPage:thisPage});
-
+          this.loadData();
         }
-
-
+        handleSort(sort){
+          this.setState({sort:sort});
+          this.loadData();
+        }
         render() {
-            return (
-              <div className="wrapRightMain">
-                <Search/>
-                <Table/>
-                <Tab setPage={this.setPage} allNum={this.state.allNum} everyNum={this.state.everyNum} thisPage={this.state.thisPage} />
-              </div>
-            );
+          console.log("a");
+          return (
+            <div className="wrapRightMain">
+              <Search/>
+              <Table tabthitems={this.state.tabthitems} tabtritems={this.state.tabtritems} sort={this.state.sort} onSort={this.handleSort} />
+              <Tab setPage={this.setPage} allNum={this.state.allNum} everyNum={this.state.everyNum} thisPage={this.state.thisPage} />
+            </div>
+          );
         }
       };
+
+
       class Search extends React.Component {
         render() {
             return (
@@ -469,38 +506,17 @@
       class Table extends React.Component {
         constructor(props) {
             super(props);
-            this.handleSort=this.handleSort.bind(this);
-            // 初始化一个空对象
-            this.state = {tabitems: [],tabtritems:[],sort:{name:"",dir:""}};
-        }
-        componentDidMount() {
-          var tt = [{name:'1',title:'日期',width:'10%',sort:true}
-          ,{name:'2',title:'订单号',width:'10%',sort:true}
-          ,{name:'3',title:'订单人',width:'10%',sort:true}
-          ,{name:'4',title:'门店',sort:true}
-          ,{name:'5',title:'实付(元)',width:'10%',sort:true}
-          ,{name:'6',title:'找零(元)',width:'10%',sort:true}
-          ,{name:'7',title:'抹零(元)',width:'10%',sort:true}
-          ,{name:'8',title:'状态',width:'10%'}];
-          this.setState({tabitems:tt});
-          var tr=[{tr},{tr},{tr},{tr},{tr},{tr},{tr},{tr}];
-          this.setState({tabtritems:tr});
-        }
-        handleSort(sort){
-          this.setState({sort:sort});
-
         }
         render() {
-
             return (
               <table cellPadding="0" cellSpacing="0">
                 <tr>
-                  {this.state.tabitems.map(item => (
-                      <Th item={item} sort={this.state.sort} onSort={this.handleSort} />))
+                  {this.props.tabthitems.map(item => (
+                      <Th item={item} sort={this.props.sort} onSort={this.props.onSort} />))
                   }
                 </tr>
-                {this.state.tabtritems.map(item => (
-                    <Tr item={item} />))
+                {this.props.tabtritems.map(item => (
+                    <Tr item={item} tabthitems={this.props.tabthitems} />))
                 }
               </table>
             );
@@ -511,19 +527,14 @@
             super(props);
 
             // 初始化一个空对象
-            this.state = {tabtditems:[]};
-        }
-        componentDidMount() {
-          var td=[{td:"2017-02-13"},{td:"000000009"},{td:"1000000"},{td:"宝山呼兰路店"},{td:"11111111"},{td:"2222222"},{td:"3424"},{td:"2"}];
-          this.setState({tabtditems:td});
+            this.state = {};
         }
 
         render() {
-
             return (
               <tr>
-              {this.state.tabtditems.map(item => (
-                  <Td item={item} />))
+              {this.props.tabthitems.map(item => (
+                  <Td item={this.props.item} thitem={item} />))
               }
               </tr>
             );
@@ -543,7 +554,6 @@
           if (sort.name != this.props.item.name) {
             sort.dir = "";
           }
-
           sort.name = this.props.item.name;
           //排序顺序
           if (sort.dir == "asc") {
@@ -579,10 +589,11 @@
       class Td extends React.Component {
         render() {
             return (
-            <td>{this.props.item.td}</td>
+            <td>{this.props.item[this.props.thitem.name]}</td>
             );
         }
       };
+
       // 分页
       class Tab extends React.Component {
         constructor(props) {

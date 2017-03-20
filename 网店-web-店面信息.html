@@ -142,9 +142,9 @@
     <div id="example"></div>
     <script type="text/javascript">
       function getMiddleData(parmas,cb) {
-        var hh = [{img:'images/i-9.png',word1:'宝山呼兰路善淘一店',word2:'宝山区呼兰路911弄11号博济智慧园',img1:'images/zuji.png'}
-          ,{img:'images/i-9.png',word1:'宝山呼兰路善淘二店',word2:'宝山区呼兰路911弄11号博济智慧园',img1:'images/zuji.png'}
-          ,{img:'images/i-9.png',word1:'宝山呼兰路善淘三店',word2:'宝山区呼兰路911弄11号博济智慧园',img1:'images/zuji.png'}];
+        var hh = [{img:'images/i-9.png',word1:'宝山呼兰路善淘一店',word2:'宝山区呼兰路911弄11号博济智慧园'}
+          ,{img:'images/i-9.png',word1:'宝山呼兰路善淘二店',word2:'宝山区呼兰路911弄11号博济智慧园'}
+          ,{img:'images/i-9.png',word1:'宝山呼兰路善淘三店',word2:'宝山区呼兰路911弄11号博济智慧园'}];
           var selected=["宝山呼兰路善淘一店","宝山呼兰路善淘二店"];
           cb({items:hh,selected:selected});
       }
@@ -166,9 +166,9 @@
       render() {
           return (
             <div className="header">
-              <span className="jiantou"><img src="images/jiantou.png" alt="" /></span>
+              <span className="jiantou"><a href="#"><img src="images/jiantou.png" alt="" /></a></span>
               <span className="title">线下店</span>
-              <span className="menu"><img src="images/shouye1.png" alt="" /></span>
+              <span className="menu"><a href="#"><img src="images/shouye1.png" alt="" /></a></span>
             </div>
           );
       }
@@ -208,7 +208,7 @@
       render() {
         var d="";
         if($.inArray(this.props.item.word1,this.props.selected)!=-1){
-          d=<img src={this.props.item.img1} alt="" />;
+          d=<img src="images/zuji.png" alt="" />;
         }
         return (
           <div className="news">

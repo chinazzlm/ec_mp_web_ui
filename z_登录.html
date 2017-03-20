@@ -103,16 +103,13 @@
         }
         .login .submit input{
           text-indent: 0;
-          background: rgb(112,180,44);
-          color: #fff;
-          border-radius: 4px;
         }
         .login p{
           display: inline-block;
           width: 220px;
           text-align: left;
           color: #000;
-          font-size: 12px;
+          font-size: 14px;
         }
         .login p span:last-child{
           float: right;
@@ -148,7 +145,7 @@
       render() {
           return (
             <div className="person">
-              <img src="images/42.png" alt="" className="personImg" />
+              <img src="images/personImg.jpg" alt="" className="personImg" />
             </div>
           );
       }
@@ -250,7 +247,7 @@
                 <span className="checkboxtwo"><input type="checkbox" value=""  className="checkboxNum" />自动登录</span>
               </div>
               <div className="submit">
-                <input type="submit" value="登 录" className="verificationNum " onClick = {this.handleLogin}/>
+                <input type="submit" value="登 录" className="verificationNum" onClick = {this.handleLogin}/>
               </div>
               <p><span>忘记密码？</span><span onClick = {this.handleRegiser}>点击注册</span></p>
             </div>
