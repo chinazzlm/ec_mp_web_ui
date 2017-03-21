@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -76,6 +77,12 @@
         line-height: 40px;
         font-size: 14px;
         color: #666;
+      }
+      .shop-address-name img{
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-right: 10px;
       }
       .business-hours{
         width: 96%;
@@ -160,7 +167,7 @@
             // var img=this.state.item.imgs;
             return (
               <div className="shop-address">
-                <p className="shop-address-name"><u>{this.state.item.name}</u></p>
+                <p className="shop-address-name"><img src="images/gps.png" alt="" /><u>{this.state.item.name}</u></p>
                 <p className="start-businsess">开业时间：{this.state.item.time1}</p>
                 <p className="business-hours">营业时间：{this.state.item.time2}</p>
                 <p className="shop-infor">{this.state.item.word}</p>
