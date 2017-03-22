@@ -151,6 +151,18 @@
         .recharge_ul1 li p:first-child{
             font-size: 14px;
         }
+        .recharge_ul2 .recharge_li1{
+            border: 2px solid #0CB3E7;
+            box-sizing: border-box;
+            padding: 2px;
+            border-radius: 2px;
+        }
+        .recharge_ul2 .recharge_li2{
+            border: 2px solid #7EBD30;
+            box-sizing: border-box;
+            padding: 2px;
+            border-radius: 2px;
+        }
         .recharge_ul1 .liColor{
             color: #0DB3E7;;
             border: 1px solid #0DB3E7;
@@ -228,27 +240,36 @@
         constructor(props) {
             super(props);
             this.setSelected=this.setSelected.bind(this);
-            this.state = {priceitems:[],selected:100};
+            this.handleClick=this.handleClick.bind(this);
+            this.state = {priceitems:[],selected:100,border:""};
         }
         setSelected(selected){
             this.setState({selected:selected});
+        }
+        handleClick(e){
+            this.setState({border:e.target.id});
         }
         componentDidMount(){
             var priceitems=[{price:200,price1:198},{price:500,price1:498},{price:1000,price1:990},{price:5000,price1:4900},{price:6000,price1:4900},{price:7000,price1:4900}];
             this.setState({priceitems:priceitems});
         }
         render() {
+            var c="",d="";
+            if(this.state.border=="1"){
+                c="recharge_li1";
+            } else if(this.state.border=="2"){
+                d="recharge_li2";
+            }
           return (
               <div>
                   <ul className="recharge_ul1">
                   {this.state.priceitems.map(item => (
                       <RechargeLi item={item} selected={this.state.selected} setSelected={this.setSelected}/>))
                   }
-
                   </ul>
                   <ul className="recharge_ul2">
-                    <li className="recharge_li"><a><img src="images/zhifubaozhifu.png" alt="" /></a></li>
-                    <li className="recharge_li"><a><img src="images/weixinzhifu.png" alt="" /></a></li>
+                    <li className={c}><img src="images/zhifubaozhifu.png" alt="" id="1" onClick={this.handleClick} /></li>
+                    <li className={d}><img src="images/weixinzhifu.png" alt="" id="2" onClick={this.handleClick} /></li>
                   </ul>
               </div>
           );
