@@ -310,8 +310,7 @@
         line-height: 16px;
         color: #333;
         position: relative;
-        margin: 16px 0 8px 0;
-        z-index: 2;
+        margin: 24px 0 20px 0;
         border-bottom: 0 none;
         text-align: center;
         font-size: 16px;
@@ -379,6 +378,72 @@
         height: 15px;
         margin: 0 auto;
       }
+
+      /*搜索弹出层样式*/
+
+      .SearchCeng{
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background:#f5edf5;
+          /*display: none;*/
+      }
+      .SearchCeng .Search_top{
+        width: 100%;
+        height: 35px;
+        margin-top: 10px;
+      }
+      .Search a{
+        color: #888888;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .SearchCeng img{
+        width: 8%;
+        vertical-align: middle;
+      }
+      .SearchCeng input{
+        width: 74.9333333%;
+        height: 25px;
+        line-height: 25px;
+        border: none;
+        border: 2px solid #ebe8eb;
+        outline: none;
+        -webkit-appearance : none ;
+        margin-top: 10px;
+        border-radius: 4px;
+      }
+      .SearchCeng .SearchCeng_top span{
+        display: inline-block;
+      }
+      .SearchCeng .word{
+        font-size: 12px;
+        color: #999999;
+        width: 100%;
+        height: 20px;
+        line-height: 20px;
+        margin: 0 auto;
+        text-indent: 10px;
+
+      }
+      .SearchCeng .SearchCeng_infor{
+        width: 96%;
+        margin: 0 auto;
+        background: #f9f9f9;
+      }
+      .SearchCeng .SearchCeng_infor span{
+        display: inline-block;
+        border: 1px solid #bbbbbb;
+        border-radius: 6px;
+        background: #fff;
+        margin: 10px 5px;
+        padding: 3px 5px;
+        line-height: 18px;
+      }
     }
     </style>
 </head>
@@ -388,10 +453,29 @@
   <script type="text/babel">
   // 框架
   class Warp extends React.Component {
+      constructor(props) {
+          super(props);
+          this.setSelected = this.setSelected.bind(this);
+          this.state={status:"0"};
+      }
+      setSelected(status){
+          this.setState({status:status})
+      }
     render() {
         return (
           <div className="wrap">
-            <Header/>
+            <Layout setSelected={this.setSelected}/>
+            <SearchCeng setSelected={this.setSelected} status={this.state.status} />
+          </div>
+        );
+    }
+  };
+  // 框架
+  class Layout extends React.Component {
+    render() {
+        return (
+          <div className="Layout">
+            <Header setSelected={this.props.setSelected}/>
             <Main/>
             <Footer/>
             <Background0/>
@@ -405,22 +489,42 @@
   class Header extends React.Component {
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
         var items = [
           {id:1,img:'images/htad1.jpg'}
           ,{id:2,img:'images/htad2.jpg'}
           ,{id:3,img:'images/htad3.jpg'}
         ];
-        this.state={items:items};
+        this.state={items:items,count:0};
+    }
+    handleClick(e){
+        this.props.setSelected("1");
+    }
+    componentDidMount() {
+        $.ajax({
+          url: "/check_message_number",
+          dataType: 'json',
+          type: 'POST',
+          success: function(data) {
+              this.setState({count: data.count});
+          }.bind(this),
+          error: function(xhr, status, err) {
+          }.bind(this)
+      });
     }
     render() {
+        var s = (<span className="headernewsnum">{this.state.count}</span>);
+        if(this.state.count==0){
+            s = (<q></q>);
+        }
         return (
           <div className="header">
             <div className="search">
-              <input  type="search" value="" placeholder="寻找商品" className="headersearch" />
+              <input  type="search" value="" placeholder="寻找商品" className="headersearch"  onClick={this.handleClick}/>
               <span className="searchfangda"><img src="images/fangdajing.png" alt="" className="searchfangdaImg" /></span>
               <div className="headernews">
                 <img src="images/news2.png" alt="" className="headernimg" />
-                <span className="headernewsnum">99</span>
+                {s}
               </div>
             </div>
             <Lunbo items={this.state.items} />
@@ -437,7 +541,6 @@
             <News/>
             <Activity/>
             <Like/>
-
           </div>
         );
     }
@@ -497,7 +600,7 @@
       var liTop=$(".HomeNews li").first().css("margin-top");
 
       var liparseInt=parseInt(liTop);
-      console.log(liparseInt);
+
 
         if (liparseInt<-20){
           var First=$(".HomeNews li").first();
@@ -510,6 +613,7 @@
     render() {
         return (
             <div className="news">
+            <p className="yourLike"><span>最新活动</span></p>
                 <ul className="HomeNews">
                 {this.state.newsitems.map(item => (
                     <NewsLi item={item}  />))
@@ -517,6 +621,17 @@
                 </ul>
                 <span className="newsMore"><a></a></span>
             </div>
+        );
+    }
+  };
+  // 新闻内容
+  class NewsLi extends React.Component {
+
+    render() {
+
+        return (
+
+            <li className="newsLi"><a href="#"><u>{this.props.item.word}</u></a></li>
         );
     }
   };
@@ -556,17 +671,7 @@
     }
   };
 
-  // 猜你喜欢内容
-  class NewsLi extends React.Component {
 
-    render() {
-
-        return (
-
-            <li className="newsLi"><a href="#"><u>{this.props.item.word}</u></a></li>
-        );
-    }
-  };
   // 猜你喜欢
   class Like extends React.Component {
     constructor(props) {
@@ -574,19 +679,16 @@
         this.state={likeitems:[]};
     }
     componentDidMount() {
-      var infor = [{img:"images/c_1.jpg",word:"短袖t恤女 春夏装韩版学生百搭修身打底衫女圆领黑色欧洲站显瘦女",price:"123"},
-                   {img:"images/c_2.jpg",word:"短袖t恤女 春夏装韩版学生百搭修身打底衫女圆领黑色欧洲站显瘦女",price:"123"},
-                   {img:"images/c_3.jpg",word:"短袖t恤女 春夏装韩版学生百搭修身打底衫女圆领黑色欧洲站显瘦女",price:"123"},
-                   {img:"images/c_4.jpg",word:"短袖t恤女 春夏装韩版学生百搭修身打底衫女圆领黑色欧洲站显瘦女",price:"123"},
-                   {img:"images/c_5.jpg",word:"短袖t恤女 春夏装韩版学生百搭修身打底衫女圆领黑色欧洲站显瘦女",price:"123"},
-                   {img:"images/c_6.jpg",word:"短袖t恤女 春夏装韩版学生百搭修身打底衫女圆领黑色欧洲站显瘦女",price:"123"},
-                   {img:"images/c_7.jpg",word:"短袖t恤女 春夏装韩版学生百搭修身打底衫女圆领黑色欧洲站显瘦女",price:"123"},
-                   {img:"images/c_8.jpg",word:"短袖t恤女 春夏装韩版学生百搭修身打底衫女圆领黑色欧洲站显瘦女",price:"123"},
-                   {img:"images/c_9.jpg",word:"短袖t恤女 春夏装韩版学生百搭修身打底衫女圆领黑色欧洲站显瘦女",price:"123"},
-                   {img:"images/c_1.jpg",word:"短袖t恤女 春夏装韩版学生百搭修身打底衫女圆领黑色欧洲站显瘦女",price:"123"},
-                   {img:"images/c_2.jpg",word:"短袖t恤女 春夏装韩版学生百搭修身打底衫女圆领黑色欧洲站显瘦女",price:"123"},
-                   {img:"images/c_3.jpg",word:"短袖t恤女 春夏装韩版学生百搭修身打底衫女圆领黑色欧洲站显瘦女",price:"123"}];
-      this.setState({likeitems:infor});
+        $.ajax({
+             url: "/get_recommend_products",
+             dataType: 'json',
+             type: 'POST',
+             success: function(data) {
+                this.setState({likeitems:data.products});
+             }.bind(this),
+             error: function(xhr, status, err) {
+             }.bind(this)
+        });
 
       setInterval(this.scroll,2800);
     }
@@ -609,9 +711,12 @@
   class LikeLi extends React.Component {
 
     render() {
-        var img = this.props.item.img;
+        var img = "images/jiantou.png";
+        if(this.props.item.img) {
+            img = this.props.item.img.location;
+        }
         return (
-            <li className="homeLikeLi"><a href="#"><img src={img} alt="" /><p className="likename">{this.props.item.word}</p><p className="likeprice">￥<span>{this.props.item.price}</span></p></a></li>
+            <li className="homeLikeLi"><a href="#"><img src={img} alt="" /><p className="likename">{this.props.item.product_name}</p><p className="likeprice">￥<span>{this.props.item.product_sale_price}</span></p></a></li>
         );
     }
   };
@@ -652,7 +757,6 @@
     componentDidMount() {
       $(window).scroll(function(){
         var topHeight=$(window).scrollTop();
-        console.log(topHeight);
         if (topHeight>500){
           //当滚动条的位置处于距顶部1000像素以下时，就是大于1000象数时，跳转出现
           $(".top").fadeIn(250);
@@ -663,9 +767,9 @@
       })
     }
 
+
     render() {
       var topHeight=$(window).scrollTop();
-      console.log(topHeight);
 
         return (
           <div className="top" onClick={this.handleClick}><img src="images/top.png" alt="" /><u>top</u></div>
@@ -678,6 +782,54 @@
     render() {
         return (
           <div className="background"></div>
+        );
+    }
+  };
+
+  // 搜索框弹出层
+  class SearchCeng extends React.Component {
+      constructor(props) {
+          super(props);
+          this.handleClick=this.handleClick.bind(this);
+          this.onKeyPress=this.onKeyPress.bind(this);
+      }
+      onKeyPress(e){
+          var key = e.which;
+    		if (key == 13) {
+    			var q = encodeURI(e.target.value);
+    			location.href = "/search?q="+q;
+    		}
+      }
+      handleClick(e){
+          this.props.setSelected("0");
+      }
+
+    render() {
+        var Ceng = <div></div>;
+        if(this.props.status=="1"){
+            Ceng = (<div className="SearchCeng">
+                <div className="SearchCeng_top">
+                  <img src="images/jiantou.png" alt="" />
+                  <input type="text" name="" value="" placeholder="搜索" onKeyPress={this.onKeyPress} />
+                  <span onClick={this.handleClick}>取消</span>
+                </div>
+                <p className="word">大家都在搜</p>
+                <div className="SearchCeng_infor">
+                  <span><a href="#">礼服</a></span>
+                  <span><a href="#">棒球服</a></span>
+                  <span><a href="#">孕妇裤</a></span>
+                  <span><a href="#">休闲鞋</a></span>
+                  <span><a href="#">板鞋</a></span>
+                  <span><a href="#">电动车</a></span>
+                  <span><a href="#">手提包</a></span>
+                  <span><a href="#">行车记录仪</a></span>
+                  <span><a href="#">礼品袋</a></span>
+                  <span><a href="#">移动电源</a></span>
+                </div>
+            </div>);
+        }
+        return (
+            Ceng
         );
     }
   };
