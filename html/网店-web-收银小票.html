@@ -140,6 +140,7 @@
                 constructor(props) {
                     super(props);
                     this.currentTime=this.currentTime.bind(this);
+                    // pay_infos:[{}]数组中只有一个对象
                     this.state = {row:{store:{},order_details:[],pay_infos:[{}]}};
                 }
                 componentDidMount() {
