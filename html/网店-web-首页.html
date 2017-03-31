@@ -514,8 +514,9 @@
     }
     render() {
         var s = (<span className="headernewsnum">{this.state.count}</span>);
+        var style={display:"none"};
         if(this.state.count==0){
-            s = (<q></q>);
+            s = (<span style={style}></span>);
         }
         return (
           <div className="header">
