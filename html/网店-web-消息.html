@@ -40,10 +40,15 @@
         }
         .jiantou{
           display: inline-block;
-          width: 32px;
+          width: 25px;
+          height: 25px;
           position: absolute;
           left: 10px;
           top: 7px;
+        }
+        .jiantou img{
+            width: 25px;
+            height: 25px;
         }
         .title{
           display:block;
@@ -54,11 +59,16 @@
           text-align: center;
         }
         .menu{
-          width: 32px;
+          width: 25px;
+          height: 25px;
           display: inline-block;
           position: absolute;
           right: 10px;
           top: 13px;
+        }
+        .menu img{
+          width: 25px;
+          height: 25px;
         }
         .title span{
           color: #D81E06;
@@ -84,6 +94,18 @@
           background: #fff;
           border-radius: 4px;
           padding: 10px;
+          position: relative;
+        }
+        .newsStatus{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+        }
+        .newsStatus img{
+            width: 30px;
+            height: 30px;
         }
         .newsTitle{
           width: 80%;
@@ -110,11 +132,12 @@
           width: 82%;
           vertical-align: top;
           padding-left: 10px;
-          font-size: 12px;
+          font-size: 14px;
           line-height: 20px;
           height: 41px;
           overflow:hidden;
           text-overflow:ellipsis;
+          color: #919191;
         }
       }
     </style>
@@ -154,11 +177,12 @@
       }
       // 3
       componentDidMount() {
-        var hh = [{time:'2017/3/1',title:'您有可领取的会员卡',img:'images/i-9.png',word:'您可领取"金锣火腿肠"满100元减20元优惠券.'}
-          ,{time:'2017/3/1',title:'您有可领取的会员卡',img:'images/i-9.png',word:'您可领取"金锣火腿肠"满100元减20元优惠券.'}
-          ,{time:'2017/3/1',title:'您有可领取的会员卡',img:'images/i-9.png',word:'您可领取"金锣火腿肠"满100元减20元优惠券.'}];
+        var hh = [{read:0, time:'2017/3/1',title:'您有可领取的会员卡',img:'images/i-9.png',word:'您可领取"金锣火腿肠"满100元减20元优惠券.'}
+          ,{read:0,time:'2017/3/1',title:'您有可领取的会员卡',img:'images/i-9.png',word:'您可领取"金锣火腿肠"满100元减20元优惠券.'}
+          ,{read:0,time:'2017/3/1',title:'您有可领取的会员卡',img:'images/i-9.png',word:'您可领取"金锣火腿肠"满100元减20元优惠券.'}];
         this.setState({items:hh});
       }
+
       // 1
       render() {
           return (
@@ -173,16 +197,34 @@
     };
     // 中间消息
     class News extends React.Component {
+        constructor(props) {
+            super(props);
+            this.handleClick = this.handleClick.bind(this);
+            this.state = {item:this.props.item};
+        }
+        // 点击更改read的值
+        handleClick(e){
+            var item = this.state.item;
+            item.read = 1;
+            this.setState({item:item});
+        }
       render() {
+          var img="";
+          if(this.state.item.read == 0){
+              img="images/weidu.png";
+          }else {
+              img="images/yidu.png";
+          }
           return (
-            <div className="news">
-              <p className="newsTime"><span>{this.props.item.time}</span></p>
-              <div className="newsInfor">
-                <p className="newsTitle">{this.props.item.title}</p>
+            <div className="news" >
+              <p className="newsTime"><span>{this.state.item.time}</span></p>
+              <div className="newsInfor" onClick={this.handleClick}>
+                <p className="newsTitle">{this.state.item.title}</p>
                 <div className="newscontent">
-                  <p className="newsimg"><img src={this.props.item.img} alt="" /></p>
-                  <p className="newsword">{this.props.item.word}</p>
+                  <p className="newsimg"><img src={this.state.item.img} alt="" /></p>
+                  <p className="newsword">{this.state.item.word}</p>
                 </div>
+                <p className="newsStatus"><img src={img} alt="" /></p>
               </div>
             </div>
           );
